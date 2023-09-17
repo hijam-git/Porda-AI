@@ -1,6 +1,6 @@
-# Project Name
+# PORDA AI
 
-Welcome to Project Name!
+Welcome to Project PORDA AI!
 
 ## Important Notice
 
@@ -12,7 +12,7 @@ Thank you for your continued support!
 
 ## About the Project
 
-
+The project prevent to seeing unwanted content direct over screen in real time. This flexibility enables users to adapt the application to their specific needs, preferences, and cultural sensitivities. It offers potential benefits for Muslim communities by allowing users to prevent the display of content that may be considered inappropriate or offensive according to Islamic principles. This can help individuals adhere to their religious beliefs and maintain a more positive and sacred digital environment.
 
 # My Experimental Porda Application
 
