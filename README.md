@@ -12,7 +12,7 @@ Thank you for your continued support!
 
 ## About the Project
 
-The project prevent to seeing unwanted content direct over screen in real time. This flexibility enables users to adapt the application to their specific needs, preferences, and cultural sensitivities. It offers potential benefits for Muslim communities by allowing users to prevent the display of content that may be considered inappropriate or offensive according to Islamic principles. This can help individuals adhere to their religious beliefs and maintain a more positive and sacred digital environment.
+The project prevents to seeing unwanted content one does not wish to see. The application places a cover directly on the object on the screen in real-time. This flexibility enables users to adapt the application to their specific needs, preferences, and cultural sensitivities. It offers potential benefits for Muslim communities by allowing users to prevent the display of content that may be considered inappropriate or offensive according to Islamic principles. This can help individuals adhere to their religious beliefs and maintain a more positive and sacred digital environment.
 
 # My Experimental Porda Application
 
@@ -22,20 +22,21 @@ Welcome to My Experimental App! Please note that this is an experimental project
 
 To download and install the app, follow these steps:
 
-1. Download the latest release from [here](link-to-download).
-2. From google drive [here](link-to-download).
+1. Download the latest release from [here](https://itholy.xyz/porda-ai).
+2. From google drive [here](https://drive.google.com/file/d/16E1gq0pglEv9hx219jxx_HShFVfahbR5/view?usp=sharing).
 
-2. Follow the installation instructions provided in the app's documentation.
+3. Follow the installation instructions provided in the app's [documentation](https://itholy.xyz/porda-ai).
 
 ## Usage
-
+[here](https://itholy.xyz/porda-ai)
 
 ## Disclaimer
 
-This is an experimental project and may have bugs, security vulnerabilities, or other issues that have not been fully addressed. By using this app, you acknowledge and accept these risks. The developer make no guarantees regarding the app's performance, reliability or others.
+This is an experimental project and may have bugs or other issues that have not been fully addressed. By using this app, you acknowledge and accept these risks. The developer make no guarantees regarding the app's performance, reliability or others.
 
 Use the app responsibly, and if you encounter any problems or issues, please report them to the project's issue tracker.
 
-Contact me at [your.email@gmail.com](mailto:your.email@gmail.com)
+Contact me at [hijamweb@gmail.com](mailto:hijamweb@gmail.com)
 
 Visit [My Website](https://www.itholy.xyz) for more information.
+[My facebook](https://facebook/abdullah.holy)
