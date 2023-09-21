@@ -39,4 +39,4 @@ Use the app responsibly, and if you encounter any problems or issues, please rep
 Contact me at [hijamweb@gmail.com](mailto:hijamweb@gmail.com)
 
 Visit [My Website](https://www.itholy.xyz) for more information.
-[My facebook](https://facebook/abdullah.holy)
+[My facebook](https://facebook.com/abdullah.holy)
