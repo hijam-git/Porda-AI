@@ -1,16 +1,15 @@
-# PORDA AI
-Welcome to Project PORDA AI!
-Your everyday AI companion.
-
-PORDA AI is an innovative application designed to assist Muslims in maintaining digital modesty by blurring or covering Haram objects in real-time
+# Welcome to PORDA AI!
+Introducing Porda Ai an innovative application.
+Everyday AI companion designed for Muslim community to empower them maintain modesty in the digital realm by blurring and covering Non-Mahram and Haram objects (NSFW), directly on screen.
 
 ## About the Project
-Introducing Porda Ai, designed for Muslims to help them maintain modesty in the digital realm by blurring or covering Haram objects in real-time, empowering users to avoid unintentionally viewing non-Mahram and Haram content (NSFW).
-
 The project prevents to looking unwanted content one does not wish to see. The application places a cover directly on the object on the screen in real-time. This flexibility enables users to adapt the application to their specific needs, preferences, and cultural sensitivities. It offers potential benefits for Muslim communities by allowing users to prevent the display of content that may be considered inappropriate or offensive according to Islamic principles. This can help individuals adhere to their religious beliefs and maintain a more positive and sacred digital environment.
 
 ## Demo Videos
+[Demon Video 1](https://www.youtube.com/watch?v=XbIZO9VOgqE)
 [![Porda AI Demo](http://img.youtube.com/vi/XbIZO9VOgqE/0.jpg)](http://www.youtube.com/watch?v=XbIZO9VOgqE)
+
+[Demon Video 1](https://www.youtube.com/watch?v=iyYQu5W_0xg)
 [![Porda AI Demo2](http://img.youtube.com/vi/iyYQu5W_0xg/0.jpg)](https://www.youtube.com/watch?v=iyYQu5W_0xg)
 
 [Intro Video here](https://www.youtube.com/watch?v=XbIZO9VOgqE)
@@ -23,7 +22,8 @@ The project prevents to looking unwanted content one does not wish to see. The a
 ## New Updated (PordaAi Experiment2)
 - Full Offline functionality (Dosen't communicate to internet)
 - System Tray integration
-- Auto Sleep Mode, Active Mode
+- Auto Start Up
+- Auto Sleep Mode, Audo Active Mode
 - Bug fixes
 - Improved accuracy
 - App Inclusion/Exclusion
@@ -42,9 +42,10 @@ If download link dose not work then please contact me, I will response immediate
 - The app icon will appear in the system tray when a single app is opened. Avoid opening multiple apps simultaneously.
 - Choose the object to detect (Male or Female) and select the cover type (black/white/bg-color/blur). blur level can also be adjusted.
 - In the engine settings, select Intel GPU if you're using an Intel processor; otherwise, choose CPU.
-- Click the Activate button and then ok button. It may take 20-30 seconds to initialize, especially if using GPU.
+- Click the Activate button and then click ok button. It may take 20-30 seconds to initialize, especially if using GPU.
+After sucessfully setup the app will be working.
 - Press F2 (default) to activate or deactivate the app. Double-click F2 to access engine settings.
-- Adjust accuracy settings as needed.
+- Adjust accuracy and other settings as needed. 
 - To use the app regularly, enable the startup option and save settings.
 - Shortcut keys are available for activation, deactivation, and creating datasets. Customize hotkeys as desired.
 - If the app fails to detect objects accurately, create a dataset by pressing the hotkey. Data will be - Gathered in your selected folder and either send it to me for training or train the model yourself.
