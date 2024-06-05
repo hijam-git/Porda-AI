@@ -21,38 +21,41 @@ The project prevents to looking unwanted content one does not wish to see. The a
 
 ## New Updated (PordaAi Experiment2)
 - Full Offline functionality (Dosen't communicate to internet)
-- Works on anywhere, in any window, browser facebook, youtube, videoplayer.
+- Works on anywhere, in any window (Any Browser, Facebook, Youtube, Offline videoplayer)
 - System Tray integration
-- Auto Start Up
+- Auto Start-Up
 - Auto Sleep Mode, Audo Active Mode
+- Auto Stop in Non-Interested Window
+- Auto deactivate when high cpu uses (when gaming or other)
 - Bug fixes
 - Improved accuracy
 - App Inclusion/Exclusion
 - Intel GPU support
-- Auto-startup
-- Shortcut keys
+- Shortcut keys for activate and deactivate any time
 - Dataset creation
 - Other optimizations
 
 ## Download and Installation
-From google drive [here](https://drive.google.com/file/d/1hUfZb6Ud025-CbYf9vOFYF5C_VoyHQZS/view?usp=sharing )
+From google drive [here](https://drive.google.com/file/d/1ZBTH7D-r1f5_4OnukdtTVlltWWjG7mI9/view?usp=sharing )
 If download link dose not work then please contact me, I will response immediately inshaAllah.
 
 ## How to Use
+- As I have no Code Cert, So windows may show worning.
 - Download the app and click to open it.
 - The app icon will appear in the system tray when a single app is opened. Avoid opening multiple apps simultaneously.
-- Ok button disappare setting and starts working as settings, apply button applies setting while keeping the settings appare.
+- Ok button disappare settings window and starts working as settings value, apply button applies setting while keeping the settings window appare.
 - Choose the object to detect (Male or Female) and select the cover type (black/white/bg-color/blur). blur level can also be adjusted.
 - In the engine settings, select Intel GPU if you're using an Intel processor; otherwise, choose CPU.
-- If you want to select GPU then add this app in Graphics Setting, graphics performance preference. Terminate the porda app and reopen and now select GPU.
+- If you want to select GPU then add this app in Graphics Setting (graphics performance preference). Terminate the porda app and reopen the app and now select GPU.
 - Click the Activate button and then click ok button. It may take 20-30 seconds to initialize, especially if using GPU.
 After sucessfully setup the app will be working.
 - Press F2 (default) to activate or deactivate the app. Double-click F2 to access settings.
+- Shortcut keys are available for activation, deactivation, and creating datasets. Customize hotkeys as desired.
+- You can change hot key as your choise, If you changed hot key then terminate and reopen the app.
 - Adjust accuracy and other settings as needed. 
 - To use the app regularly, enable the startup option and save settings.
-- Shortcut keys are available for activation, deactivation, and creating datasets. Customize hotkeys as desired.
 - If the app fails to detect objects accurately, create a dataset by pressing the hotkey. Data will be - Gathered in your selected folder and either send it to me for training or train the model yourself.
-- Right-click on the system tray icon to exit or access other options.
+- Right-click on the system tray porda-ai app icon to exit or access other options.
 - Check out other settings.
 Don't hesitate to reach out for any queries or assistance.
 
@@ -74,7 +77,7 @@ I have been involved in all aspect of this project, from collecting and annotati
 You can assist by providing technical support, making donations, or offering suggestions for improvement. Any form of help will be greatly appreciated.
 
 ## Disclaimer
-This is an experimental project and may have bugs that have not been fully addressed. By using this app, you acknowledge and accept this.
+This is an experimental project and may have bugs that may have not been fully addressed. By using this app, you acknowledge and accept this.
 Use the app responsibly, and if you encounter any problems or issues, please report them to the project's issue tracker.
 Note: This app was Tested on many computers in long time.
 
