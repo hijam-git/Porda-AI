@@ -40,7 +40,7 @@ From google drive [here](https://drive.google.com/file/d/1ZBTH7D-r1f5_4OnukdtTVl
 If download link dose not work then please contact me, I will response immediately inshaAllah.
 
 ## How to Use
-- As I have no Code Cert, So windows may show worning.
+- As it does not have a code certificate yet, if Windows shows a warning, you can safely ignore it and install the app.
 - Download the app and click to open it.
 - The app icon will appear in the system tray when a single app is opened. Avoid opening multiple apps simultaneously.
 - Ok button disappare settings window and starts working as settings value, apply button applies setting while keeping the settings window appare.
@@ -52,7 +52,7 @@ After sucessfully setup the app will be working.
 - Press F2 (default) to activate or deactivate the app. Double-click F2 to access settings.
 - Shortcut keys are available for activation, deactivation, and creating datasets. Customize hotkeys as desired.
 - You can change hot key as your choise, If you changed hot key then terminate and reopen the app.
-- Adjust accuracy and other settings as needed. 
+- Adjust accuracy, img size (13*13)  and other settings as needed.
 - To use the app regularly, enable the startup option and save settings.
 - If the app fails to detect objects accurately, create a dataset by pressing the hotkey. Data will be - Gathered in your selected folder and either send it to me for training or train the model yourself.
 - Right-click on the system tray porda-ai app icon to exit or access other options.
