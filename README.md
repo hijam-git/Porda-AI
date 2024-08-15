@@ -2,8 +2,11 @@
 Introducing Porda Ai an innovative application.
 Everyday AI companion designed for Muslim community to empower them maintain modesty in the digital realm by blurring and covering Non-Mahram and Haram objects (NSFW), directly on screen.
 
+## Try Porda Ai Extension For Browser and for Mobile 
+**Extension version**: [Porda AI on GitHub](https://github.com/hijam-git/porda-ai-extension)
+
 ## About the Project
-The project prevents to looking unwanted content one does not wish to see. The application places a cover directly on the object on the screen in real-time. This flexibility enables users to adapt the application to their specific needs, preferences, and cultural sensitivities. It offers high benefits for Muslim communities by allowing users to prevent the display of content that may be considered inappropriate or offensive according to Islamic principles. This can help individuals adhere to their religious beliefs and maintain a more positive and sacred digital environment.
+The project prevents to looking unwanted content one does not wish to see. The application places a cover directly on the object on the screen in real-time. It offers high benefits for Muslim communities by allowing users to prevent the display of content that may be considered inappropriate or offensive according to Islamic principles. This can help individuals adhere to their religious beliefs and maintain a more positive and sacred digital environment.
 
 ## Demo Videos
 [Demon Video 1](https://www.youtube.com/watch?v=XbIZO9VOgqE)
@@ -19,7 +22,8 @@ The project prevents to looking unwanted content one does not wish to see. The a
 - Detects objects within the captured data.
 - Generates an overlay box or applies blur directly onto the screen.
 
-## New Updated (PordaAi Experiment2)
+## New Updated (PordaAi1.3)
+## New AI Model
 - Full Offline functionality (Dosen't communicate to internet)
 - Works on anywhere, in any window (Any Browser, Facebook, Youtube, Offline videoplayer)
 - System Tray integration
@@ -35,9 +39,41 @@ The project prevents to looking unwanted content one does not wish to see. The a
 - Dataset creation
 - Other optimizations
 
-## Download and Installation
-From google drive [here](https://drive.google.com/file/d/1ZBTH7D-r1f5_4OnukdtTVlltWWjG7mI9/view?usp=sharing )
-If download link dose not work then please contact me, I will response immediately inshaAllah.
+## Features of Porda AI
+
+💠 **100% Secure:**
+- Runs entirely offline; no data is sent or stored externally.
+- Ensures user privacy and data security.
+
+💠 **User-Friendly Interface:**
+- Intuitive design for easy navigation and settings adjustment.
+
+💠 **Instant On/Off:**
+- Shortcut keys for activate and deactivate any time.
+
+💠 **Personalization for Websites:**
+- Activate or deactivate detection for specific app.
+
+💠 **Various Covering Options for Your Vision Comfort:**
+- Blur, solid color, full blur, and background color (Bg color) for covering haram objects.
+
+💠 **Fast Detection:**
+- Detects and blurs haram objects as soon as the image or video is loaded, ensuring a smooth user experience.
+
+💠 **Strong Caching Mechanism:**
+- Dynamic and efficient caching for faster performance.
+
+💠 **Optimization for High Accuracy:**
+- Advanced AI trained with extensive custom data for precise detection of haram objects.
+- Regular updates to improve detection accuracy.
+
+💠 **Optimal Halal Vision:**
+- Ensures maximum coverage of haram objects while preserving surrounding content (text, subtitles, etc.).
+- Enhances user experience by showing as much of the halal surrounding content as possible.
+
+💠 **Low Resource Consumption:**
+- Optimized to run efficiently on both desktop and mobile devices, ensuring it does not slow down your device or impact other tasks.
+
 
 ## How to Use
 - As it does not have a code certificate yet, if Windows shows a warning, you can safely ignore it and install the app.
@@ -60,8 +96,10 @@ After sucessfully setup the app will be working.
 Don't hesitate to reach out for any queries or assistance.
 
 ## Limitations
-- The network size is currently set at 416x416, so smaller objects (under 100px) may not be detected accurately in this version. Future updates will address this issue.
-- The accuracy of the system ranges from 70% to 80% across various scenarios. Ongoing improvements will gradually enhance accuracy over time.
+Try Porda Ai Extension For small images
+
+- Smaller objects (under 100px) may not be detected accurately in this version. Future updates will address this issue.
+- The accuracy of the system ranges from (85%-95%) across various scenarios. Ongoing improvements will gradually enhance accuracy over time.
 - While the software functions on any CPU, GPU support is currently limited to Intel OpenCL GPUs. Future -updates will extend compatibility to include late-model AMD GPUs and CUDA.
 - The speed and effectiveness depend on your computer.
 - Presently, the software is compatible only with Windows(10/11) operating systems. However, Linux compatibility can be tested using Bottle.
@@ -69,21 +107,28 @@ Any other observed limitations will be addressed in future updates, inshaAllah.
 
 ## The Next Update will be Published soon inshaAllah
 
+## Download and Installation
+# From google drive [here](https://github.com/hijam-git/Porda-AI/releases/ )
+
+# Put you email, to get update notification
+**Feedback Form:** [Feedback Form](https://forms.gle/uKoWWYATQvLBHhkN9)
+
+
 ## Help On this project
+This project is very expensive due to its advanced AI capabilities. As students, we have funded this project from our own, dedicating over a year to research, data collection, data annotation, model training, developing both the computer app and extension version and repeated testing.To further improve this project, we need your support. We are committed to building a Halal Digital Environment using state-of-the-art technology to protect our present ummah and future generations. We have many ongoing projects that will empower you. Will you support us in this Halal technology revolution? Donate to us and join us on this journey.
+
 If you've found value in this project, your support can contribute to its present and future success.
 
-I have been involved in all aspect of this project, from collecting and annotating datasets to training models and developing, testing the application. It took with long period of time for me. Surely With a larger dataset, we could achieve up to 98% accuracy.
+💠Request💠
+Dear Brother/Sister, 
+We tried as much as we could and it is just beginning. If you encounter any issues, please let us know. We are dedicated to solving the issue as soon as possible. Please give us the highest review and recommend it to your friends and your communities (through FB posts, FB groups, YouTube videos, etc.) to earn rewards from Allah.
 
-You can assist by providing technical support, making donations, or offering suggestions for improvement. Any form of help will be greatly appreciated.
-
-## Disclaimer
-This is an experimental project and may have bugs that may have not been fully addressed. By using this app, you acknowledge and accept this.
-Use the app responsibly, and if you encounter any problems or issues, please report them to the project's issue tracker.
-Note: This app was Tested on many computers in long time.
 
 ## Feel free to contact with me
-Contact me at [hijamweb@gmail.com](mailto:hijamweb@gmail.com)
 
-[My facebook](https://facebook.com/abdullah.holy)
-
-[My Linkedin](https://www.linkedin.com/in/hijamibnaomar/)
+- **Email:** [hijamweb@gmail.com](mailto:hijamweb@gmail.com)
+- **Facebook:** [Abdullah](https://facebook.com/abdullah.holy)
+- **LinkedIn:** [Hijam Ibna Omar](https://www.linkedin.com/in/hijamibnaomar/)
+- **Phone (Bkash/Nagad):** 01823170383
+- **IBBL Account:** 2050 1806 7001 66103 (Hijam Ibna Omar)
+- **Feedback Form:** [Feedback Form](https://forms.gle/uKoWWYATQvLBHhkN9)
