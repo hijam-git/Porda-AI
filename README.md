@@ -51,13 +51,14 @@ The project prevents to looking unwanted content one does not wish to see. The a
 💠 **Instant On/Off:**
 - Shortcut keys for activate and deactivate any time.
 
-💠 **Personalization for Websites:**
+💠 **Personalization for App:**
 - Activate or deactivate detection for specific app.
 
 💠 **Various Covering Options for Your Vision Comfort:**
 - Blur, solid color, full blur, and background color (Bg color) for covering haram objects.
 
 💠 **Fast Detection ensuring a smooth user experience.**
+
 💠 **Works on anywhere anytime:**
 - Any Browser, Facebook, Youtube, Offline videoplayer.
 
@@ -74,22 +75,29 @@ The project prevents to looking unwanted content one does not wish to see. The a
 
 
 ## How to Use
+
+**Installing From Link**
 - As it does not have a code certificate yet, if Windows shows a warning, you can safely ignore it and install the app.
 - Download the app and click to open it.
-- The app icon will appear in the system tray when a single app is opened. Avoid opening multiple apps simultaneously.
-- Ok button disappare settings window and starts working as settings value, apply button applies setting while keeping the settings window appare.
+- The app icon will appear in the system tray when a single app is opened. Avoid opening multiple apps simultaneously. You can see how the app in your system tray.
+
+**Run The App**
+- Ok button disappare settings window, apply button applies setting while keeping the settings window appare.
 - Choose the object to detect (Male or Female) and select the cover type (color/bg-color/blur).
 - In the engine settings, select Intel GPU if you're using an Intel processor; otherwise, choose CPU.
 - If you want to select GPU then add this app in Graphics Setting (graphics performance preference). Terminate the porda app and reopen the app and now select GPU.
 - Click the Activate button and then click Apply button then Ok button. It may take 20-30 seconds to initialize, especially if using GPU.
 After sucessfully setup the app will be working.
-- Press F2 (default) to activate or deactivate the app. Double-click F2 to access settings.
-- Shortcut keys are available for activation, deactivation, and creating datasets. Customize hotkeys as desired.
+
+
+**Additional**
+- Press F2 (default) to activate or deactivate the app any time. Double-click F2 to access settings. 
+- Right-click on the system tray porda-ai app icon to exit, Activate Deactivate any time, or access other options.
+- Shortcut keys are available for activation, deactivation, and creating datasets.
 - You can change hot key as your choise, If you changed hot key then terminate and reopen the app.
-- Adjust accuracy, img size (13*13)  and other settings as needed.
-- To use the app regularly, enable the startup option and save settings.
+- Adjust accuracy, other settings as needed.
+- To use the app regularly, enable the **startup option** and save settings.
 - If the app fails to detect objects accurately, create a dataset by pressing the hotkey. Data will be - Gathered in your selected folder and either send it to me for training or train the model yourself.
-- Right-click on the system tray porda-ai app icon to exit or access other options.
 - Check out other settings.
 Don't hesitate to reach out for any queries or assistance.
 
