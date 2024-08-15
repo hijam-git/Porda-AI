@@ -23,7 +23,7 @@ The project prevents to looking unwanted content one does not wish to see. The a
 - Generates an overlay box or applies blur directly onto the screen.
 
 ## New Updated (PordaAi1.3)
-## New AI Model
+**New AI Model**
 - Full Offline functionality (Dosen't communicate to internet)
 - Works on anywhere, in any window (Any Browser, Facebook, Youtube, Offline videoplayer)
 - System Tray integration
@@ -57,7 +57,9 @@ The project prevents to looking unwanted content one does not wish to see. The a
 💠 **Various Covering Options for Your Vision Comfort:**
 - Blur, solid color, full blur, and background color (Bg color) for covering haram objects.
 
-💠 **Fast Detection ensuring a smooth user experience.:**
+💠 **Fast Detection ensuring a smooth user experience.**
+💠 **Works on anywhere anytime:**
+- Any Browser, Facebook, Youtube, Offline videoplayer.
 
 💠 **Optimization for High Accuracy:**
 - Advanced AI trained with extensive custom data for precise detection of haram objects.
@@ -68,7 +70,7 @@ The project prevents to looking unwanted content one does not wish to see. The a
 - Enhances user experience by showing as much of the halal surrounding content as possible.
 
 💠 **Low Resource Consumption:**
-- Optimized to run efficiently on both desktop and mobile devices, ensuring it does not slow down your device or impact other tasks.
+- Optimized to run efficiently on both desktop and laptop, ensuring it does not slow down your device or impact other tasks.
 
 
 ## How to Use
