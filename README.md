@@ -3,7 +3,7 @@ Introducing Porda Ai an innovative application.
 Everyday AI companion designed for Muslim community to empower them maintain modesty in the digital realm by blurring and covering Non-Mahram and Haram objects (NSFW), directly on screen.
 
 ## Try Porda Ai Extension For Browser and for Mobile 
-**Extension version**: [Porda AI on GitHub](https://github.com/hijam-git/porda-ai-extension)
+**Extension version**: [Porda AI Extension GitHub](https://github.com/hijam-git/porda-ai-extension)
 
 ## About the Project
 The project prevents to looking unwanted content one does not wish to see. The application places a cover directly on the object on the screen in real-time. It offers high benefits for Muslim communities by allowing users to prevent the display of content that may be considered inappropriate or offensive according to Islamic principles. This can help individuals adhere to their religious beliefs and maintain a more positive and sacred digital environment.
@@ -43,7 +43,7 @@ The project prevents to looking unwanted content one does not wish to see. The a
 
 💠 **100% Secure:**
 - Runs entirely offline; no data is sent or stored externally.
-- Ensures user privacy and data security.
+- 100% Ensures user privacy and data security.
 
 💠 **User-Friendly Interface:**
 - Intuitive design for easy navigation and settings adjustment.
@@ -57,11 +57,7 @@ The project prevents to looking unwanted content one does not wish to see. The a
 💠 **Various Covering Options for Your Vision Comfort:**
 - Blur, solid color, full blur, and background color (Bg color) for covering haram objects.
 
-💠 **Fast Detection:**
-- Detects and blurs haram objects as soon as the image or video is loaded, ensuring a smooth user experience.
-
-💠 **Strong Caching Mechanism:**
-- Dynamic and efficient caching for faster performance.
+💠 **Fast Detection ensuring a smooth user experience.:**
 
 💠 **Optimization for High Accuracy:**
 - Advanced AI trained with extensive custom data for precise detection of haram objects.
@@ -80,10 +76,10 @@ The project prevents to looking unwanted content one does not wish to see. The a
 - Download the app and click to open it.
 - The app icon will appear in the system tray when a single app is opened. Avoid opening multiple apps simultaneously.
 - Ok button disappare settings window and starts working as settings value, apply button applies setting while keeping the settings window appare.
-- Choose the object to detect (Male or Female) and select the cover type (black/white/bg-color/blur). blur level can also be adjusted.
+- Choose the object to detect (Male or Female) and select the cover type (color/bg-color/blur).
 - In the engine settings, select Intel GPU if you're using an Intel processor; otherwise, choose CPU.
 - If you want to select GPU then add this app in Graphics Setting (graphics performance preference). Terminate the porda app and reopen the app and now select GPU.
-- Click the Activate button and then click ok button. It may take 20-30 seconds to initialize, especially if using GPU.
+- Click the Activate button and then click Apply button then Ok button. It may take 20-30 seconds to initialize, especially if using GPU.
 After sucessfully setup the app will be working.
 - Press F2 (default) to activate or deactivate the app. Double-click F2 to access settings.
 - Shortcut keys are available for activation, deactivation, and creating datasets. Customize hotkeys as desired.
@@ -108,9 +104,9 @@ Any other observed limitations will be addressed in future updates, inshaAllah.
 ## The Next Update will be Published soon inshaAllah
 
 ## Download and Installation
-# From google drive [here](https://github.com/hijam-git/Porda-AI/releases/ )
+## Latest Version [here](https://github.com/hijam-git/Porda-AI/releases/ )
 
-# Put you email, to get update notification
+**Put you email, to get update notification**
 **Feedback Form:** [Feedback Form](https://forms.gle/uKoWWYATQvLBHhkN9)
 
 
