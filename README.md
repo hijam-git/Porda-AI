@@ -1,6 +1,6 @@
 # Welcome to PORDA AI
 
-## The World's First Realtime onDevice Ai Project to maintian Modestey and Regious values.
+## The World's First Realtime onDevice AI Project to maintian Modestey and Religious values.
 
 Introducing Porda Ai an powerful innovative application.
 Everyday AI companion designed for Muslim community to empower them maintain modesty, decency in the digital realm by blurring and covering Non-Mahram and Haram objects (NSFW), **directly on screen on anywhere(offline,online,browser,videoplayer) in anytime.**
