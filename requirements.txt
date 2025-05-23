@@ -1,0 +1,13 @@
+keyboard==0.13.5
+matplotlib==3.10.1
+numpy==2.2.5
+opencv_contrib_python==4.8.1.78
+opencv_python==4.10.0.84
+opencv_python_headless==4.10.0.84
+psutil==5.9.6
+pyopencl==2023.1.4
+PyQt5==5.15.11
+PyQt5_sip==12.13.0
+pywin32==306
+Requests==2.32.3
+pyinstaller
