@@ -7,18 +7,36 @@ Everyday AI companion designed for Muslim community to empower them maintain mod
 
 ## 📚 Table of Contents
 
--   [How Porda Ai works](#how-porda-ai-works)
--   [Features](#features)
--   [Demo Videos](#demo-videos)
--   [How to Use](#how-to-use)
--   [Download and Installation](#download-and-installation)
--   [Limitations of the app](#limitations)
--   [For Developer/Engineer](#for-developer)
--   [How you can contribute](#how-you-can-help)
--   [Help On this project](#help-on-this-project)
--   [Contact With Me](#contact-with-me)
--   [Contributor](#contributor)
--   [Bangla (বাংলা)](#bangla)
+- [Welcome to PORDA AI](#welcome-to-porda-ai)
+  - [The World's First Realtime onDevice AI Project to maintian Modestey and Religious values.](#the-worlds-first-realtime-ondevice-ai-project-to-maintian-modestey-and-religious-values)
+  - [📚 Table of Contents](#-table-of-contents)
+  - [📄 License](#-license)
+  - [Try Porda Ai Extension For Browser and for Mobile (by kiwi browser)](#try-porda-ai-extension-for-browser-and-for-mobile-by-kiwi-browser)
+  - [About the Project](#about-the-project)
+  - [Demo Videos](#demo-videos)
+  - [Full Intro Video here](#full-intro-video-here)
+  - [Demon Video 1](#demon-video-1)
+  - [Demon Video 2](#demon-video-2)
+  - [Basic Tutorial](#basic-tutorial)
+  - [How Porda Ai works?](#how-porda-ai-works)
+  - [Features](#features)
+  - [How to Use](#how-to-use)
+  - [Limitations](#limitations)
+  - [Download and Installation](#download-and-installation)
+  - [Help On this project](#help-on-this-project)
+  - [Contributor](#contributor)
+  - [Contact with me](#contact-with-me)
+- [For Developer](#for-developer)
+  - [🔧 How to Run the Project](#-how-to-run-the-project)
+    - [1. Clone the Repository](#1-clone-the-repository)
+    - [2. Create a Virtual Environment (Recommended)](#2-create-a-virtual-environment-recommended)
+    - [3. Install Dependencies](#3-install-dependencies)
+    - [4. Run the Application](#4-run-the-application)
+  - [🏗️ Build the Executable (Windows)](#️-build-the-executable-windows)
+  - [Important Info](#important-info)
+  - [How You Can Help](#how-you-can-help)
+  - [Bangla](#bangla)
+  - [যেভাবে ইউস করবেন](#যেভাবে-ইউস-করবেন)
 
 ## 📄 License
 
@@ -198,19 +216,62 @@ If you've found value in this project, your support can contribute to its presen
 -   **IBBL Account:** 2050 1806 7001 66103 (Hijam Ibna Omar)
 -   **Feedback Form:** [Feedback Form](https://forms.gle/uKoWWYATQvLBHhkN9)
 
-## For Developer
+# For Developer
 
-## How to run the project?
+## 🔧 How to Run the Project
 
--   git clone https://github.com/hijam-git/Porda-AI
--   cd porda-ai
--   create new env
--   first Install dependencies: pip install -r requirements.txt
--   to Run the application: python main.py
+### 1. Clone the Repository
 
--   For building application:
-    pyinstaller --onefile --noconsole --add-data "model/pordav4x3.cfg;model/" --add-data "model/porda-19200-lr-0005-909.weights;model/" --add-data "startup_image/1.png;startup_image/" --add-data "static/pordaailogo.png;static/" --add-data "static/pordaailogo.ico;static/" --icon=static/pordaailogo.ico --name PordaAi(version) main.py
+```bash
+git clone https://github.com/hijam-git/Porda-AI.git
+cd Porda-AI
+```
 
+### 2. Create a Virtual Environment (Recommended)
+
+```bash
+python -m venv env
+# Activate the environment:
+# On Windows:
+env\Scripts\activate
+# On macOS/Linux:
+source env/bin/activate
+```
+
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the Application
+
+```bash
+python main.py
+```
+
+
+## 🏗️ Build the Executable (Windows)
+
+To build the standalone executable for Windows:
+
+```bash
+pyinstaller --onefile --noconsole ^
+  --add-data "model/pordav4x3.cfg;model/" ^
+  --add-data "model/porda-19200-lr-0005-909.weights;model/" ^
+  --add-data "startup_image/1.png;startup_image/" ^
+  --add-data "static/pordaailogo.png;static/" ^
+  --add-data "static/pordaailogo.ico;static/" ^
+  --icon=static/pordaailogo.ico ^
+  --name "PordaAi(version)" ^
+  main.py
+```
+
+> ⚠️ **Important**:
+> * Use `^` for line continuation on **Windows CMD**.
+> * If using PowerShell, replace `^` with backtick `` ` `` or write the command on one line.
+
+---
 ## Important Info
 
 This was my first desktop app — and not just mine. It was the first ever created (2022) to blur haram content in real time, directly on the screen, anywhere and anytime.
