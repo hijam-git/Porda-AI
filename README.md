@@ -33,6 +33,14 @@ Everyday AI companion designed for Muslim community to empower them maintain mod
     - [3. Install Dependencies](#3-install-dependencies)
     - [4. Run the Application](#4-run-the-application)
   - [🏗️ Build the Executable (Windows)](#️-build-the-executable-windows)
+  - [🔀 Sending a Pull Request](#-sending-a-pull-request)
+    - [1. **Fork the Repository**](#1-fork-the-repository)
+    - [2. **Clone Your Fork Locally**](#2-clone-your-fork-locally)
+    - [3. **Create a New Branch (recommended)**](#3-create-a-new-branch-recommended)
+    - [4. **Make Your Changes and Commit**](#4-make-your-changes-and-commit)
+    - [5. **Push the Changes to Your Fork**](#5-push-the-changes-to-your-fork)
+    - [6. **Open the Pull Request**](#6-open-the-pull-request)
+    - [✅ Done!](#-done)
   - [Important Info](#important-info)
   - [How You Can Help](#how-you-can-help)
   - [Bangla](#bangla)
@@ -272,6 +280,76 @@ pyinstaller --onefile --noconsole ^
 > * If using PowerShell, replace `^` with backtick `` ` `` or write the command on one line.
 
 ---
+To send a **pull request (PR)** to a GitHub repository (like `hijam-git/Porda-AI`), follow these steps:
+
+---
+
+## 🔀 Sending a Pull Request
+
+### 1. **Fork the Repository**
+
+If you haven’t already:
+
+* Go to the repo: [https://github.com/hijam-git/Porda-AI](https://github.com/hijam-git/Porda-AI)
+* Click the **"Fork"** button (top right)
+* Choose your account
+
+This creates a copy under your GitHub account:
+`https://github.com/your_username/Porda-AI`
+
+---
+
+### 2. **Clone Your Fork Locally**
+
+```bash
+git clone https://github.com/your_username/Porda-AI.git
+cd Porda-AI
+```
+
+---
+
+### 3. **Create a New Branch (recommended)**
+
+```bash
+git checkout -b my-feature-branch
+```
+
+Replace `my-feature-branch` with something descriptive (e.g., `fix-readme`, `add-feature-x`).
+
+---
+
+### 4. **Make Your Changes and Commit**
+
+Edit files, then:
+
+```bash
+git add .
+git commit -m "Describe your changes here"
+```
+
+---
+
+### 5. **Push the Changes to Your Fork**
+
+```bash
+git push origin my-feature-branch
+```
+
+---
+
+### 6. **Open the Pull Request**
+
+1. Go to your fork: `https://github.com/nazmulhasan77/Porda-AI`
+2. You’ll see a **“Compare & pull request”** button — click it
+3. Review the changes, add a title/description
+4. Click **“Create pull request”**
+
+---
+
+### ✅ Done!
+
+Now the repository owner (`hijam-git`) can review and merge your changes.
+
 ## Important Info
 
 This was my first desktop app — and not just mine. It was the first ever created (2022) to blur haram content in real time, directly on the screen, anywhere and anytime.
