@@ -29,7 +29,7 @@ See the [LICENSE](./LICENSE) file for details.
 
 ## Try Porda Ai Extension For Browser and for Mobile (by kiwi browser)
 
--   [Porda AI Website](https:/pordaai.com) **Website**
+-   [Porda AI Website](https://pordaai.com) **Website**
 -   [Porda AI Extension GitHub](https://github.com/hijam-git/porda-ai-extension) **Extension version**
 -   [Download Porda AI Extension](https://chromewebstore.google.com/detail/pordaai-blur-haram-object/ofhlminijomemliahkjjbgcbfoimjiaj) **Download Extension version**
 
