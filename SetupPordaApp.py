@@ -1,3 +1,15 @@
+"""
+SetupPordaApp.py - Application Setup and Configuration Module
+
+This module handles the initial setup and configuration of the Porda AI application.
+It manages application directories, model loading, logging setup, registry modifications,
+and various utility functions for the application lifecycle.
+
+@author Abdullah
+@version 1.0
+@since 2024
+"""
+
 import logging
 import os
 import sys
@@ -22,6 +34,18 @@ REG_DWORD = 4
 #"Normal": "00000002",
 
 def set_priority_in_registry(exe_path, priority_hex):
+    """
+    Sets the CPU priority for an executable in the Windows registry.
+    
+    This function modifies the Windows registry to set the CPU priority class
+    for a specific executable file. It requires administrative privileges.
+    
+    @param {str} exe_path - Path to the executable file
+    @param {str} priority_hex - Hexadecimal priority value (e.g., "00000003" for High)
+    @returns {bool} True if successful, False otherwise
+    @throws {OSError} When registry operations fail
+    @throws {PermissionError} When administrative privileges are required
+    """
     try:
         # Open the key for the specified application
         key_path = r"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options"
@@ -56,11 +80,21 @@ def set_priority_in_registry(exe_path, priority_hex):
 
 from settings import SettingsValue
 
-FEEDBACK_MESSAGE = "Please Check The latest Version. Could You Please Give us a Feedback? Please Donate us 01823170383 (bkash/nagad/whatsapp). লেটেস্ট ভার্সন চেক করুন। অত্যান্ত ব্যয়বহুল এই প্রজেক্টটিকে এগিয়ে নিতে দয়া করে দান করুন"
+FEEDBACK_MESSAGE = "Please Check The latest Version. Could You Please Give us a Feedback? Please Donate us 01823170383 (bkash/nagad/whatsapp). লেটেস্ট ভার্সন চেক করুন। অত্যান্ত ব্যয়বহুল এই প্রজেক্টটিকে এগিয়ে নিতে দয়া করে দান করুন"
 FEEDBACK_URL = "https://forms.gle/yQk4yesWcuv65Ruw7"
 
 DONATION_REMINDER = "Please Donate Us so that we can Improve it more, 01823170383 (bkash/nagad/whatsapp)"
+
 def check_validity():
+    """
+    Checks application validity and shows feedback reminder.
+    
+    This function checks if the application should show a feedback/donation
+    reminder based on the last message shown date. If more than 15 days have
+    passed, it shows the feedback message and opens the feedback URL.
+    
+    @returns {bool} True if validity check passes, False if reminder was shown
+    """
     now_time = date.today()
     settings = SettingsValue.load_settings()
 
@@ -91,7 +125,17 @@ def check_validity():
         return True
     
 import psutil
+
 def isAppOpend():
+    """
+    Checks if the Porda AI application is already running.
+    
+    This function scans all running processes to check if multiple instances
+    of the Porda AI application are running. It returns True if more than
+    2 instances are found.
+    
+    @returns {bool} True if multiple instances are running, False otherwise
+    """
     app_name = "PordaAi"
     app_count=0
     for proc in psutil.process_iter(['pid', 'name']):
@@ -109,8 +153,14 @@ def isAppOpend():
 
 #==========================================================================================
 def PordaAppDir():
-    """It located exactly where the app (.exe) is located"""
-
+    """
+    Gets the directory where the application executable is located.
+    
+    This function returns the path to the directory containing the application
+    executable, whether running as a frozen executable or as a Python script.
+    
+    @returns {str} Path to the application directory
+    """
     path = ""
     if getattr(sys, 'frozen', False):
         path = os.path.dirname(sys.executable)
@@ -120,8 +170,15 @@ def PordaAppDir():
     return str(path)
 
 def PordaInternalFileDir():
-    """It locates the files which was integrated when executable in py installer, """
+    """
+    Gets the directory containing internal application files.
     
+    This function returns the path to the directory containing files that were
+    integrated when the executable was created with PyInstaller, or the current
+    script directory when running as a Python script.
+    
+    @returns {str} Path to the internal files directory
+    """
     dir_path = ""
     if getattr(sys, 'frozen', False):
         dir_path = sys._MEIPASS
@@ -133,6 +190,19 @@ def PordaInternalFileDir():
 #============= ================ ========================= ====================== ================ =====
 
 def app_initial_setup():
+    """
+    Performs initial setup for the Porda AI application.
+    
+    This function creates necessary directories, sets up logging, and determines
+    which model files to use (external or internal). It handles the complete
+    initialization process for the application.
+    
+    @returns {tuple} (CONFIG, WEIGHTS, internal_dir) where:
+        - CONFIG: Path to the model configuration file
+        - WEIGHTS: Path to the model weights file
+        - internal_dir: Path to internal application directory
+    @throws {Exception} When setup process fails
+    """
     try:
         app_dir = PordaAppDir()
         # creating dir for porda ai
@@ -223,6 +293,16 @@ def app_initial_setup():
     return CONFIG , WEIGHTS, internal_dir
 
 def log_setup(app_dir, porda_app_dir_name):
+    """
+    Sets up logging configuration for the application.
+    
+    This function creates the log directory, sets up logging configuration,
+    and configures unhandled exception logging. It also manages log file
+    cleanup to prevent excessive disk usage.
+    
+    @param {str} app_dir - Application directory path
+    @param {str} porda_app_dir_name - Name of the Porda AI application directory
+    """
     # Creating log folder if not exist
     log_folder_path = os.path.join(app_dir, porda_app_dir_name, "Error-log")
     os.makedirs(log_folder_path, exist_ok=True)
@@ -258,8 +338,16 @@ def log_setup(app_dir, porda_app_dir_name):
     sys.excepthook = log_unhandled_exception
 
 
-#This keep last 7  log files
 def delete_old_logs_based_on_file_count(log_folder_path, files_to_keep):
+    """
+    Deletes old log files based on file count, keeping the most recent ones.
+    
+    This function keeps only the specified number of most recent log files
+    and deletes older ones to manage disk space usage.
+    
+    @param {str} log_folder_path - Path to the log folder
+    @param {int} files_to_keep - Number of most recent log files to keep
+    """
     log_files = [f for f in os.listdir(log_folder_path) if f.startswith("Error_") and f.endswith(".log")]
 
     # Sort log files based on the date in the file name
@@ -275,8 +363,16 @@ def delete_old_logs_based_on_file_count(log_folder_path, files_to_keep):
         except Exception as e:
             logging.error(f"Error while deleting old log file: {e}")
 
-#This keeps last files based on date, Delete log files older than 7 days
 def delete_old_logs_based_on_date(log_folder_path, days_to_keep):
+    """
+    Deletes log files older than the specified number of days.
+    
+    This function removes log files that are older than the specified number
+    of days to manage disk space usage.
+    
+    @param {str} log_folder_path - Path to the log folder
+    @param {int} days_to_keep - Number of days to keep log files
+    """
     today_date = datetime.now()
     for file_name in os.listdir(log_folder_path):
         file_path = os.path.join(log_folder_path, file_name)

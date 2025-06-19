@@ -1,3 +1,14 @@
+"""
+EngineSetting.py - Detection Engine Configuration Module
+
+This module handles the configuration and setup of different detection engines
+for the Porda AI application. It supports CPU, integrated GPU, and dedicated GPU
+engines using OpenCL for hardware acceleration.
+
+@author Abdullah
+@version 1.0
+@since 2024
+"""
 
 import cv2
 import time
@@ -7,6 +18,15 @@ from PyQt5.QtCore import QSettings
 from . import SettingsValue
 
 def get_gpu_list():
+    """
+    Retrieves the list of available GPU devices using OpenCL.
+    
+    This function detects all available OpenCL platforms and devices
+    that can be used for hardware acceleration of the detection process.
+    
+    @returns {list} List of GPU device descriptions in format "platform:name,device:name"
+    @throws {Exception} When OpenCL is not available or GPU detection fails
+    """
     li = []
     try:
         import pyopencl as cl
@@ -28,12 +48,34 @@ def get_gpu_list():
 
 
 def get_engines():
+    """
+    Returns the list of available detection engines.
+    
+    This function combines CPU engine with available GPU engines
+    to provide a complete list of detection options.
+    
+    @returns {list} List of available engine names
+    """
     val = ["CPU Engine"] + get_gpu_list()
     #val = ["CPU Engine","Hp Elitbook G3","Intregeted GPU"] + get_gpu_list()
     return val
 
 
 def SetEngine(self,engine,network_width,network_height):
+    """
+    Configures the detection engine with specified parameters.
+    
+    This function sets up the appropriate detection engine (CPU, integrated GPU,
+    or dedicated GPU) and configures the neural network model with the specified
+    input dimensions.
+    
+    @param {object} self - Main window instance
+    @param {str} engine - Engine name to configure
+    @param {int} network_width - Width of the neural network input
+    @param {int} network_height - Height of the neural network input
+    @returns {bool} True if engine setup is successful, False otherwise
+    @throws {Exception} When engine configuration fails
+    """
    
     engines = get_engines()
     self.engine_set_properly = False
@@ -148,6 +190,16 @@ def SetEngine(self,engine,network_width,network_height):
             return False
     
 def set_opencl_device(selected_platform_index,selected_device_index):
+    """
+    Sets up a specific OpenCL device for use.
+    
+    This function creates an OpenCL context with the specified platform
+    and device for hardware acceleration.
+    
+    @param {int} selected_platform_index - Index of the OpenCL platform
+    @param {int} selected_device_index - Index of the OpenCL device
+    @throws {Exception} When OpenCL device setup fails
+    """
     try:
         print("entering set_opencl devidce function")
         import pyopencl as cl
@@ -171,6 +223,15 @@ def set_opencl_device(selected_platform_index,selected_device_index):
 #if there is cuda and opencl then set 1
 
 def set_graphics_preference():
+    """
+    Sets the graphics preference in Windows registry for GPU acceleration.
+    
+    This function modifies the Windows registry to set GPU preference
+    for the application, ensuring it uses the appropriate graphics device.
+    
+    @throws {FileNotFoundError} When registry key doesn't exist
+    @throws {Exception} When registry operations fail
+    """
     import sys
     import winreg
     
