@@ -1,3 +1,13 @@
+> ## 🚀 New: Porda AI **v2.0.0** is out — try it now
+>
+> **[⬇️ Download for Windows (PordaAI-Setup.exe, ~85 MB)](https://github.com/hijam-git/Porda-AI/releases/latest/download/PordaAI-Setup.exe)**
+>
+> Faster detection · brand new dark UI with bigger readable text · smoother blur cover · no more cover-bleed when another window sits on top · sticky focus (keeps detecting on the previous window when you click elsewhere) · one-click in-app updates · first-run welcome walkthrough · built-in Help & manual · new hotkeys `Ctrl+Alt+P` / `Ctrl+Alt+S` · per-user installer, no admin password needed.
+>
+> 👉 [See full release notes](https://github.com/hijam-git/Porda-AI/releases/tag/v2.0.0)
+
+---
+
 # Welcome to PORDA AI
 
 ## The World's First Realtime onDevice AI Project to maintian Modestey and Religious values.
