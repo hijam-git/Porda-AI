@@ -1,11 +1,11 @@
 {
-  "version": "2.0.0",
+  "version": "2.0.1",
   "min_supported_version": "2.0.0",
   "windows": {
     "download_url": "https://github.com/hijam-git/Porda-AI/releases/latest/download/PordaAI-Setup.exe",
     "sha256": "b516b34932c28926a7913dfb275edb3aba76fb3a7410214d38cd00f8a111cc64",
     "size_bytes": 88537957
   },
-  "notes": "Major rebuild on ONNX Runtime + DirectML. Refactored UI with sidebar settings, dark theme, larger fonts. Sticky target window + z-order-aware cover cropping. Faster blur/mosaic via Pillow. First-run welcome wizard. In-app update check (this manifest!). New Help and Updates pages.",
+  "notes": "Test update — verifies the in-app update dialog. <br><br>• Faster blur and mosaic via Pillow.<br>• z-order-aware cover cropping.<br>• Sticky target window.<br>• In-app update check (this dialog!).<br>• New Help and Updates pages in Settings.",
   "published_at": "2026-05-08"
 }
