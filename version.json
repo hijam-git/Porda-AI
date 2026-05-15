@@ -1,11 +1,11 @@
 {
-  "version": "2.0.0",
-  "min_supported_version": "2.0.0",
+  "version": "2.0.1",
+  "min_supported_version": "2.0.1",
   "windows": {
     "download_url": "https://github.com/hijam-git/Porda-AI/releases/latest/download/PordaAI-Setup.exe",
-    "sha256": "f266340a46ea10716b2055d7a7779a2863d337053d4f2dedfcb92271e26241f4",
-    "size_bytes": 88579600
+    "sha256": "4c314042dda30305551c548ab298a574bf0a87a75daeabd6baf548116f8cf521",
+    "size_bytes": 88580777
   },
-  "notes": "Faster detection · brand new dark UI · smoother blur · no more cover bleed when other windows are on top · sticky focus · one-click in-app updates · welcome walkthrough · built-in help · quit confirmation · new hotkeys (Ctrl+Alt+P / Ctrl+Alt+S) · smaller installer.",
-  "published_at": "2026-05-08"
+  "notes": "Bigger and more readable UI · animated on/off toggle for Detection · tray icon now shows green/red status dot at a glance · click desktop or Start Menu icon while running to open Settings · Quit button in Settings · Mosaic as the new default cover · snappier default detection · covers clear instantly when paused · Window-mode buttons highlight correctly · readable Quit confirmation dialog.",
+  "published_at": "2026-05-15"
 }
