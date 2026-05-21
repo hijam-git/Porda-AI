@@ -1,11 +1,11 @@
 {
-  "version": "2.0.1",
-  "min_supported_version": "2.0.1",
+  "version": "2.0.2",
+  "min_supported_version": "2.0.2",
   "windows": {
     "download_url": "https://github.com/hijam-git/Porda-AI/releases/latest/download/PordaAI-Setup.exe",
-    "sha256": "4c314042dda30305551c548ab298a574bf0a87a75daeabd6baf548116f8cf521",
-    "size_bytes": 88580777
+    "sha256": "c223ced3eb10cd8d3bcd651d5aa4bd4f0b24f839bf1702644fd3119af539d774",
+    "size_bytes": 88586125
   },
-  "notes": "Bigger and more readable UI · animated on/off toggle for Detection · tray icon now shows green/red status dot at a glance · click desktop or Start Menu icon while running to open Settings · Quit button in Settings · Mosaic as the new default cover · snappier default detection · covers clear instantly when paused · Window-mode buttons highlight correctly · readable Quit confirmation dialog.",
-  "published_at": "2026-05-15"
+  "notes": "Sleep mode now works correctly — the app sleeps based on covers actually shown on screen, so it no longer stays fully active when watching a hidden window. System tray menu now closes on an outside click. Tray status dot stays in sync. Default detection interval set to 40 ms.",
+  "published_at": "2026-05-21"
 }
