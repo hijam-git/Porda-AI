@@ -1,11 +1,11 @@
 {
-  "version": "2.0.2",
-  "min_supported_version": "2.0.2",
+  "version": "2.0.3",
+  "min_supported_version": "2.0.3",
   "windows": {
     "download_url": "https://github.com/hijam-git/Porda-AI/releases/latest/download/PordaAI-Setup.exe",
-    "sha256": "c223ced3eb10cd8d3bcd651d5aa4bd4f0b24f839bf1702644fd3119af539d774",
-    "size_bytes": 88586125
+    "sha256": "968e1c55cc991153015496e87955bf918d5342e28af0c8005d2312f0196bcea6",
+    "size_bytes": 88593223
   },
-  "notes": "Sleep mode now works correctly — the app sleeps based on covers actually shown on screen, so it no longer stays fully active when watching a hidden window. System tray menu now closes on an outside click. Tray status dot stays in sync. Default detection interval set to 40 ms.",
-  "published_at": "2026-05-21"
+  "notes": "You can now uninstall Porda AI from inside the app — open Settings → Uninstall. Your settings stay in case you reinstall.",
+  "published_at": "2026-05-24"
 }
