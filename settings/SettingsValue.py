@@ -1,3 +1,15 @@
+"""
+SettingsValue.py - Settings Management and Configuration Module
+
+This module handles the loading, saving, and management of application settings
+for the Porda AI application. It provides default settings, configuration options,
+and utility functions for managing user preferences and application behavior.
+
+@author Abdullah
+@version 1.0
+@since 2024
+"""
+
 import json
 import os
 from SetupPordaApp import PordaAppDir
@@ -62,19 +74,43 @@ default_settings = {
 }
 
 def cover_list():
+    """
+    Returns the list of available cover options for detected objects.
+    
+    @returns {list} List of cover option strings
+    """
     values = ["Black", "White", "Bg Color","Blur","Mosaic"]
     return values
 
 def object_list():
+    """
+    Returns the list of available object detection options.
+    
+    @returns {list} List of object detection option strings
+    """
     values = ["Male", "Female","Female without Hijab","Female without Borka","Only NSFW","All Human",]
     return values
 
 def engine_list():
+    """
+    Returns the list of available detection engines.
+    
+    @returns {list} List of available engine names
+    """
     #"Dedicated GPU","Integrated GPU",
     values = get_engines()#["CPU Engine","Hp Elitbook G3"] + get_gpu_list()
     return values
 
 def get_gpu_list():
+    """
+    Retrieves the list of available GPU devices using OpenCL.
+    
+    This function attempts to detect available GPU devices that can be used
+    for hardware acceleration of the detection process.
+    
+    @returns {list} List of GPU device names, or ["Got Error"] if detection fails
+    @throws {Exception} When OpenCL is not available or GPU detection fails
+    """
     li = []
     try:
         import pyopencl as cl
@@ -89,6 +125,18 @@ def get_gpu_list():
     return li
 
 def load_settings():
+    """
+    Loads application settings from the settings file.
+    
+    This function attempts to load settings from the JSON file. If the file
+    doesn't exist or is corrupted, it creates a new file with default settings.
+    It also ensures all required settings keys are present by merging with defaults.
+    
+    @returns {dict} Dictionary containing the loaded settings
+    @throws {FileNotFoundError} When settings file doesn't exist
+    @throws {json.JSONDecodeError} When settings file is corrupted
+    @throws {PermissionError} When file access is denied
+    """
     #As I already created pordaAi folder, if i use base_path then the programme will look for pyinstaller temp folder
     porda_app_dir = PordaAppDir()
 
@@ -116,6 +164,16 @@ def load_settings():
     return settings
 
 def save_settings(settings):
+    """
+    Saves application settings to the settings file.
+    
+    This function writes the current settings to a JSON file. If the operation
+    fails due to permissions or other issues, it handles the error gracefully.
+    
+    @param {dict} settings - Dictionary containing the settings to save
+    @throws {PermissionError} When file write access is denied
+    @throws {Exception} When file write operation fails
+    """
     porda_app_dir = PordaAppDir()
     try:
         settings_file_path = os.path.join(porda_app_dir,"pordaAi","settings.json")

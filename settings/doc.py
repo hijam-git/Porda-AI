@@ -1,3 +1,14 @@
+"""
+doc.py - Documentation and Help Content Module
+
+This module contains HTML documentation content for the Porda AI application.
+It includes information about the project, donation details, contact information,
+and links to various resources including the GitHub repository and browser extension.
+
+@author Abdullah
+@version 1.0
+@since 2024
+"""
 
 document='''<body style="font-family: Arial, sans-serif; color: #333;">
     <div style= margin: 0 auto; background-color: #fff; border-radius: 10px;">
@@ -9,7 +20,7 @@ document='''<body style="font-family: Arial, sans-serif; color: #333;">
             <a href="https://github.com/hijam-git/porda-ai-extension" style="color: #007BFF; text-decoration: none;">GitHub Porda AI Extension</a>.<br>
             <a href="https://chromewebstore.google.com/detail/pordaai-realtime-haramblu/ofhlminijomemliahkjjbgcbfoimjiaj" style="color: #007BFF; text-decoration: none;">Download Extension From Chrome Web Store</a>.<br>
             
-         <h2 style="text-align: center; color: #007BFF;">Please Donate to Us <br>ব্যয়বহুল এই প্রযেক্টে দান করুন।</h2>
+         <h2 style="text-align: center; color: #007BFF;">Please Donate to Us <br>ব্যয়বহুল এই প্রযেক্টে দান করুন।</h2>
         <p style="text-align: center; font-size: 16px; color: #555;">
     
             We tried as much as we could, and it is just the beginning. If you encounter any issues, please let us know. We are dedicated to solving the issue as soon as possible. This project is very expensive due to its advanced AI capabilities.

@@ -1,3 +1,16 @@
+"""
+Settings.py - Main Settings Interface Module
+
+This module provides the main settings interface for the Porda AI application.
+It creates a comprehensive settings dialog with multiple tabs for configuring
+detection parameters, network settings, timeouts, window management, and other
+application preferences.
+
+@author Abdullah
+@version 1.0
+@since 2024
+"""
+
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIcon
 
@@ -21,7 +34,29 @@ from ctypes.wintypes import HDC, HWND, RECT
 
 title = "PordaAi1.3(a92)"
 class SettingsWindow(QDialog):
+    """
+    Main settings dialog for the Porda AI application.
+    
+    This class provides a comprehensive settings interface with multiple tabs
+    for configuring all aspects of the application including detection parameters,
+    network settings, timeouts, window management, and user preferences.
+    
+    @extends {QDialog}
+    @author Abdullah
+    @version 1.0
+    @since 2024
+    """
     def __init__(self, parent=None):
+        """
+        Initializes the settings window with all UI components.
+        
+        This constructor sets up the main settings dialog with a splitter layout
+        containing navigation buttons on the left and stacked property widgets
+        on the right. It also initializes all settings controls and connects
+        signal handlers.
+        
+        @param {object} parent - Parent window instance
+        """
         super().__init__()
         parent_window_handle=131970
 
@@ -201,6 +236,12 @@ class SettingsWindow(QDialog):
         self.getStatus() #This shows Status in settings window
 
     def onTimeout(self):
+        """
+        Handles timeout events for text drawing operations.
+        
+        This method manages timeout events for drawing text on the screen
+        using Windows API calls.
+        """
         rect = RECT()
         hwnd = 0
         hdc = self.GetDC(hwnd)
@@ -213,6 +254,13 @@ class SettingsWindow(QDialog):
 
 
     def show_group_properties(self):
+        """
+        Shows the properties for the selected settings group.
+        
+        This method handles navigation between different settings groups
+        and updates the stacked widget to show the appropriate properties
+        for the selected group.
+        """
         sender_button = self.sender()
         index = sender_button.text()
 
@@ -239,6 +287,14 @@ class SettingsWindow(QDialog):
                 btn.setStyleSheet("")
 
     def contact_layout(self):
+        """
+        Creates the contact and about information layout.
+        
+        This method creates a scrollable widget containing contact information,
+        donation details, and links to various resources.
+        
+        @returns {QWidget} Widget containing contact information
+        """
         contact_widget = QWidget()
         main_layout = QVBoxLayout()
 
@@ -260,6 +316,14 @@ class SettingsWindow(QDialog):
         return contact_widget
     
     def tracking_settings(self):
+        """
+        Creates the tracking settings layout.
+        
+        This method creates a placeholder widget for tracking settings
+        that will be implemented in future updates.
+        
+        @returns {QWidget} Widget containing tracking settings
+        """
         tracking_widget = QWidget()
         main_layout = QVBoxLayout()
         label = QLabel("On Next Update")
@@ -272,6 +336,14 @@ class SettingsWindow(QDialog):
         return tracking_widget
 
     def scalling_settings(self):
+        """
+        Creates the scaling and performance settings layout.
+        
+        This method creates controls for CPU limit management and
+        performance monitoring settings.
+        
+        @returns {QWidget} Widget containing scaling settings
+        """
         scalling_widget = QWidget()
         main_layout = QVBoxLayout()
 
@@ -324,6 +396,15 @@ class SettingsWindow(QDialog):
 
 
     def window_specefy(self):
+        """
+        Creates the window specification settings layout.
+        
+        This method creates controls for specifying which windows to monitor,
+        including options for all windows, included windows only, excluded
+        windows, and specific window detection.
+        
+        @returns {QWidget} Widget containing window specification settings
+        """
         window_widget = QWidget()
         main_layout = QVBoxLayout()
 
@@ -424,7 +505,6 @@ class SettingsWindow(QDialog):
         layout_cover.addWidget(self.blur_checkbox)
         layout_cover.addWidget(self.bg_color_checkbox)
         layout_cover.addWidget(self.color_checkbox)
-       
         
         
         layout_cover_color = QHBoxLayout()
@@ -972,6 +1052,14 @@ class SettingsWindow(QDialog):
 
     #===========================================================
     def get_window_to_detect(self):
+        """
+        Gets the current window detection mode.
+        
+        This method determines which windows should be monitored based on
+        the selected radio button options.
+        
+        @returns {str} Detection mode: "all", "excluded", "included", "get_app_for_excluded_windows", or "get_app_for_included_windows"
+        """
         if self.all_windows_checkbox.isChecked():
             return "all"
         elif self.exclude_windows_checkbox.isChecked():
@@ -985,18 +1073,39 @@ class SettingsWindow(QDialog):
             return "get_app_for_included_windows"
         
     def get_included_windows(self):
+        """
+        Gets the list of windows to include in detection.
+        
+        This method parses the included windows text input and returns
+        a list of window names to monitor.
+        
+        @returns {list} List of window names to include
+        """
         windows = self.include_window_input.toPlainText()
         window_list = [item.strip() for item in windows.split(',') if item]
         print(f'Included window: {window_list}')
         return window_list
     def get_excluded_windows(self):
-
+        """
+        Gets the list of windows to exclude from detection.
+        
+        This method parses the excluded windows text input and returns
+        a list of window names to skip during monitoring.
+        
+        @returns {list} List of window names to exclude
+        """
         windows = self.exclude_window_input.toPlainText()
         window_list = [item.strip() for item in windows.split(',') if item]
         print(f'Excluded window: {window_list}')
         return window_list
     #===========================================
     def change_status(self):
+        """
+        Changes the detection status (active/inactive).
+        
+        This method toggles the detection status and updates the UI
+        accordingly. It also starts or stops the detection timer.
+        """
         print("change_status method in Setting")
         
         
@@ -1025,48 +1134,106 @@ class SettingsWindow(QDialog):
         
     # ---------------------------------------------------------------------------
     def on_ok_button_clicked(self):
+        """
+        Handles the OK button click event.
+        
+        This method accepts the dialog and applies the current settings.
+        """
         # Update the attribute of the parent class
         # self.parent.update_settings(True)
         
         self.accept()
         
     def getDetectionAccuracy(self):
+        """
+        Gets the current detection accuracy setting.
+        
+        @returns {int} Detection accuracy percentage
+        """
         return self.spinBoxForAccuracy.value()
     
-   
     def getNetworkWidth(self):
+        """
+        Gets the network width setting.
+        
+        @returns {int} Network width (multiplied by 32)
+        """
         return int(self.spinBoxForNetworkWidth.value()*32)
+        
     def getNetworkHeight(self):
+        """
+        Gets the network height setting.
+        
+        @returns {int} Network height (multiplied by 32)
+        """
         return int(self.spinBoxForNetworkHeight.value()*32)
 
     # ---------------------------------------------------------------------------
 
     # -------------TIMEOUT-------------------------------------------------------
     def getActiveTimeOut(self):
+        """
+        Gets the active timeout setting.
+        
+        @returns {int} Active timeout value in milliseconds
+        """
         return self.spinBoxActiveTimeout.value()
     
     def getSleepTimeOut(self):
+        """
+        Gets the sleep timeout setting.
+        
+        @returns {int} Sleep timeout value in milliseconds
+        """
         return self.spinBoxSleepTimeout.value()
     
     def getKeepActiveTime(self):
+        """
+        Gets the keep active time setting.
+        
+        @returns {int} Keep active time value in seconds
+        """
         return self.spinBoxKeepActiveTime.value()
 
     # --------------------------------------------------------------------------
 
     #========= Engine ============================================================
     def getEngine(self):
+        """
+        Gets the currently selected detection engine.
+        
+        @returns {str} Name of the selected engine
+        """
         return self.engine_combobox.currentText()
 
     #===========================================================================
     
     
     def getBlurKernel(self):
+        """
+        Gets the blur kernel setting.
+        
+        @returns {int} Blur kernel value
+        """
         return 0 #self.spin_box_for_blur_kernel.value()
     
     def getObjectCombobox(self):
+        """
+        Gets the currently selected object detection option.
+        
+        @returns {str} Selected object detection option
+        """
         return self.object_combobox.currentText() #here i return the index number
     
     def getStatus(self):
+        """
+        Gets the current detection status.
+        
+        This method determines if detection is currently active based on
+        the button text and updates the window title accordingly.
+        
+        @returns {bool} True if detection is active, False otherwise
+        """
         #if self.activity_status_combobox.currentIndex() == 0:
         if self.button_text == "deactive":
             self.setWindowTitle(f"{self.title} - is Active")
@@ -1079,14 +1246,38 @@ class SettingsWindow(QDialog):
     
     # ----------------------------------------------------------------------
     def isHardwareAccelarationEnabled(self):
+        """
+        Checks if hardware acceleration is enabled.
+        
+        @returns {bool} True if hardware acceleration is enabled
+        """
         return self.checkbox_hardware_acceleration.isChecked()
 
     def isSpecificWindowEnabled(self):
+        """
+        Checks if specific window detection is enabled.
+        
+        @returns {bool} True if specific window detection is enabled
+        """
         return self.checkbox_specific_window.isChecked()
+        
     def isSpecificAppEnabled(self):
+        """
+        Checks if specific app detection is enabled.
+        
+        @returns {bool} True if specific app detection is enabled
+        """
         return self.checkbox_specific_app.isChecked()
     
     def SpecificWindowAppName(self):
+        """
+        Gets the specific window app name.
+        
+        This method parses the specific window name input and returns
+        the first app name from the comma-separated list.
+        
+        @returns {str|None} First app name or None if empty
+        """
         apps = self.specific_window_name.text()
         app_list = [item.strip() for item in apps.split(',') if item]
         if app_list:
@@ -1098,23 +1289,51 @@ class SettingsWindow(QDialog):
 
 
     def isStaticCoverEnabled(self):
+        """
+        Checks if static cover is enabled.
+        
+        @returns {bool} True if static cover is enabled
+        """
         return self.checkbox_static_cover.isChecked()
     
     def isStaticCoverForSpecificWindow(self):
+        """
+        Checks if static cover for specific window is enabled.
+        
+        @returns {bool} True if static cover for specific window is enabled
+        """
         return self.checkbox_static_cover_for_specific_window.isChecked()
     
     def isAutoStartup(self):
+        """
+        Checks if auto startup is enabled.
+        
+        @returns {bool} True if auto startup is enabled
+        """
         return self.checkbox_auto_startup.isChecked()
     #===============================================================
 
 
 
     def closeEvent(self, event):
+        """
+        Handles the window close event.
+        
+        This method is called when the settings window is closed and
+        triggers the application shutdown.
+        
+        @param {QCloseEvent} event - Close event object
+        """
         self.application_is_about_to_close = True
         #self.accept()
         self.parent.closetheapp()
 
     def close_app(self):
+        """
+        Closes the application.
+        
+        This method triggers the application shutdown process.
+        """
         print("close print")
         self.application_is_about_to_close = True
         #self.accept()

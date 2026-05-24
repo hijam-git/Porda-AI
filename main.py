@@ -1,3 +1,15 @@
+"""
+main.py - Main Application Entry Point
+
+This module contains the main application logic for the Porda AI application.
+It handles screen capture, object detection, window management, system tray
+integration, and the overall application lifecycle.
+
+@author Abdullah
+@version 1.0
+@since 2024
+"""
+
 import sys
 from PyQt5.QtCore import (Qt, QPoint, QTimer,QCoreApplication,QEvent, 
                           QObject, pyqtSignal,QStandardPaths,QThread)
@@ -46,14 +58,30 @@ import multiprocessing
 
 
 class KeyBoardManager(QObject):
+    """
+    Manages keyboard shortcuts and hotkeys for the application.
+    
+    This class handles the registration and management of keyboard shortcuts
+    for capturing screenshots and enabling/disabling detection.
+    
+    @extends {QObject}
+    @author Abdullah
+    @version 1.0
+    @since 2024
+    """
 
     F2Signal = pyqtSignal()
-    
     F1Signal = pyqtSignal()
     
-       
     settings = load_settings()
+    
     def show_settings_shortcut(self):
+        """
+        Registers the screenshot capture hotkey.
+        
+        This method sets up the keyboard shortcut for capturing screenshots
+        based on the user's settings, with F1 as a fallback.
+        """
         #keyboard.add_hotkey("F1", self.F1Signal.emit, suppress=True)
        
         try:
@@ -64,6 +92,12 @@ class KeyBoardManager(QObject):
             
 
     def disable_enable_shortcut(self):
+        """
+        Registers the enable/disable detection hotkey.
+        
+        This method sets up the keyboard shortcut for enabling/disabling
+        detection based on the user's settings, with F2 as a fallback.
+        """
         try:
             keyboard.add_hotkey(self.settings["shortcut_key"], self.F2Signal.emit, suppress=True)
             
@@ -72,9 +106,26 @@ class KeyBoardManager(QObject):
             logging.error(f"Getting error of shortcut hot key: {e}")
         
 class CPUThread(QThread):
+    """
+    Monitors CPU usage and emits signals when thresholds are exceeded.
+    
+    This class runs in a separate thread to continuously monitor CPU usage
+    and automatically stop detection when CPU usage exceeds the configured limit.
+    
+    @extends {QThread}
+    @author Abdullah
+    @version 1.0
+    @since 2024
+    """
+    
     cpu_usage_updated = pyqtSignal(float)
 
     def __init__(self, parent=None):
+        """
+        Initializes the CPU monitoring thread.
+        
+        @param {object} parent - Parent object
+        """
         super().__init__(parent)
         self._stop_flag = False
         self.itr = 30 #Second
@@ -82,6 +133,12 @@ class CPUThread(QThread):
         self.cpu_usage_sum =0
 
     def run(self):
+        """
+        Main thread execution loop for CPU monitoring.
+        
+        This method continuously monitors CPU usage and emits signals
+        with average CPU usage over the configured interval.
+        """
         while not self._stop_flag:
             self.cpu_usage_sum += psutil.cpu_percent(interval=1)
             self.l += 1
@@ -93,11 +150,36 @@ class CPUThread(QThread):
             self.msleep(100)
 
     def stop(self):
+        """
+        Stops the CPU monitoring thread.
+        
+        This method sets the stop flag and waits for the thread to finish.
+        """
         self._stop_flag = True
         self.wait()
 
 class MainWindow(QWidget):
+    """
+    Main application window for the Porda AI application.
+    
+    This class represents the main application window that handles screen
+    capture, object detection, overlay drawing, and overall application
+    lifecycle management.
+    
+    @extends {QWidget}
+    @author Abdullah
+    @version 1.0
+    @since 2024
+    """
+    
     def __init__(self):
+        """
+        Initializes the main application window.
+        
+        This constructor sets up the main window with transparent overlay
+        capabilities, loads settings, initializes the detection model,
+        and sets up all necessary timers and event handlers.
+        """
         super().__init__()
         #self.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint | Qt.WindowTransparentForInput)
         self.setWindowFlags(self.windowFlags() | Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint |  Qt.WindowTransparentForInput)
@@ -235,6 +317,14 @@ class MainWindow(QWidget):
             
             
     def setup_engine(self):
+        """
+        Sets up the detection engine with the specified configuration.
+        
+        This method configures the neural network model with the selected
+        engine (CPU or GPU) and network dimensions.
+        
+        @returns {bool|Exception} True if successful, Exception if failed
+        """
         engine = self.current_settings["engine"]
         self.network_width=int(self.current_settings["network_width"])*32
         self.network_height=int(self.current_settings["network_height"])*32
@@ -254,7 +344,15 @@ class MainWindow(QWidget):
             
             
     def update_settings(self,apply_button_clicked=False):
+        """
+        Updates application settings from the current configuration.
         
+        This method loads all settings from the current configuration and
+        applies them to the detection system. It also handles engine setup
+        when necessary.
+        
+        @param {bool} apply_button_clicked - Whether the apply button was clicked
+        """
         self.apply_button_pressed = apply_button_clicked
 
         self.detection_accuracy = float(self.current_settings["accuracy"]/100)
@@ -311,6 +409,12 @@ class MainWindow(QWidget):
             self.applied_active_timeout = self.active_timeout
         
     def timer_and_connect(self):
+        """
+        Sets up timers and connects signal handlers.
+        
+        This method initializes keyboard managers, CPU monitoring thread,
+        detection timer, and connects all necessary signal handlers.
+        """
         manager = KeyBoardManager(self)
         manager.F1Signal.connect(self.capture_screenshot)
         manager.show_settings_shortcut()
@@ -337,7 +441,13 @@ class MainWindow(QWidget):
         self.make_window_topmost_timer.timeout.connect(self.make_window_topmost)
         # self.make_window_topmost_timer.start(1000)
 
-    def refresh_hotkey(self): #if hot key regestration is faild 
+    def refresh_hotkey(self):
+        """
+        Refreshes keyboard hotkey registrations.
+        
+        This method removes all existing hotkeys and re-registers them
+        to fix any registration issues.
+        """
         print("refreshing Hot key")
         try:
             print("removing hot key")
@@ -356,6 +466,16 @@ class MainWindow(QWidget):
 
 
     def eventFilter(self, obj, event):
+        """
+        Filters application events for power state detection.
+        
+        This method monitors window state changes to detect when the
+        computer is going to sleep or hibernating.
+        
+        @param {QObject} obj - Object that generated the event
+        @param {QEvent} event - Event object
+        @returns {bool} True if event was handled
+        """
         if event.type() == QEvent.WindowStateChange:
             # Check if the window is minimized, which may indicate sleep or hibernate
             if self.windowState() & Qt.WindowMinimized:
@@ -368,14 +488,31 @@ class MainWindow(QWidget):
         return super().eventFilter(obj, event)
 
     def myFunction(self):
+        """
+        Handles power state change events.
+        
+        This method is called when the computer is going to sleep
+        or hibernating.
+        """
         print("power called")
 
     def make_window_topmost(self):
+        """
+        Makes the application window topmost.
+        
+        This method ensures the application window stays on top of
+        other windows for proper overlay functionality.
+        """
         print("Making TOp")
         win32gui.SetWindowPos(int(self.winId()), win32con.HWND_TOPMOST, 0, 0, 0, 0, win32con.SWP_NOMOVE | win32con.SWP_NOSIZE)
 
     def capture_screenshot(self):
-
+        """
+        Captures a screenshot and saves it to the dataset directory.
+        
+        This method captures the entire screen, hides the application window
+        during capture, and saves the screenshot with a timestamp filename.
+        """
         if (time.time() - self.last_status_changed_shortcut_key_press_f1) < 0.1: #second
             self.last_status_changed_shortcut_key_press_f1 = time.time()
             #self.make_window_topmost()
@@ -780,6 +917,17 @@ class MainWindow(QWidget):
        
 
     def add_padding(self,frame,h,w):
+        """
+        Adds padding to the input frame to match network dimensions.
+        
+        This method resizes and pads the input frame to match the neural
+        network's expected input dimensions while maintaining aspect ratio.
+        
+        @param {numpy.ndarray} frame - Input image frame
+        @param {int} h - Height of the frame
+        @param {int} w - Width of the frame
+        @returns {tuple} (padded_frame, x_ratio, y_ratio) where ratios are scaling factors
+        """
         #h, w = frame.shape[:2] # For faster get width height from getdata
         
         scale = min(self.network_height / h, self.network_width / w)
@@ -801,6 +949,14 @@ class MainWindow(QWidget):
         return padded_frame, x_ratio,y_ratio
     
     def paintEvent(self, event):
+        """
+        Handles the painting of overlay objects on the window.
+        
+        This method draws the detected objects as overlays on the screen
+        using the cover objects stored in self.cover_objects.
+        
+        @param {QPaintEvent} event - Paint event object
+        """
         painter = QPainter(self)
         painter.setRenderHint(QPainter.Antialiasing)
         painter.setPen(Qt.NoPen)
@@ -812,6 +968,11 @@ class MainWindow(QWidget):
 
 
     def triggerShutdown(self):
+        """
+        Triggers the application shutdown process.
+        
+        This method stops the CPU monitoring thread and quits the application.
+        """
         logging.error("Shutting Down")
         
         if self.enable_auto_stop_when_high_cpu:
@@ -821,6 +982,11 @@ class MainWindow(QWidget):
         QCoreApplication.instance().quit()
 
     def closetheapp(self):
+        """
+        Closes the application.
+        
+        This method stops the CPU monitoring thread and quits the application.
+        """
         #self.display_image_closing()
         if self.enable_auto_stop_when_high_cpu:
             self.cpu_thread.stop()
@@ -830,7 +996,27 @@ class MainWindow(QWidget):
 
 import SetupPordaApp
 class SystemTrayIcon(QSystemTrayIcon):
+    """
+    System tray icon for the Porda AI application.
+    
+    This class provides a system tray icon with a context menu for
+    accessing application settings and controls.
+    
+    @extends {QSystemTrayIcon}
+    @author Abdullah
+    @version 1.0
+    @since 2024
+    """
+    
     def __init__(self,main_window):
+        """
+        Initializes the system tray icon.
+        
+        This constructor sets up the system tray icon with the application
+        logo, tooltip, and context menu with various actions.
+        
+        @param {MainWindow} main_window - Reference to the main window
+        """
         super(SystemTrayIcon, self).__init__()
 
         base_path = SetupPordaApp.PordaInternalFileDir() # it should from the directory where main.py
@@ -876,11 +1062,24 @@ class SystemTrayIcon(QSystemTrayIcon):
         self.show()
 
     def icon_activated(self, reason):
+        """
+        Handles system tray icon activation events.
+        
+        This method is called when the system tray icon is clicked
+        and shows the settings window on left-click.
+        
+        @param {QSystemTrayIcon.ActivationReason} reason - Reason for activation
+        """
         if reason == QSystemTrayIcon.Trigger:
             # Handle left-click event here
             self.settings.show()
            
     def change_tooltip(self):
+        """
+        Changes the system tray icon tooltip.
+        
+        This method updates the tooltip to show the current application status.
+        """
         # Set a new tooltip when the messageClicked signal is emitted
         new_tooltip = "PordaAi - Currently Active"
         self.setToolTip(new_tooltip)
@@ -889,10 +1088,27 @@ class SystemTrayIcon(QSystemTrayIcon):
 #We can check it by shut-down clicking button and not saving a text file,
 #  then text file show worning for unsaved work and the pordaai will exit 
 def sleep_handler(sig, frame):
+    """
+    Handles sleep/hibernate signals.
+    
+    This function is called when the system is going to sleep
+    or hibernating.
+    
+    @param {int} sig - Signal number
+    @param {object} frame - Current stack frame
+    """
     print("i sleep")
     sys.exit(0)
 
 def signal_handler(sig, frame):
+    """
+    Handles system shutdown signals.
+    
+    This function is called when the system is shutting down.
+    
+    @param {int} sig - Signal number
+    @param {object} frame - Current stack frame
+    """
     sys.exit(0)
 
 
