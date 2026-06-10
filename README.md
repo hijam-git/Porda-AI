@@ -17,18 +17,44 @@ Everyday AI companion designed for Muslim community to empower them maintain mod
 
 ## 📚 Table of Contents
 
--   [How Porda Ai works](#how-porda-ai-works)
--   [Features](#features)
--   [Demo Videos](#demo-videos)
--   [How to Use](#how-to-use)
--   [Download and Installation](#download-and-installation)
--   [Limitations of the app](#limitations)
--   [For Developer/Engineer](#for-developer)
--   [How you can contribute](#how-you-can-help)
--   [Help On this project](#help-on-this-project)
--   [Contact With Me](#contact-with-me)
--   [Contributor](#contributor)
--   [Bangla (বাংলা)](#bangla)
+- [Welcome to PORDA AI](#welcome-to-porda-ai)
+  - [The World's First Realtime onDevice AI Project to maintian Modestey and Religious values.](#the-worlds-first-realtime-ondevice-ai-project-to-maintian-modestey-and-religious-values)
+  - [📚 Table of Contents](#-table-of-contents)
+  - [📄 License](#-license)
+  - [Try Porda Ai Extension For Browser and for Mobile (by kiwi browser)](#try-porda-ai-extension-for-browser-and-for-mobile-by-kiwi-browser)
+  - [About the Project](#about-the-project)
+  - [Demo Videos](#demo-videos)
+  - [Full Intro Video here](#full-intro-video-here)
+  - [Demon Video 1](#demon-video-1)
+  - [Demon Video 2](#demon-video-2)
+  - [Basic Tutorial](#basic-tutorial)
+  - [How Porda Ai works?](#how-porda-ai-works)
+  - [Features](#features)
+  - [How to Use](#how-to-use)
+  - [Limitations](#limitations)
+  - [Download and Installation](#download-and-installation)
+  - [Help On this project](#help-on-this-project)
+  - [Contributor](#contributor)
+  - [Contact with me](#contact-with-me)
+- [For Developer](#for-developer)
+  - [🔧 How to Run the Project](#-how-to-run-the-project)
+    - [1. Clone the Repository](#1-clone-the-repository)
+    - [2. Create a Virtual Environment (Recommended)](#2-create-a-virtual-environment-recommended)
+    - [3. Install Dependencies](#3-install-dependencies)
+    - [4. Run the Application](#4-run-the-application)
+  - [🏗️ Build the Executable (Windows)](#️-build-the-executable-windows)
+  - [🔀 Sending a Pull Request](#-sending-a-pull-request)
+    - [1. **Fork the Repository**](#1-fork-the-repository)
+    - [2. **Clone Your Fork Locally**](#2-clone-your-fork-locally)
+    - [3. **Create a New Branch (recommended)**](#3-create-a-new-branch-recommended)
+    - [4. **Make Your Changes and Commit**](#4-make-your-changes-and-commit)
+    - [5. **Push the Changes to Your Fork**](#5-push-the-changes-to-your-fork)
+    - [6. **Open the Pull Request**](#6-open-the-pull-request)
+    - [✅ Done!](#-done)
+  - [Important Info](#important-info)
+  - [How You Can Help](#how-you-can-help)
+  - [Bangla](#bangla)
+  - [যেভাবে ইউস করবেন](#যেভাবে-ইউস-করবেন)
 
 ## 📄 License
 
@@ -208,18 +234,131 @@ If you've found value in this project, your support can contribute to its presen
 -   **IBBL Account:** 2050 1806 7001 66103 (Hijam Ibna Omar)
 -   **Feedback Form:** [Feedback Form](https://forms.gle/uKoWWYATQvLBHhkN9)
 
-## For Developer
+# For Developer
 
-## How to run the project?
+## 🔧 How to Run the Project
 
--   git clone https://github.com/hijam-git/Porda-AI
--   cd porda-ai
--   create new env
--   first Install dependencies: pip install -r requirements.txt
--   to Run the application: python main.py
+### 1. Clone the Repository
 
--   For building application:
-    pyinstaller --onefile --noconsole --add-data "model/pordav4x3.cfg;model/" --add-data "model/porda-19200-lr-0005-909.weights;model/" --add-data "startup_image/1.png;startup_image/" --add-data "static/pordaailogo.png;static/" --add-data "static/pordaailogo.ico;static/" --icon=static/pordaailogo.ico --name PordaAi(version) main.py
+```bash
+git clone https://github.com/hijam-git/Porda-AI.git
+cd Porda-AI
+```
+
+### 2. Create a Virtual Environment (Recommended)
+
+```bash
+python -m venv env
+# Activate the environment:
+# On Windows:
+env\Scripts\activate
+# On macOS/Linux:
+source env/bin/activate
+```
+
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the Application
+
+```bash
+python main.py
+```
+
+
+## 🏗️ Build the Executable (Windows)
+
+To build the standalone executable for Windows:
+
+```bash
+pyinstaller --onefile --noconsole ^
+  --add-data "model/pordav4x3.cfg;model/" ^
+  --add-data "model/porda-19200-lr-0005-909.weights;model/" ^
+  --add-data "startup_image/1.png;startup_image/" ^
+  --add-data "static/pordaailogo.png;static/" ^
+  --add-data "static/pordaailogo.ico;static/" ^
+  --icon=static/pordaailogo.ico ^
+  --name "PordaAi(version)" ^
+  main.py
+```
+
+> ⚠️ **Important**:
+> * Use `^` for line continuation on **Windows CMD**.
+> * If using PowerShell, replace `^` with backtick `` ` `` or write the command on one line.
+
+---
+To send a **pull request (PR)** to a GitHub repository (like `hijam-git/Porda-AI`), follow these steps:
+
+---
+
+## 🔀 Sending a Pull Request
+
+### 1. **Fork the Repository**
+
+If you haven’t already:
+
+* Go to the repo: [https://github.com/hijam-git/Porda-AI](https://github.com/hijam-git/Porda-AI)
+* Click the **"Fork"** button (top right)
+* Choose your account
+
+This creates a copy under your GitHub account:
+`https://github.com/your_username/Porda-AI`
+
+---
+
+### 2. **Clone Your Fork Locally**
+
+```bash
+git clone https://github.com/your_username/Porda-AI.git
+cd Porda-AI
+```
+
+---
+
+### 3. **Create a New Branch (recommended)**
+
+```bash
+git checkout -b my-feature-branch
+```
+
+Replace `my-feature-branch` with something descriptive (e.g., `fix-readme`, `add-feature-x`).
+
+---
+
+### 4. **Make Your Changes and Commit**
+
+Edit files, then:
+
+```bash
+git add .
+git commit -m "Describe your changes here"
+```
+
+---
+
+### 5. **Push the Changes to Your Fork**
+
+```bash
+git push origin my-feature-branch
+```
+
+---
+
+### 6. **Open the Pull Request**
+
+1. Go to your fork: `https://github.com/nazmulhasan77/Porda-AI`
+2. You’ll see a **“Compare & pull request”** button — click it
+3. Review the changes, add a title/description
+4. Click **“Create pull request”**
+
+---
+
+### ✅ Done!
+
+Now the repository owner (`hijam-git`) can review and merge your changes.
 
 ## Important Info
 
