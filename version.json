@@ -1,11 +1,12 @@
 {
-  "version": "2.0.3",
-  "min_supported_version": "2.0.3",
+  "version": "2.2.3",
+  "min_supported_version": "2.2.2",
   "windows": {
-    "download_url": "https://github.com/hijam-git/Porda-AI/releases/latest/download/PordaAI-Setup.exe",
-    "sha256": "968e1c55cc991153015496e87955bf918d5342e28af0c8005d2312f0196bcea6",
-    "size_bytes": 88593223
+    "download_url": "https://github.com/hijam-git/Porda-AI/releases/download/v2.2.3/PordaAI-Setup.exe",
+    "mirror_url": "https://pub-2d19bad9d78c42f799ef01a05236aad6.r2.dev/porda-ai/assets/PordaAI-Setup.exe",
+    "sha256": "8fdad0a4b22d5dcc57e616831a9cfe607d5677acb34f1f3d98bd379d7093522e",
+    "size_bytes": 96417689
   },
-  "notes": "You can now uninstall Porda AI from inside the app — open Settings → Uninstall. Your settings stay in case you reinstall.",
-  "published_at": "2026-05-24"
+  "notes": "A big update: Porda AI on your PC now works together with the Porda AI browser extension, gives you more ways to cover what you don't want to see, and updates itself properly.\n\nWhat's new:\n• Works with the browser extension. The PC app now powers the Porda AI browser extension, so images and videos in your browser are checked privately on your own computer.\n• More cover styles. Turn the cover greyscale, or cover the whole image instead of just the person. You can choose different cover settings for images and for videos.\n• Faster on pages you visit again. Porda AI remembers images it has already checked, so they are covered instantly next time.\n• Clearer switch. 'Detection enabled' is now called Detect on entire screen, so it's clear it controls whole-screen protection — the browser extension has its own switch.\n• New logo everywhere. The new Porda AI logo now shows in the Start menu and on the app window.\n• Fixed: clicking Update now works again, the download progress bar moves, and if GitHub is slow the update downloads from our own server instead.",
+  "published_at": "2026-10-04"
 }
