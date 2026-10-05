@@ -951,7 +951,7 @@ class SettingsWindow(QDialog):
         self.blur_checkbox.setChecked(default_settings["is_blur"])
         self.color_checkbox.setChecked(default_settings["is_color"])
         self.bg_color_checkbox.setChecked(default_settings["is_bg_color"])
-        rgb_color=f"rgb{default_settings["rgb_color_value"]}"
+        rgb_color=f"rgb{default_settings['rgb_color_value']}"
         self.lbl.setStyleSheet(f'background-color: {rgb_color}; color:{rgb_color}; padding: 5px')
         
         
