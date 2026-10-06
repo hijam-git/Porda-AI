@@ -1,3 +1,15 @@
+"""
+settingscss2.py - Settings UI Styling Module
+
+This module contains CSS styling definitions for the Porda AI settings interface.
+It provides a consistent visual theme and styling for all UI components in
+the settings dialog, including buttons, labels, input fields, and containers.
+
+@author Abdullah
+@version 1.0
+@since 2024
+"""
+
 css = """
 QDialog {
     background-color: #f5f5f5;

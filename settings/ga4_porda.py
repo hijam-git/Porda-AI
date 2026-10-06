@@ -1,3 +1,15 @@
+"""
+ga4_porda.py - Google Analytics 4 Tracking Module
+
+This module handles user analytics and tracking for the Porda AI application
+using Google Analytics 4. It collects user behavior data, system information,
+and application usage statistics to help improve the application.
+
+@author Abdullah
+@version 1.0
+@since 2024
+"""
+
 import requests
 import uuid
 import psutil
@@ -14,7 +26,15 @@ import os
 load_dotenv()
 
 def is_connected():
-    """Check if the internet connection is available."""
+    """
+    Checks if the internet connection is available.
+    
+    This function attempts to connect to Google's DNS server to verify
+    internet connectivity.
+    
+    @returns {bool} True if internet connection is available, False otherwise
+    @throws {OSError} When connection attempt fails
+    """
     try:
         # Connect to a reliable host (Google's DNS server) on port 53
         socket.create_connection(("8.8.8.8", 53), timeout=3)
@@ -31,8 +51,16 @@ API_SECRET = os.getenv("API_SECRET")
 print("Measurement ID:", MEASUREMENT_ID)
 print("API Secret:", API_SECRET)
 
-# Function to retrieve the OS version
 def get_os_version():
+    """
+    Retrieves the Windows operating system version from the registry.
+    
+    This function reads the Windows registry to get the product name
+    of the installed operating system.
+    
+    @returns {str} Operating system product name or "error" if failed
+    @throws {Exception} When registry access fails
+    """
     try:
         key = reg.OpenKey(reg.HKEY_LOCAL_MACHINE, r"SOFTWARE\Microsoft\Windows NT\CurrentVersion")
         product_name, _ = reg.QueryValueEx(key, "ProductName")
@@ -41,9 +69,16 @@ def get_os_version():
     except Exception as e:
         return "error"
 
-
-# Function to generate or retrieve a unique user ID
 def get_or_create_uuid():
+    """
+    Generates or retrieves a unique user ID from the Windows registry.
+    
+    This function checks if a user UUID exists in the registry. If not,
+    it creates a new one and stores it for future use.
+    
+    @returns {tuple} (user_uuid, status) where status is "got" or "created"
+    @throws {FileNotFoundError} When registry key doesn't exist
+    """
     registry_path = r"SOFTWARE\pordaai"
     uuid_key_name = "UserUUID"
     try:
@@ -59,6 +94,14 @@ def get_or_create_uuid():
         return user_uuid, "created"
     
 def get_or_created_client_uuid():
+    """
+    Generates or retrieves a client session ID from application settings.
+    
+    This function manages client session IDs for analytics tracking.
+    It creates new sessions for first-time users or retrieves existing ones.
+    
+    @returns {tuple} (client_id, isNewSession) where isNewSession is boolean
+    """
     settings = load_settings()
     clinet_id=""
     isNewSession=False
@@ -79,17 +122,31 @@ def get_or_created_client_uuid():
         save_settings(settings)
     return clinet_id,isNewSession
         
-        
-# Function to determine the system type (Laptop/Desktop)
 def get_system_type():
+    """
+    Determines if the system is a laptop or desktop based on battery presence.
+    
+    This function checks for the presence of a battery to determine
+    the system type for analytics purposes.
+    
+    @returns {str} "Laptop" if battery is present, "Desktop" otherwise
+    """
     if hasattr(psutil, "sensors_battery"):
         battery = psutil.sensors_battery()
         if battery is not None:
             return "Laptop"
     return "Desktop"
 
-# Function to get the user's country based on IP address
 def get_geo_country():
+    """
+    Retrieves the user's country based on IP address geolocation.
+    
+    This function uses the ipinfo.io service to determine the user's
+    geographical location based on their IP address.
+    
+    @returns {str} Country code or "Unknown" if detection fails
+    @throws {requests.RequestException} When geolocation service is unavailable
+    """
     try:
         response = requests.get("https://ipinfo.io")
         data = response.json()
@@ -98,8 +155,19 @@ def get_geo_country():
         logging.error(f"Error fetching geolocation data: {e}")
         return "Unknown"
 
-# Function to send events to Google Analytics
-def send_event(user_id, client_id, events,isNewSession):
+def send_event(user_id, client_id, events, isNewSession):
+    """
+    Sends analytics events to Google Analytics 4.
+    
+    This function sends user events to Google Analytics with retry logic
+    for reliability. It handles both new sessions and existing sessions.
+    
+    @param {str} user_id - Unique user identifier
+    @param {str} client_id - Client session identifier
+    @param {list} events - List of events to send
+    @param {bool} isNewSession - Whether this is a new user session
+    @throws {requests.RequestException} When network requests fail
+    """
     url = f'https://www.google-analytics.com/mp/collect?measurement_id={MEASUREMENT_ID}&api_secret={API_SECRET}'
 
     payload = {
@@ -112,8 +180,6 @@ def send_event(user_id, client_id, events,isNewSession):
         'Content-Type': 'application/json',
     }
 
-    
-    
     for attempt in range(1, MAX_RETRIES + 1):
         try:
             response = requests.post(url, json=payload, headers=headers)
@@ -136,11 +202,15 @@ def send_event(user_id, client_id, events,isNewSession):
         else:
             print('Max retries reached. Failed to send event.')
 
-
-
-
 def track_user(is_auto_startup):
+    """
+    Tracks user activity and sends analytics data to Google Analytics.
     
+    This function collects system information, user behavior data, and
+    sends appropriate events based on whether it's a new user or existing session.
+    
+    @param {bool} is_auto_startup - Whether the app was started automatically
+    """
     # Initialize user ID and client ID
     user_id, user_status = get_or_create_uuid()
     client_id,isNewSession = get_or_created_client_uuid()#str(uuid.uuid4())
@@ -175,12 +245,17 @@ def track_user(is_auto_startup):
         events.append(app_start_event)
         # Send all events in a single payload
 
-    
     send_event(user_id, client_id, events,isNewSession)
         
-        
 def send_tracking_request(is_auto_startup):
+    """
+    Initiates the tracking request with internet connectivity check.
     
+    This function checks for internet connectivity and attempts to send
+    tracking data multiple times if needed.
+    
+    @param {bool} is_auto_startup - Whether the app was started automatically
+    """
     # Create a thread for tracking
     try:
         for i in range(5):

@@ -1,3 +1,15 @@
+"""
+GetDataV2.py - Screen Capture and Window Management Module
+
+This module provides functionality for capturing screen data from Windows applications,
+managing window handles, and retrieving process information. It's designed to work
+with the Porda AI application for intelligent screen monitoring and object detection.
+
+@author Abdullah
+@version 2.0
+@since 2024
+"""
+
 import win32gui
 import win32ui
 import win32con
@@ -9,6 +21,13 @@ import psutil
 import time
 
 def get_process_name(hwnd):
+    """
+    Retrieves the process name from a window handle using win32api.
+    
+    @param {int} hwnd - Window handle to get process name for
+    @returns {str|None} Process name if successful, None if failed
+    @throws {Exception} When unable to access process information
+    """
     try:
         _, pid = win32process.GetWindowThreadProcessId(hwnd)
         handle = win32api.OpenProcess(win32con.PROCESS_QUERY_INFORMATION | win32con.PROCESS_VM_READ, False, pid)
@@ -21,6 +40,13 @@ def get_process_name(hwnd):
 
 
 def get_process_name2(hwnd):
+    """
+    Retrieves the process name from a window handle using psutil.
+    
+    @param {int} hwnd - Window handle to get process name for
+    @returns {str|None} Process name if successful, None if failed
+    @throws {psutil.NoSuchProcess} When process no longer exists
+    """
     _, pid = win32process.GetWindowThreadProcessId(hwnd)
     try:
         process_name = psutil.Process(pid).name()
@@ -30,6 +56,12 @@ def get_process_name2(hwnd):
 
 
 def get_hwnds_for_pid(pid):
+    """
+    Gets all window handles associated with a specific process ID.
+    
+    @param {int} pid - Process ID to find windows for
+    @returns {list} List of window handles for the given process ID
+    """
     def callback(hwnd, hwnds):
         #if win32gui.IsWindowVisible(hwnd) and win32gui.IsWindowEnabled(hwnd):
         _, found_pid = win32process.GetWindowThreadProcessId(hwnd)
@@ -41,6 +73,12 @@ def get_hwnds_for_pid(pid):
     return hwnds
 
 def get_hwnd_by_process_name(process_name):
+    """
+    Finds window handles by process name.
+    
+    @param {str} process_name - Name of the process to find windows for
+    @returns {list} List of window handles for the given process name
+    """
     for proc in psutil.process_iter(['pid', 'name']):
         if proc.info['name'] == process_name:
             hwnds = get_hwnds_for_pid(proc.pid)
@@ -49,8 +87,21 @@ def get_hwnd_by_process_name(process_name):
     return []  # Return an empty list if process not found
 
 class FoundWindow(Exception):
+    """
+    Custom exception raised when a window is found during enumeration.
+    
+    @extends {Exception}
+    """
     pass
+
 def get_hwnds_for_pid_first_hwnd(pid):
+    """
+    Gets the first visible and enabled window handle for a specific process ID.
+    
+    @param {int} pid - Process ID to find window for
+    @returns {list} List containing the first found window handle
+    @throws {FoundWindow} When a suitable window is found (caught internally)
+    """
     def callback(hwnd, hwnds):
         if win32gui.IsWindowVisible(hwnd) and win32gui.IsWindowEnabled(hwnd):
             if win32gui.GetParent(hwnd) == 0:
@@ -70,6 +121,12 @@ def get_hwnds_for_pid_first_hwnd(pid):
     return hwnds
 
 def get_hwnd_by_process_name_first_hwnd(process_name):
+    """
+    Finds the first window handle for a given process name.
+    
+    @param {str} process_name - Name of the process to find window for
+    @returns {list} List containing the first found window handle
+    """
     for proc in psutil.process_iter(['pid', 'name']):
         if proc.info['name'] == process_name:
             hwnds = get_hwnds_for_pid_first_hwnd(proc.pid)
@@ -79,6 +136,21 @@ def get_hwnd_by_process_name_first_hwnd(process_name):
 
 
 def GetScreenData(self):
+    """
+    Captures screen data from the currently active window or specified windows.
+    
+    This function handles window detection, screen capture, and returns image data
+    along with window position and size information. It supports various detection
+    modes including all windows, included windows only, and specific window detection.
+    
+    @param {object} self - Main window instance containing detection settings
+    @returns {tuple} (image, x, y, height, width, status) where:
+        - image: numpy array of captured screen data
+        - x, y: window position coordinates
+        - height, width: window dimensions
+        - status: 1 for success, None for failure
+    @throws {Exception} When window capture fails
+    """
     not_empt=False
     
     try:
