@@ -7,6 +7,18 @@
     "sha256": "8fdad0a4b22d5dcc57e616831a9cfe607d5677acb34f1f3d98bd379d7093522e",
     "size_bytes": 96417689
   },
+  "linux": {
+    "download_url": "https://github.com/hijam-git/Porda-AI/releases/download/v2.2.3/PordaAI-Setup-amd64.deb",
+    "mirror_url": "https://pub-2d19bad9d78c42f799ef01a05236aad6.r2.dev/porda-ai/assets/PordaAI-Setup-amd64.deb",
+    "sha256": "7c1bf74bc3fb3158bbc5737f8a405473b96807074817c6f5839567583dbb25b1",
+    "size_bytes": 101149950,
+    "appimage": {
+      "download_url": "https://github.com/hijam-git/Porda-AI/releases/download/v2.2.3/PordaAI-x86_64.AppImage",
+      "mirror_url": "https://pub-2d19bad9d78c42f799ef01a05236aad6.r2.dev/porda-ai/assets/PordaAI-x86_64.AppImage",
+      "sha256": "76eea6dd1d65e5fca253869b8585b9aa167cfb96b90438d6cc459e110b0712be",
+      "size_bytes": 116804088
+    }
+  },
   "notes": "A big update: Porda AI on your PC now works together with the Porda AI browser extension, gives you more ways to cover what you don't want to see, and updates itself properly.\n\nWhat's new:\n• Works with the browser extension. The PC app now powers the Porda AI browser extension, so images and videos in your browser are checked privately on your own computer.\n• More cover styles. Turn the cover greyscale, or cover the whole image instead of just the person. You can choose different cover settings for images and for videos.\n• Faster on pages you visit again. Porda AI remembers images it has already checked, so they are covered instantly next time.\n• Clearer switch. 'Detection enabled' is now called Detect on entire screen, so it's clear it controls whole-screen protection — the browser extension has its own switch.\n• New logo everywhere. The new Porda AI logo now shows in the Start menu and on the app window.\n• Fixed: clicking Update now works again, the download progress bar moves, and if GitHub is slow the update downloads from our own server instead.",
   "published_at": "2026-10-04"
 }
