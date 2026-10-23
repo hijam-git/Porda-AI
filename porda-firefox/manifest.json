@@ -1,0 +1,69 @@
+{
+  "manifest_version": 3,
+  "name": "PordaAI: Blur Haram in Images & Videos",
+  "version": "2.3.8",
+  "description": "Automatically Block haram & NSFW content in images and videos in real time. Haram Remover Islamic Ai filter for Muslims.",
+  "default_locale": "en",
+  "homepage_url": "https://pordaai.com",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "pordaai@ofhlminijomemliahkjjbgcbfoimjiaj",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
+  "permissions": ["storage", "scripting", "tabs"],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  },
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "action": {
+    "default_title": "PordaAI Image Blur",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "match_about_blank": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "styles.css",
+        "welcome.html",
+        "welcome.css",
+        "welcome.js",
+        "offscreen.html",
+        "offscreen.js",
+        "offscreen-cache.js",
+        "offscreen/ort/ort.webgpu.bundle.min.mjs",
+        "offscreen/ort/ort-wasm-simd-threaded.jsep.mjs",
+        "offscreen/ort/ort-wasm-simd-threaded.jsep.wasm",
+        "offscreen/model/porda.onnx",
+        "icons/icon-16.png",
+        "icons/icon-48.png",
+        "icons/icon-128.png"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

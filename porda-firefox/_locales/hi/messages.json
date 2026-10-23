@@ -1,0 +1,305 @@
+{
+  "_comment": {
+    "message": "Hindi (hi)."
+  },
+  "checking": {
+    "message": "जाँच हो रही है..."
+  },
+  "pordaai_is_running": {
+    "message": "PordaAI चल रहा है"
+  },
+  "browse_any_site": {
+    "message": "कोई भी साइट देखें — छवियाँ जाँच होने तक धुँधली रहेंगी।"
+  },
+  "desktop_app_not_running": {
+    "message": "डेस्कटॉप ऐप नहीं चल रहा"
+  },
+  "install_or_open": {
+    "message": "छवियाँ प्रोसेस करने के लिए PordaAI इंस्टॉल करें या खोलें।"
+  },
+  "ext_master_title": {
+    "message": "एक्सटेंशन चालू | बंद"
+  },
+  "site_title": {
+    "message": "इस साइट पर सक्रिय"
+  },
+  "site_sub": {
+    "message": "केवल मौजूदा साइट पर बंद करें।"
+  },
+  "preblur_title": {
+    "message": "छवियों को पहले से धुँधला करें"
+  },
+  "preblur_sub": {
+    "message": "पेज लोड होते समय हर छवि जाँच तक धुँधली रहेगी।"
+  },
+  "reload_needed_title": {
+    "message": "रीलोड आवश्यक"
+  },
+  "reload_needed": {
+    "message": "नए स्थिति को लागू करने के लिए टैब को रीलोड करें।"
+  },
+  "reload_now": {
+    "message": "अभी रीलोड करें"
+  },
+  "cancel": {
+    "message": "रद्द करें"
+  },
+  "get_desktop_app": {
+    "message": "मुफ्त डेस्कटॉप ऐप लें"
+  },
+  "desktop_app_intro": {
+    "message": "यह ब्राउज़र के परे भी, यहाँ तक कि वीडियो प्लेयर आदि में भी कवर करेगा।"
+  },
+  "free_download": {
+    "message": "मुफ्त डाउनलोड"
+  },
+  "coming_soon": {
+    "message": "जल्द आ रहा है"
+  },
+  "how_to_use": {
+    "message": "कैसे उपयोग करें"
+  },
+  "hover_hint": {
+    "message": "किसी छवि को अस्थायी रूप से देखने के लिए उस पर होवर करें। पूर्ण प्रभाव के लिए सेटिंग बदलने के बाद टैब रीलोड करें।"
+  },
+  "donate_title": {
+    "message": "पर्दा AI का समर्थन करें"
+  },
+  "tab_status": {
+    "message": "स्थिति"
+  },
+  "tab_detection": {
+    "message": "पहचान"
+  },
+  "tab_cover": {
+    "message": "कवर"
+  },
+  "detection_title": {
+    "message": "पहचान"
+  },
+  "detection_sub": {
+    "message": "डिटेक्टर को हर मीडिया में क्या ढूँढना चाहिए।"
+  },
+  "detect_male": {
+    "message": "पुरुष"
+  },
+  "detect_female": {
+    "message": "महिला"
+  },
+  "detect_images": {
+    "message": "छवियों में"
+  },
+  "detect_videos": {
+    "message": "वीडियो में"
+  },
+  "greyscale_cover": {
+    "message": "ब्लर / मोज़ेक के नीचे ग्रेस्केल"
+  },
+  "full_image_cover": {
+    "message": "कुछ पहचानने पर पूरी छवि को ढँकें"
+  },
+  "cover_title_img": {
+    "message": "छवियों के लिए कवर"
+  },
+  "cover_sub_img": {
+    "message": "स्थिर छवियों में पहचाने गए क्षेत्र कैसे ढँके जाते हैं।"
+  },
+  "cover_title_video": {
+    "message": "वीडियो के लिए कवर"
+  },
+  "cover_sub_video": {
+    "message": "वीडियो फ्रेम में पहचाने गए क्षेत्र कैसे ढँके जाते हैं।"
+  },
+  "cover_mosaic": {
+    "message": "मोज़ेक (पिक्सेल)"
+  },
+  "cover_blur": {
+    "message": "ब्लर"
+  },
+  "cover_bg": {
+    "message": "पृष्ठभूमि रंग"
+  },
+  "cover_black": {
+    "message": "काला"
+  },
+  "cover_white": {
+    "message": "सफेद"
+  },
+  "cover_custom": {
+    "message": "कस्टम रंग"
+  },
+  "pixel_intensity": {
+    "message": "पिक्सेल ब्लॉक"
+  },
+  "blur_strength": {
+    "message": "ब्लर की तीव्रता"
+  },
+  "pick_color": {
+    "message": "रंग चुनें"
+  },
+  "products_title": {
+    "message": "हमारे अन्य उत्पाद"
+  },
+  "musicremover_desc": {
+    "message": "YouTube से हराम संगीत को म्यूट और हटाएँ"
+  },
+  "muslimbrowser_desc": {
+    "message": "मुसलमानों के लिए सुरक्षित ब्राउज़र"
+  },
+  "how_it_works": {
+    "message": "यह कैसे काम करता है"
+  },
+  "feedback": {
+    "message": "प्रतिक्रिया"
+  },
+  "contact": {
+    "message": "संपर्क"
+  },
+  "reload_prompt_title_install": {
+    "message": "इस पेज पर PordaAI नहीं चल रहा"
+  },
+  "reload_prompt_body_install": {
+    "message": "यह टैब PordaAI इंस्टॉल होने से पहले खुला था, इसलिए यहाँ की छवियाँ जाँची नहीं जा रही हैं। सुरक्षा चालू करने के लिए पेज रीलोड करें।"
+  },
+  "reload_prompt_title_update": {
+    "message": "PordaAI अपडेट हो गया है"
+  },
+  "reload_prompt_body_update": {
+    "message": "अपडेट के कारण पहले से खुले टैब में PordaAI बंद हो गया, इसलिए यहाँ की छवियाँ जाँची नहीं जा रही हैं। सुरक्षा फिर से चालू करने के लिए पेज रीलोड करें।"
+  },
+  "reload_prompt_dismiss": {
+    "message": "बाद में"
+  },
+  "cover_title": {
+    "message": "ढकने की शैली"
+  },
+  "cover_sub": {
+    "message": "प्रोसेस की गई छवि में पहचाने गए हिस्से कैसे ढके जाएँ।"
+  },
+  "action_title_protecting": {
+    "message": "PordaAI इस पेज की सुरक्षा कर रहा है"
+  },
+  "action_title_master_off": {
+    "message": "PordaAI बंद है — सुरक्षा फिर से चालू करने के लिए क्लिक करें"
+  },
+  "action_title_site_off": {
+    "message": "इस साइट पर PordaAI बंद है — फिर से चालू करने के लिए क्लिक करें"
+  },
+  "float_btn_title": {
+    "message": "वीडियो पर PordaAI बटन दिखाएँ"
+  },
+  "float_btn_sub": {
+    "message": "हर वीडियो पर खिसकाया जा सकने वाला PordaAI चालू/बंद बटन।"
+  },
+  "pcapp_connected_title": {
+    "message": "पीसी सिंक • कनेक्टेड"
+  },
+  "pcapp_off_title": {
+    "message": "पीसी सिंक • डिस्कनेक्टेड"
+  },
+  "pcapp_off_connect": {
+    "message": "मुफ्त में प्राप्त करें"
+  },
+  "pcapp_off_open": {
+    "message": "ऐप खोलें"
+  },
+  "pcapp_off_pitch": {
+    "message": "99% कम ब्राउजर लोड · 10x तेज · ब्राउजर के बाहर भी हराम ब्लर करें"
+  },
+  "website": {
+    "message": "वेबसाइट"
+  },
+  "advanced_settings": {
+    "message": "उन्नत सेटिंग्स"
+  },
+  "greyscale_title": {
+    "message": "ग्रेस्केल मोज़ेक / ब्लर"
+  },
+  "greyscale_sub": {
+    "message": "धुंधले हिस्सों को काला और सफेद बनाता है"
+  },
+  "full_cover_title": {
+    "message": "पूरी छवि ढकें"
+  },
+  "full_cover_sub": {
+    "message": "पहचान होने पर पूरी छवि ढकें"
+  },
+  "donate_sub": {
+    "message": "समुदाय द्वारा समर्थित। गोपनीयता पर केंद्रित।"
+  },
+  "bkash_label": {
+    "message": "🇧🇩 bKash (व्यक्तिगत):"
+  },
+  "copy": {
+    "message": "कॉपी"
+  },
+  "copied": {
+    "message": "कॉपी हो गया!"
+  },
+  "locked": {
+    "message": "लॉक किया गया"
+  },
+  "behavior_title": {
+    "message": "पर्दा AI व्यवहार"
+  },
+  "status_active": {
+    "message": "सुरक्षा सक्रिय है"
+  },
+  "status_paused": {
+    "message": "सुरक्षा रुकी हुई है"
+  },
+  "status_desc_active": {
+    "message": "रियल-टाइम AI शील्ड सक्रिय है"
+  },
+  "status_desc_paused": {
+    "message": "सभी AI फ़िल्टर रोके गए हैं"
+  },
+  "badge_on": {
+    "message": "चालू"
+  },
+  "badge_off": {
+    "message": "बंद"
+  },
+  "site_on": {
+    "message": "साइट: चालू"
+  },
+  "site_off": {
+    "message": "साइट: बंद"
+  },
+  "site_sub_active": {
+    "message": "सक्रिय टैब • फ़िल्टर सक्षम"
+  },
+  "site_sub_disabled": {
+    "message": "सक्रिय टैब • फ़िल्टर अक्षम"
+  },
+  "site_sub_paused": {
+    "message": "सक्रिय टैब • सुरक्षा रुकी हुई है"
+  },
+  "product_musicremover": {
+    "message": "म्यूजिक रिमूवर"
+  },
+  "product_muslimbrowser": {
+    "message": "मुस्लिम ब्राउज़र"
+  },
+  "blur_images_title": {
+    "message": "छवियों को धुंधला करें"
+  },
+  "blur_images_sub": {
+    "message": "समीक्षा होने तक प्रत्येक पृष्ठ पर प्रत्येक छवि को धुंधला रखें।"
+  },
+  "pcapp_connected_sub": {
+    "message": "आपके GPU पर पहचान — 99% कम ब्राउज़र लोड, ~5 गुना तेज़।"
+  },
+  "pcapp_off_opening": {
+    "message": "खुल रहा है…"
+  },
+  "pcapp_off_reinstall": {
+    "message": "पुनः स्थापित करें →"
+  },
+  "pcapp_off_sub": {
+    "message": "ब्राउज़र लोड 99% कम करने और 5× तेज़ लोडिंग के लिए निःशुल्क PC ऐप कनेक्ट करें।"
+  },
+  "pcapp_off_cta": {
+    "message": "PC ऐप प्राप्त करें →"
+  }
+}

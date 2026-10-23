@@ -1,0 +1,305 @@
+{
+  "_comment": {
+    "message": "Arabic (ar)."
+  },
+  "checking": {
+    "message": "جارٍ التحقق..."
+  },
+  "pordaai_is_running": {
+    "message": "PordaAI قيد التشغيل"
+  },
+  "browse_any_site": {
+    "message": "تصفّح أي موقع — الصور مموّهة حتى تتم مراجعتها."
+  },
+  "desktop_app_not_running": {
+    "message": "تطبيق سطح المكتب لا يعمل"
+  },
+  "install_or_open": {
+    "message": "ثبّت أو افتح PordaAI لبدء معالجة الصور."
+  },
+  "ext_master_title": {
+    "message": "تشغيل | إيقاف الإضافة"
+  },
+  "site_title": {
+    "message": "نشط على هذا الموقع"
+  },
+  "site_sub": {
+    "message": "أوقف التشغيل على الموقع الحالي فقط."
+  },
+  "preblur_title": {
+    "message": "تمويه الصور مسبقًا"
+  },
+  "preblur_sub": {
+    "message": "تمويه كل صورة عند تحميل الصفحة حتى تتم مراجعتها."
+  },
+  "reload_needed_title": {
+    "message": "يلزم إعادة التحميل"
+  },
+  "reload_needed": {
+    "message": "أعد تحميل التبويب ليسري الوضع الجديد."
+  },
+  "reload_now": {
+    "message": "أعد التحميل الآن"
+  },
+  "cancel": {
+    "message": "إلغاء"
+  },
+  "get_desktop_app": {
+    "message": "احصل على تطبيق سطح المكتب المجاني"
+  },
+  "desktop_app_intro": {
+    "message": "هذا يغطي ما هو أبعد من المتصفح، حتى في مشغلات الفيديو، وغيرها."
+  },
+  "free_download": {
+    "message": "تنزيل مجاني"
+  },
+  "coming_soon": {
+    "message": "قريبًا"
+  },
+  "how_to_use": {
+    "message": "كيفية الاستخدام"
+  },
+  "hover_hint": {
+    "message": "مرّر فوق الصورة لكشفها مؤقتًا. أعد تحميل التبويبات بعد تغيير الإعدادات للحصول على التأثير الكامل."
+  },
+  "donate_title": {
+    "message": "دعم بردة AI"
+  },
+  "tab_status": {
+    "message": "الحالة"
+  },
+  "tab_detection": {
+    "message": "الكشف"
+  },
+  "tab_cover": {
+    "message": "التغطية"
+  },
+  "detection_title": {
+    "message": "الكشف"
+  },
+  "detection_sub": {
+    "message": "ما الذي يجب أن يبحث عنه الكاشف في كل وسيط."
+  },
+  "detect_male": {
+    "message": "الذكور"
+  },
+  "detect_female": {
+    "message": "الإناث"
+  },
+  "detect_images": {
+    "message": "في الصور"
+  },
+  "detect_videos": {
+    "message": "في الفيديوهات"
+  },
+  "greyscale_cover": {
+    "message": "تدرج رمادي تحت التمويه / الفسيفساء"
+  },
+  "full_image_cover": {
+    "message": "غطِّ الصورة كاملة عند اكتشاف شيء"
+  },
+  "cover_title_img": {
+    "message": "التغطية للصور"
+  },
+  "cover_sub_img": {
+    "message": "كيف تُغطى المناطق المكتشفة في الصور الثابتة."
+  },
+  "cover_title_video": {
+    "message": "التغطية للفيديوهات"
+  },
+  "cover_sub_video": {
+    "message": "كيف تُغطى المناطق المكتشفة في إطارات الفيديو."
+  },
+  "cover_mosaic": {
+    "message": "فسيفساء (بكسل)"
+  },
+  "cover_blur": {
+    "message": "تمويه"
+  },
+  "cover_bg": {
+    "message": "لون الخلفية"
+  },
+  "cover_black": {
+    "message": "أسود"
+  },
+  "cover_white": {
+    "message": "أبيض"
+  },
+  "cover_custom": {
+    "message": "لون مخصص"
+  },
+  "pixel_intensity": {
+    "message": "كتل البكسل"
+  },
+  "blur_strength": {
+    "message": "شدة التمويه"
+  },
+  "pick_color": {
+    "message": "اختر اللون"
+  },
+  "products_title": {
+    "message": "أيضًا منّا"
+  },
+  "musicremover_desc": {
+    "message": "كتم وإزالة الموسيقى الحرام من YouTube"
+  },
+  "muslimbrowser_desc": {
+    "message": "المتصفح الآمن للمسلمين"
+  },
+  "how_it_works": {
+    "message": "كيف يعمل"
+  },
+  "feedback": {
+    "message": "الملاحظات"
+  },
+  "contact": {
+    "message": "اتصل بنا"
+  },
+  "reload_prompt_title_install": {
+    "message": "PordaAI لا يعمل في هذه الصفحة"
+  },
+  "reload_prompt_body_install": {
+    "message": "كانت هذه التبويبة مفتوحة قبل تثبيت PordaAI، لذا لا تتم مراجعة الصور هنا. أعد التحميل لتفعيل الحماية."
+  },
+  "reload_prompt_title_update": {
+    "message": "تم تحديث PordaAI"
+  },
+  "reload_prompt_body_update": {
+    "message": "أوقف التحديث عمل PordaAI في التبويبات المفتوحة مسبقًا، لذا لا تتم مراجعة الصور هنا. أعد التحميل لإعادة تفعيل الحماية."
+  },
+  "reload_prompt_dismiss": {
+    "message": "لاحقًا"
+  },
+  "cover_title": {
+    "message": "نمط التغطية"
+  },
+  "cover_sub": {
+    "message": "كيفية إخفاء المناطق المكتشفة في الصورة بعد المعالجة."
+  },
+  "action_title_protecting": {
+    "message": "‏PordaAI يحمي هذه الصفحة"
+  },
+  "action_title_master_off": {
+    "message": "‏PordaAI متوقف — انقر لإعادة تفعيل الحماية"
+  },
+  "action_title_site_off": {
+    "message": "‏PordaAI متوقف في هذا الموقع — انقر لإعادة تفعيله"
+  },
+  "float_btn_title": {
+    "message": "إظهار زر PordaAI على الفيديوهات"
+  },
+  "float_btn_sub": {
+    "message": "زر تشغيل/إيقاف PordaAI المتحرك على كل فيديو."
+  },
+  "pcapp_connected_title": {
+    "message": "مزامنة الكمبيوتر • متصل"
+  },
+  "pcapp_off_title": {
+    "message": "مزامنة الكمبيوتر • غير متصل"
+  },
+  "pcapp_off_connect": {
+    "message": "احصل عليه مجاناً"
+  },
+  "pcapp_off_open": {
+    "message": "افتح التطبيق"
+  },
+  "pcapp_off_pitch": {
+    "message": "حمل أقل على المتصفح بنسبة 99% · أسرع بـ 10 أضعاف · حجب الحرام خارج المتصفح"
+  },
+  "website": {
+    "message": "الموقع الإلكتروني"
+  },
+  "advanced_settings": {
+    "message": "إعدادات متقدمة"
+  },
+  "greyscale_title": {
+    "message": "تدرج رمادي للموزاييك / التمويه"
+  },
+  "greyscale_sub": {
+    "message": "تحويل المناطق المموهة إلى الأبيض والأسود"
+  },
+  "full_cover_title": {
+    "message": "تغطية الصورة بالكامل"
+  },
+  "full_cover_sub": {
+    "message": "تغطية الصورة بالكامل عند اكتشاف محتوى"
+  },
+  "donate_sub": {
+    "message": "مدعوم من المجتمع. يركز على الخصوصية."
+  },
+  "bkash_label": {
+    "message": "🇧🇩 بيكاش (شخصي):"
+  },
+  "copy": {
+    "message": "نسخ"
+  },
+  "copied": {
+    "message": "تم النسخ!"
+  },
+  "locked": {
+    "message": "مقفول"
+  },
+  "behavior_title": {
+    "message": "سلوك بردة AI"
+  },
+  "status_active": {
+    "message": "الحماية مفعلة"
+  },
+  "status_paused": {
+    "message": "الحماية متوقفة مؤقتًا"
+  },
+  "status_desc_active": {
+    "message": "درع الذكاء الاصطناعي يعمل في الوقت الفعلي"
+  },
+  "status_desc_paused": {
+    "message": "جميع فلاتر الذكاء الاصطناعي متوقفة"
+  },
+  "badge_on": {
+    "message": "تشغيل"
+  },
+  "badge_off": {
+    "message": "إيقاف"
+  },
+  "site_on": {
+    "message": "الموقع: تشغيل"
+  },
+  "site_off": {
+    "message": "الموقع: إيقاف"
+  },
+  "site_sub_active": {
+    "message": "التبويب النشط • الفلتر مفعل"
+  },
+  "site_sub_disabled": {
+    "message": "التبويب النشط • الفلتر معطل"
+  },
+  "site_sub_paused": {
+    "message": "التبويب النشط • الحماية متوقفة"
+  },
+  "product_musicremover": {
+    "message": "مزيل الموسيقى"
+  },
+  "product_muslimbrowser": {
+    "message": "متصفح المسلم"
+  },
+  "blur_images_title": {
+    "message": "تمويه الصور"
+  },
+  "blur_images_sub": {
+    "message": "تمويه جميع الصور في كل صفحة حتى مراجعتها."
+  },
+  "pcapp_connected_sub": {
+    "message": "الكشف عبر كرت الشاشة — تخفيف عبء المتصفح بنسبة 99% وأسرع بـ 5 أضعاف."
+  },
+  "pcapp_off_opening": {
+    "message": "جارٍ الفتح…"
+  },
+  "pcapp_off_reinstall": {
+    "message": "إعادة التثبيت →"
+  },
+  "pcapp_off_sub": {
+    "message": "اربط تطبيق الكمبيوتر المجاني لتقليل حمل المتصفح بنسبة 99% وتسريع الصور 5 أضعاف."
+  },
+  "pcapp_off_cta": {
+    "message": "احصل على تطبيق الكمبيوتر →"
+  }
+}

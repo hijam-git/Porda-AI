@@ -1,0 +1,305 @@
+{
+  "_comment": {
+    "message": "Indonesian (id)."
+  },
+  "checking": {
+    "message": "Memeriksa..."
+  },
+  "pordaai_is_running": {
+    "message": "PordaAI sedang berjalan"
+  },
+  "browse_any_site": {
+    "message": "Jelajahi situs mana pun — gambar diburamkan hingga diperiksa."
+  },
+  "desktop_app_not_running": {
+    "message": "Aplikasi desktop tidak berjalan"
+  },
+  "install_or_open": {
+    "message": "Instal atau buka PordaAI untuk mulai memproses gambar."
+  },
+  "ext_master_title": {
+    "message": "Aktifkan | Nonaktifkan ekstensi"
+  },
+  "site_title": {
+    "message": "Aktif di situs ini"
+  },
+  "site_sub": {
+    "message": "Matikan hanya di situs saat ini."
+  },
+  "preblur_title": {
+    "message": "Buramkan gambar sebelumnya"
+  },
+  "preblur_sub": {
+    "message": "Buramkan setiap gambar saat halaman dimuat hingga diperiksa."
+  },
+  "reload_needed_title": {
+    "message": "Perlu memuat ulang"
+  },
+  "reload_needed": {
+    "message": "Muat ulang tab agar status baru berlaku."
+  },
+  "reload_now": {
+    "message": "Muat ulang sekarang"
+  },
+  "cancel": {
+    "message": "Batal"
+  },
+  "get_desktop_app": {
+    "message": "Dapatkan aplikasi desktop gratis"
+  },
+  "desktop_app_intro": {
+    "message": "Ini akan melindungi di luar peramban, bahkan di pemutar video, dll."
+  },
+  "free_download": {
+    "message": "Unduh gratis"
+  },
+  "coming_soon": {
+    "message": "Segera hadir"
+  },
+  "how_to_use": {
+    "message": "Cara menggunakan"
+  },
+  "hover_hint": {
+    "message": "Arahkan kursor ke gambar untuk sementara memperlihatkannya. Muat ulang tab setelah mengubah pengaturan untuk efek penuh."
+  },
+  "donate_title": {
+    "message": "Dukung Porda AI"
+  },
+  "tab_status": {
+    "message": "Status"
+  },
+  "tab_detection": {
+    "message": "Deteksi"
+  },
+  "tab_cover": {
+    "message": "Penutup"
+  },
+  "detection_title": {
+    "message": "Deteksi"
+  },
+  "detection_sub": {
+    "message": "Apa yang harus dicari detektor di setiap media."
+  },
+  "detect_male": {
+    "message": "Laki-laki"
+  },
+  "detect_female": {
+    "message": "Perempuan"
+  },
+  "detect_images": {
+    "message": "Pada gambar"
+  },
+  "detect_videos": {
+    "message": "Pada video"
+  },
+  "greyscale_cover": {
+    "message": "Skala abu-abu di bawah Blur / Mosaik"
+  },
+  "full_image_cover": {
+    "message": "Tutupi seluruh gambar bila sesuatu terdeteksi"
+  },
+  "cover_title_img": {
+    "message": "Penutup untuk gambar"
+  },
+  "cover_sub_img": {
+    "message": "Bagaimana area yang terdeteksi ditutup pada gambar diam."
+  },
+  "cover_title_video": {
+    "message": "Penutup untuk video"
+  },
+  "cover_sub_video": {
+    "message": "Bagaimana area yang terdeteksi ditutup pada bingkai video."
+  },
+  "cover_mosaic": {
+    "message": "Mosaik (piksel)"
+  },
+  "cover_blur": {
+    "message": "Blur"
+  },
+  "cover_bg": {
+    "message": "Warna latar"
+  },
+  "cover_black": {
+    "message": "Hitam"
+  },
+  "cover_white": {
+    "message": "Putih"
+  },
+  "cover_custom": {
+    "message": "Warna khusus"
+  },
+  "pixel_intensity": {
+    "message": "Blok piksel"
+  },
+  "blur_strength": {
+    "message": "Kekuatan blur"
+  },
+  "pick_color": {
+    "message": "Pilih warna"
+  },
+  "products_title": {
+    "message": "Juga dari kami"
+  },
+  "musicremover_desc": {
+    "message": "Bisukan & hapus musik haram dari YouTube"
+  },
+  "muslimbrowser_desc": {
+    "message": "Peramban aman untuk Muslim"
+  },
+  "how_it_works": {
+    "message": "Cara kerjanya"
+  },
+  "feedback": {
+    "message": "Umpan balik"
+  },
+  "contact": {
+    "message": "Kontak"
+  },
+  "reload_prompt_title_install": {
+    "message": "PordaAI tidak berjalan di halaman ini"
+  },
+  "reload_prompt_body_install": {
+    "message": "Tab ini sudah terbuka sebelum PordaAI dipasang, jadi gambar di sini tidak diperiksa. Muat ulang untuk mengaktifkan perlindungan."
+  },
+  "reload_prompt_title_update": {
+    "message": "PordaAI telah diperbarui"
+  },
+  "reload_prompt_body_update": {
+    "message": "Pembaruan menghentikan PordaAI di tab yang sudah terbuka, jadi gambar di sini tidak diperiksa. Muat ulang untuk mengaktifkan kembali perlindungan."
+  },
+  "reload_prompt_dismiss": {
+    "message": "Nanti saja"
+  },
+  "cover_title": {
+    "message": "Gaya penutup"
+  },
+  "cover_sub": {
+    "message": "Bagaimana area yang terdeteksi ditutup pada gambar hasil proses."
+  },
+  "action_title_protecting": {
+    "message": "PordaAI melindungi halaman ini"
+  },
+  "action_title_master_off": {
+    "message": "PordaAI mati — klik untuk mengaktifkan perlindungan"
+  },
+  "action_title_site_off": {
+    "message": "PordaAI mati di situs ini — klik untuk mengaktifkannya"
+  },
+  "float_btn_title": {
+    "message": "Tampilkan tombol PordaAI di video"
+  },
+  "float_btn_sub": {
+    "message": "Tombol hidup/mati PordaAI yang bisa dipindah di setiap video."
+  },
+  "pcapp_connected_title": {
+    "message": "Sinkronisasi PC • Terhubung"
+  },
+  "pcapp_off_title": {
+    "message": "Sinkronisasi PC • Terputus"
+  },
+  "pcapp_off_connect": {
+    "message": "Dapatkan gratis"
+  },
+  "pcapp_off_open": {
+    "message": "Buka aplikasi"
+  },
+  "pcapp_off_pitch": {
+    "message": "Beban browser 99% lebih ringan · 10× lebih cepat · Buramkan Haram di luar browser"
+  },
+  "website": {
+    "message": "Situs web"
+  },
+  "advanced_settings": {
+    "message": "Pengaturan Lanjutan"
+  },
+  "greyscale_title": {
+    "message": "Mosaik / Blur Skala Abu-Abu"
+  },
+  "greyscale_sub": {
+    "message": "Membuat area buram menjadi hitam & putih"
+  },
+  "full_cover_title": {
+    "message": "Tutup Gambar Penuh"
+  },
+  "full_cover_sub": {
+    "message": "Tutup seluruh gambar saat terdeteksi"
+  },
+  "donate_sub": {
+    "message": "Didanai komunitas. Berfokus pada privasi."
+  },
+  "bkash_label": {
+    "message": "🇧🇩 bKash (Pribadi):"
+  },
+  "copy": {
+    "message": "Salin"
+  },
+  "copied": {
+    "message": "Tersalin!"
+  },
+  "locked": {
+    "message": "Terkunci"
+  },
+  "behavior_title": {
+    "message": "Perilaku Porda AI"
+  },
+  "status_active": {
+    "message": "Perlindungan Aktif"
+  },
+  "status_paused": {
+    "message": "Perlindungan Dijeda"
+  },
+  "status_desc_active": {
+    "message": "Perisai AI real-time aktif"
+  },
+  "status_desc_paused": {
+    "message": "Semua filter AI dijeda"
+  },
+  "badge_on": {
+    "message": "AKTIF"
+  },
+  "badge_off": {
+    "message": "MATI"
+  },
+  "site_on": {
+    "message": "Situs: AKTIF"
+  },
+  "site_off": {
+    "message": "Situs: MATI"
+  },
+  "site_sub_active": {
+    "message": "Tab aktif • Filter aktif"
+  },
+  "site_sub_disabled": {
+    "message": "Tab aktif • Filter dinonaktifkan"
+  },
+  "site_sub_paused": {
+    "message": "Tab aktif • Perlindungan dijeda"
+  },
+  "product_musicremover": {
+    "message": "Penghapus Musik"
+  },
+  "product_muslimbrowser": {
+    "message": "Muslim Browser"
+  },
+  "blur_images_title": {
+    "message": "Buramkan gambar"
+  },
+  "blur_images_sub": {
+    "message": "Buramkan setiap gambar di setiap halaman hingga diperiksa."
+  },
+  "pcapp_connected_sub": {
+    "message": "Mendeteksi pada GPU — 99% beban browser berkurang, ~5× lebih cepat."
+  },
+  "pcapp_off_opening": {
+    "message": "Membuka…"
+  },
+  "pcapp_off_reinstall": {
+    "message": "Pasang Ulang →"
+  },
+  "pcapp_off_sub": {
+    "message": "Hubungkan Aplikasi PC gratis untuk mengurangi beban browser sebesar 99% dan memuat gambar 5× lebih cepat."
+  },
+  "pcapp_off_cta": {
+    "message": "Dapatkan Aplikasi PC →"
+  }
+}

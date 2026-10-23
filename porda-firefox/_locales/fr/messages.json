@@ -1,0 +1,305 @@
+{
+  "_comment": {
+    "message": "French (fr)."
+  },
+  "checking": {
+    "message": "Vérification..."
+  },
+  "pordaai_is_running": {
+    "message": "PordaAI est en cours d'exécution"
+  },
+  "browse_any_site": {
+    "message": "Naviguez sur n'importe quel site — les images sont floutées jusqu'à leur analyse."
+  },
+  "desktop_app_not_running": {
+    "message": "L'application de bureau n'est pas en cours d'exécution"
+  },
+  "install_or_open": {
+    "message": "Installez ou ouvrez PordaAI pour commencer à traiter les images."
+  },
+  "ext_master_title": {
+    "message": "Activer | Désactiver l'extension"
+  },
+  "site_title": {
+    "message": "Actif sur ce site"
+  },
+  "site_sub": {
+    "message": "Désactiver uniquement sur le site actuel."
+  },
+  "preblur_title": {
+    "message": "Pré-flouter les images"
+  },
+  "preblur_sub": {
+    "message": "Flouter chaque image au chargement de la page jusqu'à son analyse."
+  },
+  "reload_needed_title": {
+    "message": "Rechargement requis"
+  },
+  "reload_needed": {
+    "message": "Rechargez l'onglet pour que le nouvel état prenne effet."
+  },
+  "reload_now": {
+    "message": "Recharger maintenant"
+  },
+  "cancel": {
+    "message": "Annuler"
+  },
+  "get_desktop_app": {
+    "message": "Obtenez l'application de bureau gratuite"
+  },
+  "desktop_app_intro": {
+    "message": "Elle couvrira au-delà du navigateur, même dans les lecteurs vidéo, etc."
+  },
+  "free_download": {
+    "message": "Téléchargement gratuit"
+  },
+  "coming_soon": {
+    "message": "Bientôt disponible"
+  },
+  "how_to_use": {
+    "message": "Comment utiliser"
+  },
+  "hover_hint": {
+    "message": "Survolez une image pour la révéler temporairement. Rechargez les onglets après avoir modifié les paramètres pour un effet complet."
+  },
+  "donate_title": {
+    "message": "Soutenez Porda AI"
+  },
+  "tab_status": {
+    "message": "Statut"
+  },
+  "tab_detection": {
+    "message": "Détection"
+  },
+  "tab_cover": {
+    "message": "Couverture"
+  },
+  "detection_title": {
+    "message": "Détection"
+  },
+  "detection_sub": {
+    "message": "Ce que le détecteur doit rechercher dans chaque média."
+  },
+  "detect_male": {
+    "message": "Hommes"
+  },
+  "detect_female": {
+    "message": "Femmes"
+  },
+  "detect_images": {
+    "message": "Dans les images"
+  },
+  "detect_videos": {
+    "message": "Dans les vidéos"
+  },
+  "greyscale_cover": {
+    "message": "Niveaux de gris sous Flou / Mosaïque"
+  },
+  "full_image_cover": {
+    "message": "Couvrir toute l'image lorsqu'un élément est détecté"
+  },
+  "cover_title_img": {
+    "message": "Couverture pour les images"
+  },
+  "cover_sub_img": {
+    "message": "Comment les zones détectées sont masquées dans les images fixes."
+  },
+  "cover_title_video": {
+    "message": "Couverture pour les vidéos"
+  },
+  "cover_sub_video": {
+    "message": "Comment les zones détectées sont masquées dans les images vidéo."
+  },
+  "cover_mosaic": {
+    "message": "Mosaïque (pixel)"
+  },
+  "cover_blur": {
+    "message": "Flou"
+  },
+  "cover_bg": {
+    "message": "Couleur de fond"
+  },
+  "cover_black": {
+    "message": "Noir"
+  },
+  "cover_white": {
+    "message": "Blanc"
+  },
+  "cover_custom": {
+    "message": "Couleur personnalisée"
+  },
+  "pixel_intensity": {
+    "message": "Blocs de pixels"
+  },
+  "blur_strength": {
+    "message": "Intensité du flou"
+  },
+  "pick_color": {
+    "message": "Choisir une couleur"
+  },
+  "products_title": {
+    "message": "Aussi de notre part"
+  },
+  "musicremover_desc": {
+    "message": "Coupez et supprimez la musique haram de YouTube"
+  },
+  "muslimbrowser_desc": {
+    "message": "Le navigateur sécurisé pour les musulmans"
+  },
+  "how_it_works": {
+    "message": "Comment ça marche"
+  },
+  "feedback": {
+    "message": "Retour"
+  },
+  "contact": {
+    "message": "Contact"
+  },
+  "reload_prompt_title_install": {
+    "message": "PordaAI ne fonctionne pas sur cette page"
+  },
+  "reload_prompt_body_install": {
+    "message": "Cet onglet était ouvert avant l’installation de PordaAI, les images ne sont donc pas vérifiées ici. Rechargez pour activer la protection."
+  },
+  "reload_prompt_title_update": {
+    "message": "PordaAI a été mis à jour"
+  },
+  "reload_prompt_body_update": {
+    "message": "La mise à jour a arrêté PordaAI dans les onglets déjà ouverts, les images ne sont donc pas vérifiées ici. Rechargez pour réactiver la protection."
+  },
+  "reload_prompt_dismiss": {
+    "message": "Plus tard"
+  },
+  "cover_title": {
+    "message": "Style de masque"
+  },
+  "cover_sub": {
+    "message": "Comment les zones détectées sont masquées dans l’image traitée."
+  },
+  "action_title_protecting": {
+    "message": "PordaAI protège cette page"
+  },
+  "action_title_master_off": {
+    "message": "PordaAI est désactivé — cliquez pour réactiver la protection"
+  },
+  "action_title_site_off": {
+    "message": "PordaAI est désactivé sur ce site — cliquez pour le réactiver"
+  },
+  "float_btn_title": {
+    "message": "Afficher le bouton PordaAI sur les vidéos"
+  },
+  "float_btn_sub": {
+    "message": "Le bouton PordaAI déplaçable sur chaque vidéo."
+  },
+  "pcapp_connected_title": {
+    "message": "Sync PC • Connecté"
+  },
+  "pcapp_off_title": {
+    "message": "Sync PC • Déconnecté"
+  },
+  "pcapp_off_connect": {
+    "message": "Obtenir gratuitement"
+  },
+  "pcapp_off_open": {
+    "message": "Ouvrir l'app"
+  },
+  "pcapp_off_pitch": {
+    "message": "99 % de charge en moins sur le navigateur · 10× plus rapide · Floutez le Haram au-delà du navigateur"
+  },
+  "website": {
+    "message": "Site web"
+  },
+  "advanced_settings": {
+    "message": "Paramètres avancés"
+  },
+  "greyscale_title": {
+    "message": "Mosaïque / Flou en niveaux de gris"
+  },
+  "greyscale_sub": {
+    "message": "Rend les zones floutées en noir et blanc"
+  },
+  "full_cover_title": {
+    "message": "Couverture intégrale de l'image"
+  },
+  "full_cover_sub": {
+    "message": "Couvrir toute l'image dès la détection"
+  },
+  "donate_sub": {
+    "message": "Financé par la communauté. Axé sur la confidentialité."
+  },
+  "bkash_label": {
+    "message": "🇧🇩 bKash (Personnel) :"
+  },
+  "copy": {
+    "message": "Copier"
+  },
+  "copied": {
+    "message": "Copié !"
+  },
+  "locked": {
+    "message": "Verrouillé"
+  },
+  "behavior_title": {
+    "message": "Comportement de Porda AI"
+  },
+  "status_active": {
+    "message": "Protection active"
+  },
+  "status_paused": {
+    "message": "Protection en pause"
+  },
+  "status_desc_active": {
+    "message": "Bouclier IA en temps réel actif"
+  },
+  "status_desc_paused": {
+    "message": "Tous les filtres IA sont en pause"
+  },
+  "badge_on": {
+    "message": "ACTIF"
+  },
+  "badge_off": {
+    "message": "INACTIF"
+  },
+  "site_on": {
+    "message": "Site : ACTIF"
+  },
+  "site_off": {
+    "message": "Site : INACTIF"
+  },
+  "site_sub_active": {
+    "message": "Onglet actif • Filtre activé"
+  },
+  "site_sub_disabled": {
+    "message": "Onglet actif • Filtre désactivé"
+  },
+  "site_sub_paused": {
+    "message": "Onglet actif • Protection en pause"
+  },
+  "product_musicremover": {
+    "message": "Suppresseur de musique"
+  },
+  "product_muslimbrowser": {
+    "message": "Navigateur musulman"
+  },
+  "blur_images_title": {
+    "message": "Flouter les images"
+  },
+  "blur_images_sub": {
+    "message": "Flouter chaque image sur chaque page jusqu'à examen."
+  },
+  "pcapp_connected_sub": {
+    "message": "Détection sur votre GPU — 99 % de charge navigateur en moins, ~5× plus rapide."
+  },
+  "pcapp_off_opening": {
+    "message": "Ouverture en cours…"
+  },
+  "pcapp_off_reinstall": {
+    "message": "Réinstaller →"
+  },
+  "pcapp_off_sub": {
+    "message": "Connectez l'application PC gratuite pour réduire la charge du navigateur de 99 % et charger les images 5× plus vite."
+  },
+  "pcapp_off_cta": {
+    "message": "Obtenir l'application PC →"
+  }
+}
