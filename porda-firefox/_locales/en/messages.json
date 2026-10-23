@@ -1,0 +1,305 @@
+{
+  "_comment": {
+    "message": "English (en) — base locale. Keys mirror data-i18n attributes in popup.html and welcome.html."
+  },
+  "checking": {
+    "message": "Checking..."
+  },
+  "pordaai_is_running": {
+    "message": "PordaAI is running"
+  },
+  "browse_any_site": {
+    "message": "Browse any site — images are blurred until reviewed."
+  },
+  "desktop_app_not_running": {
+    "message": "Desktop app not running"
+  },
+  "install_or_open": {
+    "message": "Install or open PordaAI to start processing images."
+  },
+  "ext_master_title": {
+    "message": "On | Off the extension"
+  },
+  "site_title": {
+    "message": "Active on this site"
+  },
+  "site_sub": {
+    "message": "Turn off on the current site only."
+  },
+  "preblur_title": {
+    "message": "Pre-blur images"
+  },
+  "preblur_sub": {
+    "message": "Blur every image at page load until reviewed."
+  },
+  "reload_needed_title": {
+    "message": "Reload required"
+  },
+  "reload_needed": {
+    "message": "Reload the tab for the new state to take effect."
+  },
+  "reload_now": {
+    "message": "Reload now"
+  },
+  "cancel": {
+    "message": "Cancel"
+  },
+  "get_desktop_app": {
+    "message": "Get the free desktop app"
+  },
+  "desktop_app_intro": {
+    "message": "This will cover beyond the browser, even in video players, etc."
+  },
+  "free_download": {
+    "message": "Free download"
+  },
+  "coming_soon": {
+    "message": "Coming soon"
+  },
+  "how_to_use": {
+    "message": "How to use"
+  },
+  "hover_hint": {
+    "message": "Hover an image to temporarily reveal it. Reload tabs after toggling for full effect."
+  },
+  "donate_title": {
+    "message": "Support - Porda AI"
+  },
+  "blur_images_title": {
+    "message": "Blur images"
+  },
+  "blur_images_sub": {
+    "message": "Blur every image on every page until the desktop app reviews it."
+  },
+  "tab_status": {
+    "message": "Status"
+  },
+  "tab_detection": {
+    "message": "Detection"
+  },
+  "tab_cover": {
+    "message": "Cover"
+  },
+  "detection_title": {
+    "message": "Detection"
+  },
+  "detection_sub": {
+    "message": "What the detector should look for in every media."
+  },
+  "detect_male": {
+    "message": "Male"
+  },
+  "detect_female": {
+    "message": "Female"
+  },
+  "detect_images": {
+    "message": "In images"
+  },
+  "detect_videos": {
+    "message": "In videos"
+  },
+  "greyscale_cover": {
+    "message": "Greyscale under Blur / Mosaic"
+  },
+  "full_image_cover": {
+    "message": "Cover the whole image when something is detected"
+  },
+  "cover_title": {
+    "message": "Cover style"
+  },
+  "cover_sub": {
+    "message": "How detected regions are masked in the processed image."
+  },
+  "cover_title_img": {
+    "message": "Cover for images"
+  },
+  "cover_sub_img": {
+    "message": "How detected regions are masked in still images."
+  },
+  "cover_title_video": {
+    "message": "Cover for videos"
+  },
+  "cover_sub_video": {
+    "message": "How detected regions are masked in video frames."
+  },
+  "cover_mosaic": {
+    "message": "Mosaic (pixel)"
+  },
+  "cover_blur": {
+    "message": "Blur"
+  },
+  "cover_bg": {
+    "message": "BG Color"
+  },
+  "cover_black": {
+    "message": "Black"
+  },
+  "cover_white": {
+    "message": "White"
+  },
+  "cover_custom": {
+    "message": "Custom Color"
+  },
+  "pixel_intensity": {
+    "message": "Pixel blocks"
+  },
+  "blur_strength": {
+    "message": "Blur strength"
+  },
+  "pick_color": {
+    "message": "Pick color"
+  },
+  "products_title": {
+    "message": "Also from us"
+  },
+  "musicremover_desc": {
+    "message": "Mute & remove haram music from YouTube"
+  },
+  "muslimbrowser_desc": {
+    "message": "The secure browser for Muslims"
+  },
+  "how_it_works": {
+    "message": "How it works"
+  },
+  "feedback": {
+    "message": "Feedback"
+  },
+  "contact": {
+    "message": "Contact"
+  },
+  "website": {
+    "message": "Website"
+  },
+  "reload_prompt_title_install": {
+    "message": "PordaAI isn’t running on this page"
+  },
+  "reload_prompt_body_install": {
+    "message": "This tab was open before PordaAI installed, so images here aren’t being checked. Reload to turn on protection."
+  },
+  "reload_prompt_title_update": {
+    "message": "PordaAI has been updated"
+  },
+  "reload_prompt_body_update": {
+    "message": "The update stopped PordaAI on tabs that were already open, so images here aren’t being checked. Reload to turn protection back on."
+  },
+  "reload_prompt_dismiss": {
+    "message": "Skip for now"
+  },
+  "action_title_protecting": {
+    "message": "PordaAI is protecting this page"
+  },
+  "action_title_master_off": {
+    "message": "PordaAI is off — click to turn protection back on"
+  },
+  "action_title_site_off": {
+    "message": "PordaAI is off on this site — click to turn it back on"
+  },
+  "float_btn_title": {
+    "message": "Show PordaAI button on videos"
+  },
+  "float_btn_sub": {
+    "message": "The movable PordaAI on/off button on each video."
+  },
+  "pcapp_connected_title": {
+    "message": "PC Sync • Connected"
+  },
+  "pcapp_connected_sub": {
+    "message": "Detecting on your GPU — 99% less browser load, ~5× faster."
+  },
+  "pcapp_off_title": {
+    "message": "PC Sync • Not connected"
+  },
+  "pcapp_off_pitch": {
+    "message": "99% less browser load · 10× faster · Blur Haram everywhere"
+  },
+  "pcapp_off_connect": {
+    "message": "Get it free"
+  },
+  "pcapp_off_open": {
+    "message": "Open app"
+  },
+  "pcapp_off_opening": {
+    "message": "Opening…"
+  },
+  "pcapp_off_reinstall": {
+    "message": "Reinstall →"
+  },
+  "pcapp_off_sub": {
+    "message": "Connect the free PC App to reduce browser load by 99% and load images ~5× faster."
+  },
+  "pcapp_off_cta": {
+    "message": "Get the PC App →"
+  },
+  "advanced_settings": {
+    "message": "Advanced Settings"
+  },
+  "greyscale_title": {
+    "message": "Grayscale Mosaic/Blur"
+  },
+  "greyscale_sub": {
+    "message": "Makes blurred areas black & white"
+  },
+  "full_cover_title": {
+    "message": "Full Image Cover"
+  },
+  "full_cover_sub": {
+    "message": "Cover entire image when detected"
+  },
+  "donate_sub": {
+    "message": "Community funded. Privacy focused."
+  },
+  "bkash_label": {
+    "message": "🇧🇩 bKash (Personal):"
+  },
+  "copy": {
+    "message": "Copy"
+  },
+  "copied": {
+    "message": "Copied!"
+  },
+  "locked": {
+    "message": "Locked"
+  },
+  "behavior_title": {
+    "message": "Porda AI Behavior"
+  },
+  "status_active": {
+    "message": "Protection Active"
+  },
+  "status_paused": {
+    "message": "Protection Paused"
+  },
+  "status_desc_active": {
+    "message": "Real-time AI shield active"
+  },
+  "status_desc_paused": {
+    "message": "All AI filters paused"
+  },
+  "badge_on": {
+    "message": "ON"
+  },
+  "badge_off": {
+    "message": "OFF"
+  },
+  "site_on": {
+    "message": "Site: ON"
+  },
+  "site_off": {
+    "message": "Site: OFF"
+  },
+  "site_sub_active": {
+    "message": "Active tab • Filter enabled"
+  },
+  "site_sub_disabled": {
+    "message": "Active tab • Filter disabled"
+  },
+  "site_sub_paused": {
+    "message": "Active tab • Protection paused"
+  },
+  "product_musicremover": {
+    "message": "Music Remover"
+  },
+  "product_muslimbrowser": {
+    "message": "Muslim Browser"
+  }
+}

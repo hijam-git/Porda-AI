@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+  <title>PordaAI Image Blur</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body class="bg-surface font-body-md text-on-surface min-h-screen flex flex-col antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+
+  <!-- Main View Container -->
+  <main class="flex-1 flex flex-col relative w-full pt-2.5 pb-11 bg-surface">
+    <div class="flex flex-col w-full max-w-[360px] mx-auto px-margin pb-space-xl text-on-surface">
+
+      <!-- 1 & 2. Hero Section Card (Brand Identity + Master Status Controls) -->
+      <div class="hero-card bg-surface-container-lowest rounded-xl shadow-sm mb-1 transition-all duration-300 status-strip" id="master-status-card" aria-label="Status">
+        <!-- Brand & Actions Row -->
+        <div class="hero-brand-row flex items-center justify-between gap-space-xs border-b border-primary/20">
+          <div class="flex items-center gap-space-sm min-w-0">
+            <img alt="Porda AI Shield Logo" class="h-8 w-8 object-contain shrink-0" src="icons/icon-128.png">
+            <div class="flex items-center gap-space-xs min-w-0">
+              <span class="font-headline-md font-bold text-on-surface truncate">Porda AI</span>
+              <span class="font-code-sm text-code-sm bg-surface-container text-on-surface-variant px-space-xs py-0.5 rounded" id="ext-version">v2.3.8</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-space-xs shrink-0">
+            <!-- Language Switcher Custom Dropdown -->
+            <div class="relative" id="lang-dropdown-container">
+              <button id="lang-dropdown-btn" type="button" aria-haspopup="true" aria-expanded="false" class="h-8 px-2 flex items-center gap-1 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors cursor-pointer" title="Select Language">
+                <span class="material-symbols-outlined text-[17px] text-primary">language</span>
+                <span class="font-code-sm text-code-sm uppercase font-bold text-on-surface" id="lang-display-code">EN</span>
+                <span class="material-symbols-outlined text-[16px] text-secondary transition-transform duration-200" id="lang-chevron">expand_more</span>
+              </button>
+
+              <!-- Custom Popover Menu -->
+              <div id="lang-menu" class="lang-dropdown-menu hidden" role="menu">
+                <button class="lang-item" data-lang="en" type="button" role="menuitem">
+                  <span>English</span>
+                  <span class="lang-item-code">EN</span>
+                </button>
+                <button class="lang-item" data-lang="ar" type="button" role="menuitem">
+                  <span lang="ar">العربية</span>
+                  <span class="lang-item-code">AR</span>
+                </button>
+                <button class="lang-item" data-lang="ur" type="button" role="menuitem">
+                  <span lang="ur">اردو</span>
+                  <span class="lang-item-code">UR</span>
+                </button>
+                <button class="lang-item" data-lang="tr" type="button" role="menuitem">
+                  <span>Türkçe</span>
+                  <span class="lang-item-code">TR</span>
+                </button>
+                <button class="lang-item" data-lang="id" type="button" role="menuitem">
+                  <span>Bahasa Indonesia</span>
+                  <span class="lang-item-code">ID</span>
+                </button>
+                <button class="lang-item" data-lang="ms" type="button" role="menuitem">
+                  <span>Bahasa Melayu</span>
+                  <span class="lang-item-code">MS</span>
+                </button>
+                <button class="lang-item" data-lang="bn" type="button" role="menuitem">
+                  <span lang="bn">বাংলা</span>
+                  <span class="lang-item-code">BN</span>
+                </button>
+                <button class="lang-item" data-lang="fa" type="button" role="menuitem">
+                  <span lang="fa">فارسی</span>
+                  <span class="lang-item-code">FA</span>
+                </button>
+                <button class="lang-item" data-lang="hi" type="button" role="menuitem">
+                  <span lang="hi">हिन्दी</span>
+                  <span class="lang-item-code">HI</span>
+                </button>
+                <button class="lang-item" data-lang="fr" type="button" role="menuitem">
+                  <span>Français</span>
+                  <span class="lang-item-code">FR</span>
+                </button>
+                <button class="lang-item" data-lang="ru" type="button" role="menuitem">
+                  <span>Русский</span>
+                  <span class="lang-item-code">RU</span>
+                </button>
+              </div>
+
+              <!-- Hidden native select maintaining 100% compatibility with popup.js -->
+              <select id="lang-select" class="sr-only" aria-label="Language">
+                <option value="en">English</option>
+                <option value="ar" lang="ar">العربية</option>
+                <option value="ur" lang="ur">اردو</option>
+                <option value="tr">Türkçe</option>
+                <option value="id">Bahasa Indonesia</option>
+                <option value="ms">Bahasa Melayu</option>
+                <option value="bn">বাংলা</option>
+                <option value="fa">فارسی</option>
+                <option value="hi">हिन्दी</option>
+                <option value="fr">Français</option>
+                <option value="ru">Русский</option>
+              </select>
+            </div>
+
+            <!-- Reload Active Tab Button -->
+            <button aria-label="Reload Active Tab" class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg active:text-primary transition-colors cursor-pointer" id="btn-refresh" type="button" title="Reload active tab">
+              <span class="material-symbols-outlined text-[19px]">sync</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-master-row flex items-start justify-between gap-space-sm">
+          <div class="min-w-0 flex-1">
+            <div class="flex items-center gap-2">
+              <div class="w-2.5 h-2.5 rounded-full bg-primary shrink-0 relative flex items-center justify-center" id="master-status-glow">
+                <span class="absolute -inset-1 rounded-full bg-primary/30 animate-ping" id="master-pulse-ring"></span>
+              </div>
+              <h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate leading-none" id="master-status-title">Protection Active</h2>
+              <span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-primary/15 text-primary font-bold tracking-wide shrink-0" id="master-badge">ON</span>
+            </div>
+            <p class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5 pl-[18px]" id="master-status-desc">Real-time AI shield active</p>
+          </div>
+          <!-- Master Toggle Switch -->
+          <label class="toggle-switch cursor-pointer mt-0.5" aria-label="Toggle all protection">
+            <input id="toggle" type="checkbox" class="sr-only" checked />
+            <span class="toggle-track-master">
+              <span class="toggle-thumb-master"></span>
+            </span>
+          </label>
+        </div>
+
+        <!-- Active Site Isolation Strip -->
+        <div class="hero-site-row bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between gap-space-sm hidden" id="row-site">
+          <div class="flex items-center gap-space-sm min-w-0">
+            <div class="min-w-0">
+              <div class="flex items-center gap-1">
+                <span class="font-label-md text-label-md text-on-surface font-semibold truncate site-host" id="site-host">—</span>
+                <span class="material-symbols-outlined text-[13px] text-primary" id="site-verified-icon">verified</span>
+              </div>
+              <p class="font-code-sm text-code-sm text-on-surface-variant truncate" id="site-subtext">Active tab • Filter enabled</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-1.5 shrink-0">
+            <span class="font-label-sm text-label-sm font-semibold text-primary" id="site-toggle-label">Site: ON</span>
+            <label class="toggle-switch cursor-pointer" aria-label="Toggle protection for active site">
+              <input id="site-toggle" type="checkbox" class="sr-only" checked />
+              <span class="toggle-track-sub">
+                <span class="toggle-thumb-sub"></span>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Desktop App Connected -->
+        <div class="hero-pcapp-row flex items-center justify-between px-1 text-on-surface-variant hidden" id="pcapp-row-on">
+          <div class="flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            <span class="font-code-sm text-code-sm font-medium" data-i18n="pcapp_connected_title">PC Sync • Connected</span>
+          </div>
+        </div>
+
+        <!-- Desktop App Not Connected (fallback promo) -->
+        <div class="hero-pcapp-row flex flex-col gap-1 px-1 text-on-surface-variant hidden" id="pcapp-row-off">
+          <div class="flex items-center justify-between gap-space-sm min-w-0">
+            <div class="flex items-center gap-1.5 min-w-0">
+              <span class="w-1.5 h-1.5 rounded-full bg-error shrink-0"></span>
+              <span class="font-code-sm text-code-sm font-medium text-error truncate" data-i18n="pcapp_off_title">PC Sync • Not connected</span>
+            </div>
+            <a class="font-code-sm text-code-sm font-semibold text-primary hover:underline shrink-0" id="pcapp-connect-btn" href="https://pordaai.com/download" target="_blank" rel="noopener noreferrer" data-i18n="pcapp_off_connect">Connect →</a>
+          </div>
+          <p class="font-body-sm text-[11px] text-on-surface-variant leading-tight pl-3" data-i18n="pcapp_off_pitch">99% less browser load · 10× faster · Blur Haram everywhere</p>
+        </div>
+      </div>
+
+      <!-- 3. Navigation Tabs (Detection vs Appearance) -->
+      <div class="flex items-center bg-surface-container-low p-1 rounded-xl my-2 shadow-inner tabs" role="tablist">
+        <button class="tab tab-active" id="tab-detection" data-tab="detection" type="button" role="tab" aria-selected="true">
+          <span class="material-symbols-outlined text-[16px]">rule</span>
+          <span data-i18n="tab_detection">Detection</span>
+        </button>
+        <button class="tab" id="tab-appearance" data-tab="cover" type="button" role="tab" aria-selected="false">
+          <span class="material-symbols-outlined text-[16px]">palette</span>
+          <span data-i18n="tab_cover">Appearance</span>
+        </button>
+      </div>
+
+      <!-- 4. Detection Tab View (Default) -->
+      <div class="flex-col gap-2 flex panel panel-active" id="view-detection" data-panel="detection">
+        <!-- Unified Detection Card -->
+        <div class="bg-surface-container-lowest rounded-xl pt-1.5 px-2.5 pb-2.5 shadow-sm card card-detection" id="card-detection">
+          <div class="mb-1">
+            <h3 class="font-title-md text-title-md text-on-surface font-semibold leading-tight" data-i18n="detection_title">Detection</h3>
+            <p class="font-body-sm text-[11.5px] text-on-surface-variant leading-tight" data-i18n="detection_sub">Choose what Porda AI should detect and where.</p>
+          </div>
+          <div class="grid grid-cols-2 gap-2" id="detect-grid">
+            <!-- Top-left: Female -->
+            <div class="detect-card rounded-lg bg-surface-container-low flex items-center justify-between gap-1.5 min-w-0">
+              <div class="flex items-center gap-1.5 min-w-0">
+                <div class="w-6 h-6 rounded bg-surface-container flex items-center justify-center text-secondary shrink-0">
+                  <span class="material-symbols-outlined text-[15px]">female</span>
+                </div>
+                <span class="font-label-sm text-[11.5px] font-semibold text-on-surface truncate leading-none" data-i18n="detect_female">Female</span>
+              </div>
+              <label class="toggle-switch cursor-pointer shrink-0" aria-label="Toggle female detection">
+                <input id="detect-female" type="checkbox" class="sr-only" checked />
+                <span class="toggle-track-sub">
+                  <span class="toggle-thumb-sub"></span>
+                </span>
+              </label>
+            </div>
+
+            <!-- Top-right: Male -->
+            <div class="detect-card rounded-lg bg-surface-container-low flex items-center justify-between gap-1.5 min-w-0">
+              <div class="flex items-center gap-1.5 min-w-0">
+                <div class="w-6 h-6 rounded bg-surface-container flex items-center justify-center text-secondary shrink-0">
+                  <span class="material-symbols-outlined text-[15px]">male</span>
+                </div>
+                <span class="font-label-sm text-[11.5px] font-semibold text-on-surface truncate leading-none" data-i18n="detect_male">Male</span>
+              </div>
+              <label class="toggle-switch cursor-pointer shrink-0" aria-label="Toggle male detection">
+                <input id="detect-male" type="checkbox" class="sr-only" />
+                <span class="toggle-track-sub">
+                  <span class="toggle-thumb-sub"></span>
+                </span>
+              </label>
+            </div>
+
+            <!-- Bottom-left: Images (Locked) -->
+            <div class="detect-card rounded-lg bg-surface-container-low flex items-center justify-between gap-1.5 min-w-0 check-row-locked">
+              <div class="flex items-center gap-1.5 min-w-0">
+                <div class="w-6 h-6 rounded bg-surface-container flex items-center justify-center text-secondary shrink-0">
+                  <span class="material-symbols-outlined text-[15px]">image</span>
+                </div>
+                <input id="detect-images" type="checkbox" checked disabled class="sr-only" />
+                <span class="font-label-sm text-[11.5px] font-semibold text-on-surface truncate leading-none" data-i18n="detect_images">In images</span>
+              </div>
+              <span class="font-code-sm text-[10.5px] px-1.5 py-0.5 rounded bg-surface-container text-secondary font-medium shrink-0 leading-tight" data-i18n="locked">Locked</span>
+            </div>
+
+            <!-- Bottom-right: Video streams -->
+            <div class="detect-card rounded-lg bg-surface-container-low flex items-center justify-between gap-1.5 min-w-0">
+              <div class="flex items-center gap-1.5 min-w-0">
+                <div class="w-6 h-6 rounded bg-surface-container flex items-center justify-center text-secondary shrink-0">
+                  <span class="material-symbols-outlined text-[15px]">videocam</span>
+                </div>
+                <span class="font-label-sm text-[11.5px] font-semibold text-on-surface truncate leading-none" data-i18n="detect_videos">In videos</span>
+              </div>
+              <label class="toggle-switch cursor-pointer shrink-0" aria-label="Toggle video streams">
+                <input id="detect-videos" type="checkbox" class="sr-only" />
+                <span class="toggle-track-sub">
+                  <span class="toggle-thumb-sub"></span>
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interception Behavior Section -->
+        <div class="bg-surface-container-lowest rounded-xl p-2.5 shadow-sm card">
+          <h3 class="font-title-md text-title-md text-on-surface font-semibold mb-2" data-i18n="behavior_title">Porda AI Behavior</h3>
+          <div class="flex flex-col gap-2.5">
+            <!-- Pre-blur images -->
+            <div class="flex items-start justify-between gap-space-sm" id="card-preblur">
+              <div class="min-w-0">
+                <span class="font-label-md text-label-md font-semibold text-on-surface block truncate" data-i18n="preblur_title">Pre-blur images</span>
+                <p class="font-body-sm text-body-sm text-on-surface-variant" data-i18n="preblur_sub">Blur every image at page load until reviewed.</p>
+              </div>
+              <label class="toggle-switch cursor-pointer mt-0.5" aria-label="Toggle pre-blur images">
+                <input id="preblur-toggle" type="checkbox" class="sr-only" checked />
+                <span class="toggle-track-sub">
+                  <span class="toggle-thumb-sub"></span>
+                </span>
+              </label>
+            </div>
+            <!-- Video shield badge -->
+            <div class="flex items-start justify-between gap-space-sm" id="card-floatbtn">
+              <div class="min-w-0">
+                <span class="font-label-md text-label-md font-semibold text-on-surface block truncate" data-i18n="float_btn_title">Floating Video Controls</span>
+                <p class="font-body-sm text-body-sm text-on-surface-variant" data-i18n="float_btn_sub">Show on-screen toggle badge directly on video players.</p>
+              </div>
+              <label class="toggle-switch cursor-pointer mt-0.5" aria-label="Toggle video button">
+                <input id="floatbtn-toggle" type="checkbox" class="sr-only" checked />
+                <span class="toggle-track-sub">
+                  <span class="toggle-thumb-sub"></span>
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div><!-- /view-detection -->
+
+      <!-- 5. Appearance Tab View (Cover Panel) -->
+      <div class="flex-col gap-2 hidden panel" id="view-appearance" data-panel="cover">
+        <!-- Advanced Cover Options Card (Top) -->
+        <div class="bg-surface-container-lowest rounded-xl p-2.5 shadow-sm">
+          <!-- Desaturate beneath mask -->
+          <div class="flex items-start justify-between gap-space-sm" id="card-cover-greyscale">
+            <div class="min-w-0">
+              <span class="font-label-md text-label-md font-semibold text-on-surface block" data-i18n="greyscale_title">Grayscale Mosaic/Blur</span>
+              <p class="font-body-sm text-[11.5px] text-on-surface-variant leading-tight" data-i18n="greyscale_sub">Makes blurred areas black &amp; white</p>
+            </div>
+            <label class="toggle-switch cursor-pointer mt-0.5" aria-label="Toggle greyscale under blur">
+              <input id="greyscale-cover" type="checkbox" class="sr-only" />
+              <span class="toggle-track-sub">
+                <span class="toggle-thumb-sub"></span>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Unified Appearance Card (Cover Style with Scope Subtabs) -->
+        <div class="bg-surface-container-lowest rounded-xl p-2.5 shadow-sm">
+
+          <!-- Cover Style Section (Images) -->
+          <div class="cover-subpanel cover-subpanel-active" id="card-cover" data-cover-panel="img">
+            <div class="flex items-center justify-between mb-1.5">
+              <h3 class="font-title-md text-title-md text-on-surface font-semibold" data-i18n="cover_title">Cover Style</h3>
+              <span class="font-code-sm text-code-sm text-primary font-semibold" id="selected-style-label">Mosaic</span>
+            </div>
+            <div class="grid grid-cols-2 gap-1 bg-surface-container-low p-1 rounded-lg mb-2 cover-subtabs" role="tablist">
+              <button class="cover-subtab cover-subtab-active" id="scope-images" data-cover-tab="img" role="tab" aria-selected="true" type="button" data-i18n="detect_images">Images</button>
+              <button class="cover-subtab" id="scope-videos" data-cover-tab="video" role="tab" aria-selected="false" type="button" data-i18n="detect_videos">Videos</button>
+            </div>
+
+            <!-- Full frame occlusion (Images only - Soft Inset Tile) -->
+            <div class="bg-surface-container-low rounded-lg flex items-center justify-between gap-space-sm" id="row-full-image-cover">
+              <div class="flex items-center gap-2.5 min-w-0">
+                <div class="w-7 h-7 rounded bg-surface-container flex items-center justify-center text-secondary shrink-0 full-cover-icon">
+                  <svg class="shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                    <path d="M7 9h3v3"></path>
+                    <path d="M17 15h-3v-3"></path>
+                  </svg>
+                </div>
+                <div class="min-w-0">
+                  <span class="font-label-md text-label-md font-semibold text-on-surface block leading-tight" data-i18n="full_cover_title">Full Image Cover</span>
+                  <p class="font-body-sm text-[11px] text-on-surface-variant leading-tight mt-0.5" data-i18n="full_cover_sub">Cover entire image when detected</p>
+                </div>
+              </div>
+              <label class="toggle-switch cursor-pointer shrink-0" aria-label="Toggle full frame occlusion">
+                <input id="full-image-cover" type="checkbox" class="sr-only" />
+                <span class="toggle-track-sub">
+                  <span class="toggle-thumb-sub"></span>
+                </span>
+              </label>
+            </div>
+
+            <div class="grid grid-cols-3 gap-2 mb-2 cover-radios" id="cover-radios">
+              <!-- Mosaic -->
+              <label class="style-card">
+                <input type="radio" name="cover" value="Mosaic" class="sr-only" checked />
+                <span class="material-symbols-outlined text-[22px] mb-1">grid_view</span>
+                <span class="font-label-sm text-label-sm" data-i18n="cover_mosaic">Mosaic</span>
+              </label>
+              <!-- Blur -->
+              <label class="style-card">
+                <input type="radio" name="cover" value="Blur" class="sr-only" />
+                <span class="material-symbols-outlined text-[22px] mb-1">blur_on</span>
+                <span class="font-label-sm text-label-sm" data-i18n="cover_blur">Blur</span>
+              </label>
+              <!-- Background -->
+              <label class="style-card">
+                <input type="radio" name="cover" value="Bg Color" class="sr-only" />
+                <span class="material-symbols-outlined text-[22px] mb-1">format_color_fill</span>
+                <span class="font-label-sm text-label-sm" data-i18n="cover_bg">BG Color</span>
+              </label>
+              <!-- Black -->
+              <label class="style-card">
+                <input type="radio" name="cover" value="Black" class="sr-only" />
+                <div class="w-5 h-5 rounded-full bg-black mb-1"></div>
+                <span class="font-label-sm text-label-sm" data-i18n="cover_black">Black</span>
+              </label>
+              <!-- White -->
+              <label class="style-card">
+                <input type="radio" name="cover" value="White" class="sr-only" />
+                <div class="w-5 h-5 rounded-full bg-white shadow-xs mb-1"></div>
+                <span class="font-label-sm text-label-sm" data-i18n="cover_white">White</span>
+              </label>
+              <!-- Custom -->
+              <label class="style-card">
+                <input type="radio" name="cover" value="Custom" class="sr-only" />
+                <span class="material-symbols-outlined text-[22px] mb-1">palette</span>
+                <span class="font-label-sm text-label-sm" data-i18n="cover_custom">Custom</span>
+              </label>
+            </div>
+
+            <!-- Contextual Dynamic Control: Mosaic Density -->
+            <div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col gap-2 cover-extra" id="cover-extra-mosaic">
+              <div class="flex items-center justify-between">
+                <span class="font-label-md text-label-md font-medium text-on-surface" data-i18n="pixel_intensity">Block Granularity</span>
+                <div class="flex items-center gap-1">
+                  <span class="font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-surface-container-lowest text-primary font-bold slider-value" id="mosaic-blocks-value">12</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-space-sm">
+                <input class="w-full accent-primary cursor-pointer" id="mosaic-blocks" max="20" min="4" step="1" type="range" value="12">
+                <div class="mosaic-preview-grid" id="swatch-grid" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                  <span></span><span></span><span></span>
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contextual Dynamic Control: Blur Slider -->
+            <div class="p-space-sm bg-surface-container-low rounded-lg flex-col gap-2 hidden cover-extra" id="cover-extra-blur">
+              <div class="flex items-center justify-between">
+                <span class="font-label-md text-label-md font-medium text-on-surface" data-i18n="blur_strength">Blur Radius</span>
+                <span class="font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-surface-container-lowest text-primary font-bold slider-value" id="blur-strength-value">25</span>
+              </div>
+              <input class="w-full accent-primary cursor-pointer" id="blur-strength" max="40" min="7" step="1" type="range" value="25">
+            </div>
+
+            <!-- Contextual Dynamic Control: Custom Color Picker -->
+            <div class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between hidden cover-extra" id="cover-extra-color">
+              <span class="font-label-md text-label-md font-medium text-on-surface" data-i18n="pick_color">Choose Hex Shade</span>
+              <div class="flex items-center gap-2 cursor-pointer" id="color-picker-trigger">
+                <input class="w-8 h-5 rounded cursor-pointer bg-transparent" id="rgb-color" type="color" value="#10b981">
+                <span class="font-code-sm text-code-sm font-semibold text-primary tracking-wide cursor-pointer" id="custom-hex-code">#10B981</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Cover Style Section (Videos) -->
+          <div class="cover-subpanel hidden" id="card-cover-video" data-cover-panel="video">
+            <div class="flex items-center justify-between mb-1.5">
+              <h3 class="font-title-md text-title-md text-on-surface font-semibold" data-i18n="cover_title">Cover Style</h3>
+              <span class="font-code-sm text-code-sm text-primary font-semibold" id="selected-style-video-label">Blur</span>
+            </div>
+            <div class="grid grid-cols-2 gap-1 bg-surface-container-low p-1 rounded-lg mb-2 cover-subtabs" role="tablist">
+              <button class="cover-subtab" data-cover-tab="img" role="tab" aria-selected="false" type="button" data-i18n="detect_images">Images</button>
+              <button class="cover-subtab cover-subtab-active" data-cover-tab="video" role="tab" aria-selected="true" type="button" data-i18n="detect_videos">Videos</button>
+            </div>
+            <div class="grid grid-cols-3 gap-2 mb-2 cover-radios" id="cover-radios-video">
+              <label class="style-card">
+                <input type="radio" name="cover_video" value="Mosaic" class="sr-only" />
+                <span class="material-symbols-outlined text-[22px] mb-1">grid_view</span>
+                <span class="font-label-sm text-label-sm" data-i18n="cover_mosaic">Mosaic</span>
+              </label>
+              <label class="style-card">
+                <input type="radio" name="cover_video" value="Blur" class="sr-only" checked />
+                <span class="material-symbols-outlined text-[22px] mb-1">blur_on</span>
+                <span class="font-label-sm text-label-sm" data-i18n="cover_blur">Blur</span>
+              </label>
+              <label class="style-card">
+                <input type="radio" name="cover_video" value="Bg Color" class="sr-only" />
+                <span class="material-symbols-outlined text-[22px] mb-1">format_color_fill</span>
+                <span class="font-label-sm text-label-sm" data-i18n="cover_bg">BG Color</span>
+              </label>
+              <label class="style-card">
+                <input type="radio" name="cover_video" value="Black" class="sr-only" />
+                <div class="w-5 h-5 rounded-full bg-black mb-1"></div>
+                <span class="font-label-sm text-label-sm" data-i18n="cover_black">Black</span>
+              </label>
+              <label class="style-card">
+                <input type="radio" name="cover_video" value="White" class="sr-only" />
+                <div class="w-5 h-5 rounded-full bg-white shadow-xs mb-1"></div>
+                <span class="font-label-sm text-label-sm" data-i18n="cover_white">White</span>
+              </label>
+              <label class="style-card">
+                <input type="radio" name="cover_video" value="Custom" class="sr-only" />
+                <span class="material-symbols-outlined text-[22px] mb-1">palette</span>
+                <span class="font-label-sm text-label-sm" data-i18n="cover_custom">Custom</span>
+              </label>
+            </div>
+
+            <div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col gap-2 cover-extra" id="cover-extra-mosaic-video">
+              <div class="flex items-center justify-between">
+                <span class="font-label-md text-label-md font-medium text-on-surface" data-i18n="pixel_intensity">Block Granularity</span>
+                <span class="font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-surface-container-lowest text-primary font-bold slider-value" id="mosaic-blocks-video-value">12</span>
+              </div>
+              <div class="flex items-center gap-space-sm">
+                <input class="w-full accent-primary cursor-pointer" id="mosaic-blocks-video" max="20" min="4" step="1" type="range" value="12">
+                <div class="mosaic-preview-grid" id="swatch-grid-video" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                  <span></span><span></span><span></span>
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-space-sm bg-surface-container-low rounded-lg flex-col gap-2 hidden cover-extra" id="cover-extra-blur-video">
+              <div class="flex items-center justify-between">
+                <span class="font-label-md text-label-md font-medium text-on-surface" data-i18n="blur_strength">Blur Strength</span>
+                <span class="font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-surface-container-lowest text-primary font-bold slider-value" id="blur-strength-video-value">25</span>
+              </div>
+              <input class="w-full accent-primary cursor-pointer" id="blur-strength-video" max="40" min="7" step="1" type="range" value="25">
+            </div>
+
+            <div class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between hidden cover-extra" id="cover-extra-color-video">
+              <span class="font-label-md text-label-md font-medium text-on-surface" data-i18n="pick_color">Choose Hex Shade</span>
+              <div class="flex items-center gap-2 cursor-pointer" id="color-picker-trigger-video">
+                <input class="w-8 h-5 rounded cursor-pointer bg-transparent" id="rgb-color-video" type="color" value="#10b981">
+                <span class="font-code-sm text-code-sm font-semibold text-primary tracking-wide cursor-pointer" id="custom-hex-code-video">#10B981</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /view-appearance -->
+
+      <!-- 6. Support Dignified Secondary Card -->
+      <div class="mt-2 bg-gradient-to-r from-primary/15 via-secondary-container to-surface-container rounded-xl p-2.5 shadow-xs border border-primary/20 card-donate flex flex-col gap-2">
+        <div class="flex items-center justify-between gap-space-sm">
+          <div class="min-w-0">
+            <span class="font-label-md text-label-md font-bold text-on-surface block truncate" data-i18n="donate_title">Support Porda AI</span>
+            <p class="font-body-sm text-body-sm text-on-secondary-container truncate" data-i18n="donate_sub">Community funded. Privacy focused.</p>
+          </div>
+          <a class="shrink-0 px-space-sm py-1 rounded-lg bg-primary text-on-primary hover:opacity-95 transition-all font-label-md text-label-md font-semibold shadow-xs flex items-center gap-1" href="https://www.paypal.com/paypalme/IqraWave" target="_blank" rel="noopener noreferrer" title="Donate via PayPal">
+            <span>PayPal</span>
+            <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </a>
+        </div>
+        <!-- bKash row with click-to-copy -->
+        <div class="pt-1.5 border-t border-primary/15 flex items-center justify-between text-[11.5px] text-on-surface-variant">
+          <div class="flex items-center gap-1.5 font-medium">
+            <span data-i18n="bkash_label">🇧🇩 bKash (Personal):</span>
+            <code class="font-bold text-on-surface bg-surface-container-lowest/80 px-1.5 py-0.5 rounded border border-primary/20 select-all cursor-pointer" id="bkash-number" title="Click to copy">01823170383</code>
+          </div>
+          <span class="text-[10px] text-secondary font-medium cursor-pointer hover:text-primary transition-colors" id="bkash-copy-hint" data-i18n="copy">Copy</span>
+        </div>
+      </div>
+
+      <!-- 7. More from IqraWave Section -->
+      <div class="mt-2 bg-surface-container-lowest rounded-xl p-2.5 shadow-sm card card-products">
+        <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold block mb-space-xs" data-i18n="products_title">From IqraWave Suite</span>
+        <div class="flex flex-col gap-space-xs">
+          <a class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors group product-row" href="https://pordaai.com/haram-music-remover" target="_blank" rel="noopener noreferrer">
+            <div class="flex items-center gap-space-sm min-w-0">
+              <div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:text-primary group-hover:bg-primary/10 transition-colors shrink-0">
+                <span class="material-symbols-outlined text-[18px]">music_off</span>
+              </div>
+              <div class="min-w-0 flex flex-col justify-center">
+                <div class="flex items-center gap-1.5 min-w-0">
+                  <span class="font-semibold text-[13.5px] text-on-surface truncate group-hover:text-primary transition-colors leading-tight product-name" data-i18n="product_musicremover">Music Remover</span>
+                  <span class="text-[10px] font-medium text-secondary bg-surface-container px-1.5 py-0.5 rounded product-sub">· Chrome</span>
+                </div>
+                <p class="font-body-sm text-[11.5px] text-on-surface-variant truncate mt-0.5 leading-tight product-desc" data-i18n="musicremover_desc">Mute and filter audio on YouTube</p>
+              </div>
+            </div>
+            <span class="material-symbols-outlined text-[16px] text-secondary group-hover:text-primary transition-colors shrink-0 ml-2">open_in_new</span>
+          </a>
+          <a class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors group product-row" href="https://muslimbrowser.com" target="_blank" rel="noopener noreferrer">
+            <div class="flex items-center gap-space-sm min-w-0">
+              <div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:text-primary group-hover:bg-primary/10 transition-colors shrink-0">
+                <span class="material-symbols-outlined text-[18px]">verified_user</span>
+              </div>
+              <div class="min-w-0 flex flex-col justify-center">
+                <div class="flex items-center gap-1.5 min-w-0">
+                  <span class="font-semibold text-[13.5px] text-on-surface truncate group-hover:text-primary transition-colors leading-tight product-name" data-i18n="product_muslimbrowser">Muslim Browser</span>
+                  <span class="text-[10px] font-medium text-secondary bg-surface-container px-1.5 py-0.5 rounded product-sub">· Mobile</span>
+                </div>
+                <p class="font-body-sm text-[11.5px] text-on-surface-variant truncate mt-0.5 leading-tight product-desc" data-i18n="muslimbrowser_desc">Safe, private zero-tracking browser</p>
+              </div>
+            </div>
+            <span class="material-symbols-outlined text-[16px] text-secondary group-hover:text-primary transition-colors shrink-0 ml-2">open_in_new</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- 8. Minimal Sub-Footer Quick Links (Fixed Bottom) -->
+  <nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-1px_8px_rgba(0,0,0,0.04)] footer-links">
+    <div class="flex items-center justify-around h-11 px-margin">
+      <a class="flex items-center justify-center h-8 px-space-xs font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-md transition-colors footer-link" href="https://pordaai.com/en/how-to-use" target="_blank" rel="noopener noreferrer">
+        <span class="material-symbols-outlined text-[15px] mr-1">help_outline</span>
+        <span data-i18n="how_it_works">How it works</span>
+      </a>
+      <a class="flex items-center justify-center h-8 px-space-xs font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-md transition-colors footer-link" href="https://forms.gle/TJk3VvScSVbb1VyD7" target="_blank" rel="noopener noreferrer">
+        <span class="material-symbols-outlined text-[15px] mr-1">chat_bubble_outline</span>
+        <span data-i18n="feedback">Feedback</span>
+      </a>
+      <a class="flex items-center justify-center h-8 px-space-xs font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-md transition-colors footer-link" href="https://pordaai.com" target="_blank" rel="noopener noreferrer">
+        <span class="material-symbols-outlined text-[15px] mr-1">language</span>
+        <span data-i18n="website">Website</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- 9. Reload Alert Modal -->
+  <div class="reload-alert hidden" id="reload-alert" role="dialog" aria-modal="true">
+    <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm w-full max-w-[290px] flex flex-col gap-space-sm">
+      <div class="font-title-md font-semibold text-on-surface" data-i18n="reload_needed_title">Reload required</div>
+      <p class="font-body-sm text-on-surface-variant" data-i18n="reload_needed">Reload the tab for changes to take full effect.</p>
+      <div class="flex items-center justify-end gap-space-xs mt-space-xs">
+        <button class="px-space-sm py-1 rounded-lg font-label-md font-medium text-secondary hover:text-on-surface bg-surface-container-low cursor-pointer" id="reload-alert-cancel" type="button" data-i18n="cancel">Cancel</button>
+        <button class="px-space-sm py-1 rounded-lg font-label-md font-semibold text-on-primary bg-primary shadow-xs cursor-pointer" id="reload-alert-ok" type="button" data-i18n="reload_now">Reload now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Primary controller and UI enhancement -->
+  <script src="popup.js"></script>
+</body>
+</html>

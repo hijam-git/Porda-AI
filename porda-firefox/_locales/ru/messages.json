@@ -1,0 +1,305 @@
+{
+  "_comment": {
+    "message": "Russian (ru)."
+  },
+  "checking": {
+    "message": "Проверка..."
+  },
+  "pordaai_is_running": {
+    "message": "PordaAI работает"
+  },
+  "browse_any_site": {
+    "message": "Просматривайте любой сайт — изображения размываются до проверки."
+  },
+  "desktop_app_not_running": {
+    "message": "Настольное приложение не запущено"
+  },
+  "install_or_open": {
+    "message": "Установите или откройте PordaAI, чтобы начать обработку изображений."
+  },
+  "ext_master_title": {
+    "message": "Вкл | Выкл расширение"
+  },
+  "site_title": {
+    "message": "Активно на этом сайте"
+  },
+  "site_sub": {
+    "message": "Отключить только на текущем сайте."
+  },
+  "preblur_title": {
+    "message": "Предварительное размытие изображений"
+  },
+  "preblur_sub": {
+    "message": "Размывать все изображения при загрузке страницы до проверки."
+  },
+  "reload_needed_title": {
+    "message": "Требуется перезагрузка"
+  },
+  "reload_needed": {
+    "message": "Перезагрузите вкладку, чтобы новое состояние вступило в силу."
+  },
+  "reload_now": {
+    "message": "Перезагрузить сейчас"
+  },
+  "cancel": {
+    "message": "Отмена"
+  },
+  "get_desktop_app": {
+    "message": "Получите бесплатное настольное приложение"
+  },
+  "desktop_app_intro": {
+    "message": "Оно защитит за пределами браузера, даже в видеоплеерах и т. д."
+  },
+  "free_download": {
+    "message": "Бесплатная загрузка"
+  },
+  "coming_soon": {
+    "message": "Скоро"
+  },
+  "how_to_use": {
+    "message": "Как использовать"
+  },
+  "hover_hint": {
+    "message": "Наведите курсор на изображение, чтобы временно его показать. Для полного эффекта перезагрузите вкладки после изменения настроек."
+  },
+  "donate_title": {
+    "message": "Поддержите Porda AI"
+  },
+  "tab_status": {
+    "message": "Статус"
+  },
+  "tab_detection": {
+    "message": "Обнаружение"
+  },
+  "tab_cover": {
+    "message": "Покрытие"
+  },
+  "detection_title": {
+    "message": "Обнаружение"
+  },
+  "detection_sub": {
+    "message": "Что детектор должен искать в каждом медиафайле."
+  },
+  "detect_male": {
+    "message": "Мужчин"
+  },
+  "detect_female": {
+    "message": "Женщин"
+  },
+  "detect_images": {
+    "message": "На изображениях"
+  },
+  "detect_videos": {
+    "message": "В видео"
+  },
+  "greyscale_cover": {
+    "message": "Оттенки серого под Размытием / Мозаикой"
+  },
+  "full_image_cover": {
+    "message": "Закрывать всё изображение при обнаружении"
+  },
+  "cover_title_img": {
+    "message": "Покрытие для изображений"
+  },
+  "cover_sub_img": {
+    "message": "Как маскируются обнаруженные области на статичных изображениях."
+  },
+  "cover_title_video": {
+    "message": "Покрытие для видео"
+  },
+  "cover_sub_video": {
+    "message": "Как маскируются обнаруженные области на кадрах видео."
+  },
+  "cover_mosaic": {
+    "message": "Мозаика (пиксели)"
+  },
+  "cover_blur": {
+    "message": "Размытие"
+  },
+  "cover_bg": {
+    "message": "Цвет фона"
+  },
+  "cover_black": {
+    "message": "Чёрный"
+  },
+  "cover_white": {
+    "message": "Белый"
+  },
+  "cover_custom": {
+    "message": "Свой цвет"
+  },
+  "pixel_intensity": {
+    "message": "Пиксельные блоки"
+  },
+  "blur_strength": {
+    "message": "Сила размытия"
+  },
+  "pick_color": {
+    "message": "Выбрать цвет"
+  },
+  "products_title": {
+    "message": "Также от нас"
+  },
+  "musicremover_desc": {
+    "message": "Отключить и удалить харам-музыку с YouTube"
+  },
+  "muslimbrowser_desc": {
+    "message": "Безопасный браузер для мусульман"
+  },
+  "how_it_works": {
+    "message": "Как это работает"
+  },
+  "feedback": {
+    "message": "Отзыв"
+  },
+  "contact": {
+    "message": "Контакт"
+  },
+  "reload_prompt_title_install": {
+    "message": "PordaAI не работает на этой странице"
+  },
+  "reload_prompt_body_install": {
+    "message": "Эта вкладка была открыта до установки PordaAI, поэтому изображения здесь не проверяются. Перезагрузите страницу, чтобы включить защиту."
+  },
+  "reload_prompt_title_update": {
+    "message": "PordaAI обновлён"
+  },
+  "reload_prompt_body_update": {
+    "message": "Обновление остановило PordaAI во вкладках, открытых ранее, поэтому изображения здесь не проверяются. Перезагрузите страницу, чтобы снова включить защиту."
+  },
+  "reload_prompt_dismiss": {
+    "message": "Позже"
+  },
+  "cover_title": {
+    "message": "Стиль перекрытия"
+  },
+  "cover_sub": {
+    "message": "Как обнаруженные области маскируются в обработанном изображении."
+  },
+  "action_title_protecting": {
+    "message": "PordaAI защищает эту страницу"
+  },
+  "action_title_master_off": {
+    "message": "PordaAI отключён — нажмите, чтобы включить защиту"
+  },
+  "action_title_site_off": {
+    "message": "PordaAI отключён на этом сайте — нажмите, чтобы включить"
+  },
+  "float_btn_title": {
+    "message": "Показывать кнопку PordaAI на видео"
+  },
+  "float_btn_sub": {
+    "message": "Перемещаемая кнопка включения PordaAI на каждом видео."
+  },
+  "pcapp_connected_title": {
+    "message": "Синхронизация с ПК • Подключено"
+  },
+  "pcapp_off_title": {
+    "message": "Синхронизация с ПК • Отключено"
+  },
+  "pcapp_off_connect": {
+    "message": "Скачать бесплатно"
+  },
+  "pcapp_off_open": {
+    "message": "Открыть приложение"
+  },
+  "pcapp_off_pitch": {
+    "message": "На 99% меньше нагрузки на браузер · В 10 раз быстрее · Размытие харама за пределами браузера"
+  },
+  "website": {
+    "message": "Веб-сайт"
+  },
+  "advanced_settings": {
+    "message": "Расширенные настройки"
+  },
+  "greyscale_title": {
+    "message": "Черно-белая мозаика / размытие"
+  },
+  "greyscale_sub": {
+    "message": "Делает размытые области чёрно-белыми"
+  },
+  "full_cover_title": {
+    "message": "Полное скрытие изображения"
+  },
+  "full_cover_sub": {
+    "message": "Закрывать всё изображение при обнаружении"
+  },
+  "donate_sub": {
+    "message": "Поддерживается сообществом. Конфиденциально."
+  },
+  "bkash_label": {
+    "message": "🇧🇩 bKash (Личный):"
+  },
+  "copy": {
+    "message": "Копировать"
+  },
+  "copied": {
+    "message": "Скопировано!"
+  },
+  "locked": {
+    "message": "Заблокировано"
+  },
+  "behavior_title": {
+    "message": "Поведение Porda AI"
+  },
+  "status_active": {
+    "message": "Защита активна"
+  },
+  "status_paused": {
+    "message": "Защита приостановлена"
+  },
+  "status_desc_active": {
+    "message": "ИИ-щит в реальном времени активен"
+  },
+  "status_desc_paused": {
+    "message": "Все ИИ-фильтры приостановлены"
+  },
+  "badge_on": {
+    "message": "ВКЛ"
+  },
+  "badge_off": {
+    "message": "ВЫКЛ"
+  },
+  "site_on": {
+    "message": "Сайт: ВКЛ"
+  },
+  "site_off": {
+    "message": "Сайт: ВЫКЛ"
+  },
+  "site_sub_active": {
+    "message": "Активная вкладка • Фильтр включен"
+  },
+  "site_sub_disabled": {
+    "message": "Активная вкладка • Фильтр отключен"
+  },
+  "site_sub_paused": {
+    "message": "Активная вкладка • Защита приостановлена"
+  },
+  "product_musicremover": {
+    "message": "Удалитель музыки"
+  },
+  "product_muslimbrowser": {
+    "message": "Мусульманский браузер"
+  },
+  "blur_images_title": {
+    "message": "Размывать изображения"
+  },
+  "blur_images_sub": {
+    "message": "Размывать каждое изображение на каждой странице до проверки."
+  },
+  "pcapp_connected_sub": {
+    "message": "Обработка на GPU — на 99% меньше нагрузки на браузер, в ~5 раз быстрее."
+  },
+  "pcapp_off_opening": {
+    "message": "Открытие…"
+  },
+  "pcapp_off_reinstall": {
+    "message": "Переустановить →"
+  },
+  "pcapp_off_sub": {
+    "message": "Подключите бесплатное приложение для ПК, чтобы снизить нагрузку на браузер на 99% и ускорить загрузку изображений в 5 раз."
+  },
+  "pcapp_off_cta": {
+    "message": "Скачать приложение для ПК →"
+  }
+}

@@ -1,0 +1,305 @@
+{
+  "_comment": {
+    "message": "Persian/Farsi (fa)."
+  },
+  "checking": {
+    "message": "در حال بررسی..."
+  },
+  "pordaai_is_running": {
+    "message": "PordaAI در حال اجراست"
+  },
+  "browse_any_site": {
+    "message": "هر سایتی را مرور کنید — تصاویر تا زمان بررسی محو می‌شوند."
+  },
+  "desktop_app_not_running": {
+    "message": "برنامه دسکتاپ اجرا نمی‌شود"
+  },
+  "install_or_open": {
+    "message": "برای شروع پردازش تصاویر، PordaAI را نصب یا باز کنید."
+  },
+  "ext_master_title": {
+    "message": "روشن | خاموش کردن افزونه"
+  },
+  "site_title": {
+    "message": "در این سایت فعال"
+  },
+  "site_sub": {
+    "message": "فقط در سایت فعلی خاموش کنید."
+  },
+  "preblur_title": {
+    "message": "محو کردن تصاویر پیش از بارگذاری"
+  },
+  "preblur_sub": {
+    "message": "هنگام بارگذاری صفحه، همه تصاویر تا بررسی محو می‌شوند."
+  },
+  "reload_needed_title": {
+    "message": "بارگذاری مجدد لازم است"
+  },
+  "reload_needed": {
+    "message": "برای اعمال وضعیت جدید، تب را دوباره بارگذاری کنید."
+  },
+  "reload_now": {
+    "message": "اکنون بارگذاری مجدد"
+  },
+  "cancel": {
+    "message": "لغو"
+  },
+  "get_desktop_app": {
+    "message": "برنامه دسکتاپ رایگان را دریافت کنید"
+  },
+  "desktop_app_intro": {
+    "message": "این فراتر از مرورگر، حتی در پخش‌کننده‌های ویدیو و غیره پوشش می‌دهد."
+  },
+  "free_download": {
+    "message": "دانلود رایگان"
+  },
+  "coming_soon": {
+    "message": "به‌زودی"
+  },
+  "how_to_use": {
+    "message": "نحوه استفاده"
+  },
+  "hover_hint": {
+    "message": "برای نمایش موقت یک تصویر، ماوس را روی آن ببرید. برای اثر کامل، پس از تغییر تنظیمات تب‌ها را دوباره بارگذاری کنید."
+  },
+  "donate_title": {
+    "message": "حمایت از پوردا AI"
+  },
+  "tab_status": {
+    "message": "وضعیت"
+  },
+  "tab_detection": {
+    "message": "شناسایی"
+  },
+  "tab_cover": {
+    "message": "پوشش"
+  },
+  "detection_title": {
+    "message": "شناسایی"
+  },
+  "detection_sub": {
+    "message": "شناساگر باید در هر رسانه به دنبال چه چیزی باشد."
+  },
+  "detect_male": {
+    "message": "مرد"
+  },
+  "detect_female": {
+    "message": "زن"
+  },
+  "detect_images": {
+    "message": "در تصاویر"
+  },
+  "detect_videos": {
+    "message": "در ویدیوها"
+  },
+  "greyscale_cover": {
+    "message": "خاکستری زیر محو / موزاییک"
+  },
+  "full_image_cover": {
+    "message": "وقتی چیزی شناسایی شد کل تصویر را بپوشان"
+  },
+  "cover_title_img": {
+    "message": "پوشش برای تصاویر"
+  },
+  "cover_sub_img": {
+    "message": "نحوه پوشاندن نواحی شناسایی‌شده در تصاویر ثابت."
+  },
+  "cover_title_video": {
+    "message": "پوشش برای ویدیوها"
+  },
+  "cover_sub_video": {
+    "message": "نحوه پوشاندن نواحی شناسایی‌شده در فریم‌های ویدیو."
+  },
+  "cover_mosaic": {
+    "message": "موزاییک (پیکسل)"
+  },
+  "cover_blur": {
+    "message": "محو"
+  },
+  "cover_bg": {
+    "message": "رنگ پس‌زمینه"
+  },
+  "cover_black": {
+    "message": "سیاه"
+  },
+  "cover_white": {
+    "message": "سفید"
+  },
+  "cover_custom": {
+    "message": "رنگ سفارشی"
+  },
+  "pixel_intensity": {
+    "message": "بلوک‌های پیکسل"
+  },
+  "blur_strength": {
+    "message": "شدت محو"
+  },
+  "pick_color": {
+    "message": "انتخاب رنگ"
+  },
+  "products_title": {
+    "message": "همچنین از ما"
+  },
+  "musicremover_desc": {
+    "message": "بی‌صدا و حذف موسیقی حرام از YouTube"
+  },
+  "muslimbrowser_desc": {
+    "message": "مرورگر امن برای مسلمانان"
+  },
+  "how_it_works": {
+    "message": "چگونه کار می‌کند"
+  },
+  "feedback": {
+    "message": "بازخورد"
+  },
+  "contact": {
+    "message": "تماس"
+  },
+  "reload_prompt_title_install": {
+    "message": "PordaAI در این صفحه اجرا نمی‌شود"
+  },
+  "reload_prompt_body_install": {
+    "message": "این زبانه پیش از نصب PordaAI باز بوده است، بنابراین تصاویر این صفحه بررسی نمی‌شوند. برای فعال کردن محافظت، صفحه را دوباره بارگذاری کنید."
+  },
+  "reload_prompt_title_update": {
+    "message": "PordaAI به‌روزرسانی شد"
+  },
+  "reload_prompt_body_update": {
+    "message": "به‌روزرسانی، PordaAI را در زبانه‌های از پیش باز متوقف کرد، بنابراین تصاویر این صفحه بررسی نمی‌شوند. برای فعال کردن دوبارهٔ محافظت، صفحه را بارگذاری مجدد کنید."
+  },
+  "reload_prompt_dismiss": {
+    "message": "بعداً"
+  },
+  "cover_title": {
+    "message": "سبک پوشش"
+  },
+  "cover_sub": {
+    "message": "نحوهٔ پوشاندن نواحی شناسایی‌شده در تصویر پردازش‌شده."
+  },
+  "action_title_protecting": {
+    "message": "PordaAI از این صفحه محافظت می‌کند"
+  },
+  "action_title_master_off": {
+    "message": "PordaAI خاموش است — برای فعال کردن محافظت کلیک کنید"
+  },
+  "action_title_site_off": {
+    "message": "PordaAI در این سایت خاموش است — برای فعال کردن کلیک کنید"
+  },
+  "float_btn_title": {
+    "message": "نمایش دکمهٔ PordaAI روی ویدیوها"
+  },
+  "float_btn_sub": {
+    "message": "دکمهٔ جابه‌جاشوندهٔ روشن/خاموش PordaAI روی هر ویدیو."
+  },
+  "pcapp_connected_title": {
+    "message": "همگام‌سازی رایانه • متصل"
+  },
+  "pcapp_off_title": {
+    "message": "همگام‌سازی رایانه • قطع شده"
+  },
+  "pcapp_off_connect": {
+    "message": "دریافت رایگان"
+  },
+  "pcapp_off_open": {
+    "message": "باز کردن برنامه"
+  },
+  "pcapp_off_pitch": {
+    "message": "۹۹٪ بار کمتر روی مرورگر · ۱۰ برابر سریع‌تر · تار کردن حرام خارج از مرورگر"
+  },
+  "website": {
+    "message": "وب‌سایت"
+  },
+  "advanced_settings": {
+    "message": "تنظیمات پیشرفته"
+  },
+  "greyscale_title": {
+    "message": "موزاییک / تاری خاکستری"
+  },
+  "greyscale_sub": {
+    "message": "سیاه و سفید کردن بخش‌های تار شده"
+  },
+  "full_cover_title": {
+    "message": "پوشش کامل تصویر"
+  },
+  "full_cover_sub": {
+    "message": "پوشاندن کل تصویر هنگام تشخیص"
+  },
+  "donate_sub": {
+    "message": "با حمایت مردمی. با تمرکز بر حفظ حریم خصوصی."
+  },
+  "bkash_label": {
+    "message": "🇧🇩 بی‌کش (شخصی):"
+  },
+  "copy": {
+    "message": "کپی"
+  },
+  "copied": {
+    "message": "کپی شد!"
+  },
+  "locked": {
+    "message": "قفل شده"
+  },
+  "behavior_title": {
+    "message": "رفتار پوردا AI"
+  },
+  "status_active": {
+    "message": "محافظت فعال است"
+  },
+  "status_paused": {
+    "message": "محافظت متوقف شد"
+  },
+  "status_desc_active": {
+    "message": "سپر هوش مصنوعی به صورت زنده فعال است"
+  },
+  "status_desc_paused": {
+    "message": "تمام فیلترهای هوش مصنوعی متوقف شده‌اند"
+  },
+  "badge_on": {
+    "message": "روشن"
+  },
+  "badge_off": {
+    "message": "خاموش"
+  },
+  "site_on": {
+    "message": "سایت: روشن"
+  },
+  "site_off": {
+    "message": "سایت: خاموش"
+  },
+  "site_sub_active": {
+    "message": "برگه فعال • فیلتر روشن است"
+  },
+  "site_sub_disabled": {
+    "message": "برگه فعال • فیلتر خاموش است"
+  },
+  "site_sub_paused": {
+    "message": "برگه فعال • محافظت متوقف است"
+  },
+  "product_musicremover": {
+    "message": "حذف‌کننده موسیقی"
+  },
+  "product_muslimbrowser": {
+    "message": "مرورگر مسلمان"
+  },
+  "blur_images_title": {
+    "message": "تار کردن تصاویر"
+  },
+  "blur_images_sub": {
+    "message": "تار کردن همه تصاویر در تمام صفحات تا زمان بررسی."
+  },
+  "pcapp_connected_sub": {
+    "message": "تشخیص روی کارت گرافیک — ۹۹٪ بار کمتر مرورگر، ~۵ برابر سریع‌تر."
+  },
+  "pcapp_off_opening": {
+    "message": "در حال باز شدن…"
+  },
+  "pcapp_off_reinstall": {
+    "message": "نصب مجدد →"
+  },
+  "pcapp_off_sub": {
+    "message": "برای کاهش ۹۹ درصدی بار مرورگر و ۵ برابر سریع‌تر شدن تصاویر، نرم‌افزار رایگان ویندوز را متصل کنید."
+  },
+  "pcapp_off_cta": {
+    "message": "دریافت نرم‌افزار PC →"
+  }
+}

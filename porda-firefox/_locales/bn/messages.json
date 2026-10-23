@@ -1,0 +1,305 @@
+{
+  "_comment": {
+    "message": "Bengali (bn)."
+  },
+  "checking": {
+    "message": "যাচাই করা হচ্ছে..."
+  },
+  "pordaai_is_running": {
+    "message": "PordaAI চালু আছে"
+  },
+  "browse_any_site": {
+    "message": "যেকোনো সাইট ব্রাউজ করুন — ছবিগুলো যাচাই না হওয়া পর্যন্ত ঝাপসা থাকবে।"
+  },
+  "desktop_app_not_running": {
+    "message": "ডেস্কটপ অ্যাপ চালু নেই"
+  },
+  "install_or_open": {
+    "message": "ছবি প্রসেসিং শুরু করতে PordaAI ইনস্টল করুন বা খুলুন।"
+  },
+  "ext_master_title": {
+    "message": "এক্সটেনশন চালু | বন্ধ"
+  },
+  "site_title": {
+    "message": "এই সাইটে সক্রিয়"
+  },
+  "site_sub": {
+    "message": "শুধুমাত্র বর্তমান সাইটে বন্ধ করুন।"
+  },
+  "preblur_title": {
+    "message": "ছবি আগে থেকেই ঝাপসা করুন"
+  },
+  "preblur_sub": {
+    "message": "পেজ লোড হওয়ার সময় সব ছবি যাচাই না হওয়া পর্যন্ত ঝাপসা থাকবে।"
+  },
+  "reload_needed_title": {
+    "message": "রিলোড প্রয়োজন"
+  },
+  "reload_needed": {
+    "message": "নতুন অবস্থা কার্যকর করতে ট্যাব রিলোড করুন।"
+  },
+  "reload_now": {
+    "message": "এখন রিলোড করুন"
+  },
+  "cancel": {
+    "message": "বাতিল"
+  },
+  "get_desktop_app": {
+    "message": "ফ্রি ডেস্কটপ অ্যাপ নিন"
+  },
+  "desktop_app_intro": {
+    "message": "এটি ব্রাউজারের বাইরেও, এমনকি ভিডিও প্লেয়ার ইত্যাদিতেও কাজ করবে।"
+  },
+  "free_download": {
+    "message": "ফ্রি ডাউনলোড"
+  },
+  "coming_soon": {
+    "message": "শীঘ্রই আসছে"
+  },
+  "how_to_use": {
+    "message": "কীভাবে ব্যবহার করবেন"
+  },
+  "hover_hint": {
+    "message": "ছবিটি সাময়িকভাবে দেখতে তার উপর কারসর নিন। সম্পূর্ণ প্রভাবের জন্য সেটিংস পরিবর্তনের পর ট্যাব রিলোড করুন।"
+  },
+  "donate_title": {
+    "message": "পর্দা এআই-কে সমর্থন করুন"
+  },
+  "tab_status": {
+    "message": "স্ট্যাটাস"
+  },
+  "tab_detection": {
+    "message": "শনাক্তকরণ"
+  },
+  "tab_cover": {
+    "message": "কভার"
+  },
+  "detection_title": {
+    "message": "শনাক্তকরণ"
+  },
+  "detection_sub": {
+    "message": "প্রতিটি মিডিয়ায় ডিটেক্টর কী খুঁজবে।"
+  },
+  "detect_male": {
+    "message": "পুরুষ"
+  },
+  "detect_female": {
+    "message": "নারী"
+  },
+  "detect_images": {
+    "message": "ছবিতে"
+  },
+  "detect_videos": {
+    "message": "ভিডিওতে"
+  },
+  "greyscale_cover": {
+    "message": "ব্লার / মোজাইকের নিচে গ্রেস্কেল"
+  },
+  "full_image_cover": {
+    "message": "কিছু শনাক্ত হলে পুরো ছবি ঢেকে দিন"
+  },
+  "cover_title_img": {
+    "message": "ছবির জন্য কভার"
+  },
+  "cover_sub_img": {
+    "message": "স্থির ছবিতে শনাক্ত এলাকাগুলো কীভাবে ঢাকা হবে।"
+  },
+  "cover_title_video": {
+    "message": "ভিডিওর জন্য কভার"
+  },
+  "cover_sub_video": {
+    "message": "ভিডিও ফ্রেমে শনাক্ত এলাকাগুলো কীভাবে ঢাকা হবে।"
+  },
+  "cover_mosaic": {
+    "message": "মোজাইক (পিক্সেল)"
+  },
+  "cover_blur": {
+    "message": "ব্লার"
+  },
+  "cover_bg": {
+    "message": "ব্যাকগ্রাউন্ড রঙ"
+  },
+  "cover_black": {
+    "message": "কালো"
+  },
+  "cover_white": {
+    "message": "সাদা"
+  },
+  "cover_custom": {
+    "message": "কাস্টম রঙ"
+  },
+  "pixel_intensity": {
+    "message": "পিক্সেল ব্লক"
+  },
+  "blur_strength": {
+    "message": "ব্লারের মাত্রা"
+  },
+  "pick_color": {
+    "message": "রঙ বাছুন"
+  },
+  "products_title": {
+    "message": "আমাদের অন্যান্য পণ্য"
+  },
+  "musicremover_desc": {
+    "message": "YouTube থেকে হারাম গান মিউট ও রিমুভ করুন"
+  },
+  "muslimbrowser_desc": {
+    "message": "মুসলিমদের জন্য নিরাপদ ব্রাউজার"
+  },
+  "how_it_works": {
+    "message": "এটি কীভাবে কাজ করে"
+  },
+  "feedback": {
+    "message": "মতামত"
+  },
+  "contact": {
+    "message": "যোগাযোগ"
+  },
+  "reload_prompt_title_install": {
+    "message": "এই পেজে PordaAI চালু নেই"
+  },
+  "reload_prompt_body_install": {
+    "message": "এই ট্যাবটি PordaAI ইনস্টল হওয়ার আগে থেকেই খোলা ছিল, তাই এখানকার ছবিগুলো যাচাই করা হচ্ছে না। সুরক্ষা চালু করতে রিলোড করুন।"
+  },
+  "reload_prompt_title_update": {
+    "message": "PordaAI আপডেট হয়েছে"
+  },
+  "reload_prompt_body_update": {
+    "message": "আপডেটের ফলে আগে থেকে খোলা ট্যাবগুলোতে PordaAI বন্ধ হয়ে গেছে, তাই এখানকার ছবিগুলো যাচাই করা হচ্ছে না। সুরক্ষা আবার চালু করতে রিলোড করুন।"
+  },
+  "reload_prompt_dismiss": {
+    "message": "এখন থাক"
+  },
+  "cover_title": {
+    "message": "ঢাকার ধরন"
+  },
+  "cover_sub": {
+    "message": "শনাক্ত হওয়া অংশগুলো প্রক্রিয়াকৃত ছবিতে কীভাবে ঢাকা হবে।"
+  },
+  "action_title_protecting": {
+    "message": "এই পেজে PordaAI সুরক্ষা দিচ্ছে"
+  },
+  "action_title_master_off": {
+    "message": "PordaAI বন্ধ আছে — সুরক্ষা আবার চালু করতে ক্লিক করুন"
+  },
+  "action_title_site_off": {
+    "message": "এই সাইটে PordaAI বন্ধ আছে — আবার চালু করতে ক্লিক করুন"
+  },
+  "float_btn_title": {
+    "message": "ভিডিওতে PordaAI বাটন দেখান"
+  },
+  "float_btn_sub": {
+    "message": "প্রতিটি ভিডিওর উপর সরানো যায় এমন PordaAI চালু/বন্ধ বাটন।"
+  },
+  "pcapp_connected_title": {
+    "message": "পিসি সিঙ্ক • সংযুক্ত"
+  },
+  "pcapp_off_title": {
+    "message": "পিসি সিঙ্ক • বিচ্ছিন্ন"
+  },
+  "pcapp_off_connect": {
+    "message": "বিনামূল্যে পান"
+  },
+  "pcapp_off_open": {
+    "message": "অ্যাপ খুলুন"
+  },
+  "pcapp_off_pitch": {
+    "message": "৯৯% কম ব্রাউজার লোড · ১০ গুণ দ্রুত · ব্রাউজারের বাইরেও হারাম ব্লার করুন"
+  },
+  "website": {
+    "message": "ওয়েবসাইট"
+  },
+  "advanced_settings": {
+    "message": "উন্নত সেটিংস"
+  },
+  "greyscale_title": {
+    "message": "গ্রেস্কেল মোজাইক / ব্লার"
+  },
+  "greyscale_sub": {
+    "message": "ব্লার করা অংশগুলো সাদা-কালো করে"
+  },
+  "full_cover_title": {
+    "message": "সম্পূর্ণ ছবি ঢাকুন"
+  },
+  "full_cover_sub": {
+    "message": "শনাক্ত হলে পুরো ছবি ঢেকে দিন"
+  },
+  "donate_sub": {
+    "message": "কমিউনিটি অনুদানে পরিচালিত। সম্পূর্ণ নিরাপদ।"
+  },
+  "bkash_label": {
+    "message": "🇧🇩 বিকাশ (পার্সোনাল):"
+  },
+  "copy": {
+    "message": "কপি"
+  },
+  "copied": {
+    "message": "কপি হয়েছে!"
+  },
+  "locked": {
+    "message": "লক করা"
+  },
+  "behavior_title": {
+    "message": "পর্দা এআই আচরণ"
+  },
+  "status_active": {
+    "message": "সুরক্ষা সক্রিয়"
+  },
+  "status_paused": {
+    "message": "সুরক্ষা স্থগিত"
+  },
+  "status_desc_active": {
+    "message": "রিয়েল-টাইম এআই সুরক্ষা সক্রিয়"
+  },
+  "status_desc_paused": {
+    "message": "সকল এআই ফিল্টার স্থগিত আছে"
+  },
+  "badge_on": {
+    "message": "চালু"
+  },
+  "badge_off": {
+    "message": "বন্ধ"
+  },
+  "site_on": {
+    "message": "সাইট: চালু"
+  },
+  "site_off": {
+    "message": "সাইট: বন্ধ"
+  },
+  "site_sub_active": {
+    "message": "সক্রিয় ট্যাব • ফিল্টার চালু"
+  },
+  "site_sub_disabled": {
+    "message": "সক্রিয় ট্যাব • ফিল্টার বন্ধ"
+  },
+  "site_sub_paused": {
+    "message": "সক্রিয় ট্যাব • সুরক্ষা স্থগিত"
+  },
+  "product_musicremover": {
+    "message": "মিউজিক রিমুভার"
+  },
+  "product_muslimbrowser": {
+    "message": "মুসলিম ব্রাউজার"
+  },
+  "blur_images_title": {
+    "message": "ছবি ব্লার করুন"
+  },
+  "blur_images_sub": {
+    "message": "পর্যালোচনা না হওয়া পর্যন্ত প্রতি পৃষ্ঠার প্রতিটি ছবি ব্লার রাখুন।"
+  },
+  "pcapp_connected_sub": {
+    "message": "আপনার GPU-তে শনাক্ত হচ্ছে — ৯৯% কম ব্রাউজার লোড, ~৫ গুণ দ্রুত।"
+  },
+  "pcapp_off_opening": {
+    "message": "খোলা হচ্ছে…"
+  },
+  "pcapp_off_reinstall": {
+    "message": "পুনরায় ইনস্টল →"
+  },
+  "pcapp_off_sub": {
+    "message": "ব্রাউজার লোড ৯৯% কমাতে এবং ৫ গুণ দ্রুত লোড করতে ফ্রি পিসি অ্যাপ যুক্ত করুন।"
+  },
+  "pcapp_off_cta": {
+    "message": "পিসি অ্যাপ পান →"
+  }
+}

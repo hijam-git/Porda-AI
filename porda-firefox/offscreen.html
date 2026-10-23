@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>PordaAI offscreen detection (ORT-Web)</title>
+  </head>
+  <body>
+    <!--
+      ORT-Web 1.20.1 ESM bundle. Loaded as module so we can `import * as
+      ort` and pick the WebGPU EP. WASM + JSEP loaders are co-located in
+      offscreen/ort/ — ort.env.wasm.wasmPaths is set in offscreen.js.
+    -->
+    <script type="module" src="offscreen.js"></script>
+  </body>
+</html>

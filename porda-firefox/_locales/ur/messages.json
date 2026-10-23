@@ -1,0 +1,305 @@
+{
+  "_comment": {
+    "message": "Urdu (ur)."
+  },
+  "checking": {
+    "message": "جانچ ہو رہی ہے..."
+  },
+  "pordaai_is_running": {
+    "message": "PordaAI چل رہا ہے"
+  },
+  "browse_any_site": {
+    "message": "کوئی بھی سائٹ براؤز کریں — تصاویر جائزہ لینے تک دھندلی رہیں گی۔"
+  },
+  "desktop_app_not_running": {
+    "message": "ڈیسک ٹاپ ایپ نہیں چل رہی"
+  },
+  "install_or_open": {
+    "message": "تصاویر پروسیس کرنے کے لیے PordaAI انسٹال یا کھولیں۔"
+  },
+  "ext_master_title": {
+    "message": "ایکسٹینشن آن | آف کریں"
+  },
+  "site_title": {
+    "message": "اس سائٹ پر فعال"
+  },
+  "site_sub": {
+    "message": "صرف موجودہ سائٹ پر بند کریں۔"
+  },
+  "preblur_title": {
+    "message": "تصاویر کو پہلے سے دھندلا کریں"
+  },
+  "preblur_sub": {
+    "message": "صفحہ لوڈ ہوتے وقت ہر تصویر جائزے تک دھندلی رہے گی۔"
+  },
+  "reload_needed_title": {
+    "message": "دوبارہ لوڈ کرنے کی ضرورت ہے"
+  },
+  "reload_needed": {
+    "message": "نئی حالت مؤثر ہونے کے لیے ٹیب کو دوبارہ لوڈ کریں۔"
+  },
+  "reload_now": {
+    "message": "ابھی دوبارہ لوڈ کریں"
+  },
+  "cancel": {
+    "message": "منسوخ کریں"
+  },
+  "get_desktop_app": {
+    "message": "مفت ڈیسک ٹاپ ایپ حاصل کریں"
+  },
+  "desktop_app_intro": {
+    "message": "یہ براؤزر سے آگے بھی، ویڈیو پلیئرز وغیرہ میں بھی کور کرے گا۔"
+  },
+  "free_download": {
+    "message": "مفت ڈاؤن لوڈ"
+  },
+  "coming_soon": {
+    "message": "جلد آ رہا ہے"
+  },
+  "how_to_use": {
+    "message": "استعمال کیسے کریں"
+  },
+  "hover_hint": {
+    "message": "کسی تصویر کو عارضی طور پر دیکھنے کے لیے اس پر ہوور کریں۔ مکمل اثر کے لیے سیٹنگز تبدیل کرنے کے بعد ٹیبز کو دوبارہ لوڈ کریں۔"
+  },
+  "donate_title": {
+    "message": "پردہ AI کی حمایت کریں"
+  },
+  "tab_status": {
+    "message": "حالت"
+  },
+  "tab_detection": {
+    "message": "شناخت"
+  },
+  "tab_cover": {
+    "message": "کور"
+  },
+  "detection_title": {
+    "message": "شناخت"
+  },
+  "detection_sub": {
+    "message": "ڈیٹیکٹر کو ہر میڈیا میں کیا تلاش کرنا چاہیے۔"
+  },
+  "detect_male": {
+    "message": "مرد"
+  },
+  "detect_female": {
+    "message": "عورت"
+  },
+  "detect_images": {
+    "message": "تصاویر میں"
+  },
+  "detect_videos": {
+    "message": "ویڈیوز میں"
+  },
+  "greyscale_cover": {
+    "message": "بلر / موزیک کے نیچے گرے اسکیل"
+  },
+  "full_image_cover": {
+    "message": "کچھ شناخت ہونے پر پوری تصویر کو ڈھانپیں"
+  },
+  "cover_title_img": {
+    "message": "تصاویر کے لیے کور"
+  },
+  "cover_sub_img": {
+    "message": "ساکن تصاویر میں شناخت شدہ حصے کیسے چھپائے جاتے ہیں۔"
+  },
+  "cover_title_video": {
+    "message": "ویڈیوز کے لیے کور"
+  },
+  "cover_sub_video": {
+    "message": "ویڈیو فریمز میں شناخت شدہ حصے کیسے چھپائے جاتے ہیں۔"
+  },
+  "cover_mosaic": {
+    "message": "موزیک (پکسل)"
+  },
+  "cover_blur": {
+    "message": "بلر"
+  },
+  "cover_bg": {
+    "message": "پس منظر کا رنگ"
+  },
+  "cover_black": {
+    "message": "سیاہ"
+  },
+  "cover_white": {
+    "message": "سفید"
+  },
+  "cover_custom": {
+    "message": "حسب ضرورت رنگ"
+  },
+  "pixel_intensity": {
+    "message": "پکسل بلاکس"
+  },
+  "blur_strength": {
+    "message": "بلر کی شدت"
+  },
+  "pick_color": {
+    "message": "رنگ منتخب کریں"
+  },
+  "products_title": {
+    "message": "ہماری دیگر پروڈکٹس"
+  },
+  "musicremover_desc": {
+    "message": "YouTube سے حرام موسیقی خاموش اور ہٹائیں"
+  },
+  "muslimbrowser_desc": {
+    "message": "مسلمانوں کے لیے محفوظ براؤزر"
+  },
+  "how_it_works": {
+    "message": "یہ کیسے کام کرتا ہے"
+  },
+  "feedback": {
+    "message": "رائے"
+  },
+  "contact": {
+    "message": "رابطہ"
+  },
+  "reload_prompt_title_install": {
+    "message": "PordaAI اس صفحے پر نہیں چل رہا"
+  },
+  "reload_prompt_body_install": {
+    "message": "یہ ٹیب PordaAI انسٹال ہونے سے پہلے کھلا تھا، اس لیے یہاں کی تصاویر کی جانچ نہیں ہو رہی۔ تحفظ آن کرنے کے لیے صفحہ دوبارہ لوڈ کریں۔"
+  },
+  "reload_prompt_title_update": {
+    "message": "PordaAI اپ ڈیٹ ہو گیا ہے"
+  },
+  "reload_prompt_body_update": {
+    "message": "اپ ڈیٹ کی وجہ سے پہلے سے کھلے ٹیبز میں PordaAI بند ہو گیا، اس لیے یہاں کی تصاویر کی جانچ نہیں ہو رہی۔ تحفظ دوبارہ آن کرنے کے لیے صفحہ دوبارہ لوڈ کریں۔"
+  },
+  "reload_prompt_dismiss": {
+    "message": "بعد میں"
+  },
+  "cover_title": {
+    "message": "ڈھانپنے کا انداز"
+  },
+  "cover_sub": {
+    "message": "پراسیس شدہ تصویر میں شناخت شدہ حصے کیسے ڈھانپے جائیں۔"
+  },
+  "action_title_protecting": {
+    "message": "PordaAI اس صفحے کی حفاظت کر رہا ہے"
+  },
+  "action_title_master_off": {
+    "message": "PordaAI بند ہے — تحفظ دوبارہ آن کرنے کے لیے کلک کریں"
+  },
+  "action_title_site_off": {
+    "message": "اس سائٹ پر PordaAI بند ہے — دوبارہ آن کرنے کے لیے کلک کریں"
+  },
+  "float_btn_title": {
+    "message": "ویڈیوز پر PordaAI بٹن دکھائیں"
+  },
+  "float_btn_sub": {
+    "message": "ہر ویڈیو پر منتقل کیا جا سکنے والا PordaAI آن/آف بٹن۔"
+  },
+  "pcapp_connected_title": {
+    "message": "پی سی سنک • منسلک"
+  },
+  "pcapp_off_title": {
+    "message": "پی سی سنک • غیر منسلک"
+  },
+  "pcapp_off_connect": {
+    "message": "مفت حاصل کریں"
+  },
+  "pcapp_off_open": {
+    "message": "ایپ کھولیں"
+  },
+  "pcapp_off_pitch": {
+    "message": "برائوزر پر 99 فیصد کم لوڈ · 10 گنا تیز تر · برائوزر کے باہر بھی حرام بلر کریں"
+  },
+  "website": {
+    "message": "ویب سائٹ"
+  },
+  "advanced_settings": {
+    "message": "اعلی ترتیبات"
+  },
+  "greyscale_title": {
+    "message": "گرے اسکیل موزیک / دھندلا پن"
+  },
+  "greyscale_sub": {
+    "message": "دھندلے حصوں کو سیاہ و سفید بناتا ہے"
+  },
+  "full_cover_title": {
+    "message": "پوری تصویر کو ڈھانپیں"
+  },
+  "full_cover_sub": {
+    "message": "شناخت ہونے پر پوری تصویر ڈھانپیں"
+  },
+  "donate_sub": {
+    "message": "کمیونٹی کی مدد سے فعال۔ رازداری پر مبنی۔"
+  },
+  "bkash_label": {
+    "message": "🇧🇩 بکاش (ذاتی):"
+  },
+  "copy": {
+    "message": "کاپی"
+  },
+  "copied": {
+    "message": "کاپی ہو گیا!"
+  },
+  "locked": {
+    "message": "مقفل"
+  },
+  "behavior_title": {
+    "message": "پردہ AI کا طریقہ کار"
+  },
+  "status_active": {
+    "message": "تحفظ فعال ہے"
+  },
+  "status_paused": {
+    "message": "تحفظ موقوف ہے"
+  },
+  "status_desc_active": {
+    "message": "ریئل ٹائم AI شیلڈ فعال ہے"
+  },
+  "status_desc_paused": {
+    "message": "تمام AI فلٹرز موقوف ہیں"
+  },
+  "badge_on": {
+    "message": "آن"
+  },
+  "badge_off": {
+    "message": "آف"
+  },
+  "site_on": {
+    "message": "سائٹ: آن"
+  },
+  "site_off": {
+    "message": "سائٹ: آف"
+  },
+  "site_sub_active": {
+    "message": "فعال ٹیب • فلٹر آن ہے"
+  },
+  "site_sub_disabled": {
+    "message": "فعال ٹیب • فلٹر آف ہے"
+  },
+  "site_sub_paused": {
+    "message": "فعال ٹیب • تحفظ موقوف ہے"
+  },
+  "product_musicremover": {
+    "message": "میوزک ریموور"
+  },
+  "product_muslimbrowser": {
+    "message": "مسلم براؤزر"
+  },
+  "blur_images_title": {
+    "message": "تصاویر دھندلا کریں"
+  },
+  "blur_images_sub": {
+    "message": "صفحہ لوڈ ہوتے ہی تمام تصاویر کو دھندلا رکھیں۔"
+  },
+  "pcapp_connected_sub": {
+    "message": "GPU پر پتہ چل رہا ہے — 99% کم براؤزر لوڈ، ~5 گنا تیز۔"
+  },
+  "pcapp_off_opening": {
+    "message": "کھل رہا ہے…"
+  },
+  "pcapp_off_reinstall": {
+    "message": "دوبارہ انسٹال کریں →"
+  },
+  "pcapp_off_sub": {
+    "message": "براؤزر کا بوجھ 99 فیصد کم کرنے اور 5 گنا تیز رفتاری کے لیے مفت پی سی ایپ جوڑیں۔"
+  },
+  "pcapp_off_cta": {
+    "message": "پی سی ایپ حاصل کریں →"
+  }
+}

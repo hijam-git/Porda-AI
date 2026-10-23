@@ -1,0 +1,305 @@
+{
+  "_comment": {
+    "message": "Malay (ms)."
+  },
+  "checking": {
+    "message": "Memeriksa..."
+  },
+  "pordaai_is_running": {
+    "message": "PordaAI sedang berjalan"
+  },
+  "browse_any_site": {
+    "message": "Layari mana-mana laman — imej dikaburkan sehingga disemak."
+  },
+  "desktop_app_not_running": {
+    "message": "Aplikasi desktop tidak berjalan"
+  },
+  "install_or_open": {
+    "message": "Pasang atau buka PordaAI untuk mula memproses imej."
+  },
+  "ext_master_title": {
+    "message": "Hidupkan | Matikan sambungan"
+  },
+  "site_title": {
+    "message": "Aktif di laman ini"
+  },
+  "site_sub": {
+    "message": "Matikan hanya di laman semasa."
+  },
+  "preblur_title": {
+    "message": "Pra-kaburkan imej"
+  },
+  "preblur_sub": {
+    "message": "Kaburkan setiap imej ketika halaman dimuatkan sehingga disemak."
+  },
+  "reload_needed_title": {
+    "message": "Muat semula diperlukan"
+  },
+  "reload_needed": {
+    "message": "Muat semula tab supaya keadaan baharu berkuat kuasa."
+  },
+  "reload_now": {
+    "message": "Muat semula sekarang"
+  },
+  "cancel": {
+    "message": "Batal"
+  },
+  "get_desktop_app": {
+    "message": "Dapatkan aplikasi desktop percuma"
+  },
+  "desktop_app_intro": {
+    "message": "Ini akan melindungi di luar pelayar, termasuk pemain video, dll."
+  },
+  "free_download": {
+    "message": "Muat turun percuma"
+  },
+  "coming_soon": {
+    "message": "Akan datang"
+  },
+  "how_to_use": {
+    "message": "Cara guna"
+  },
+  "hover_hint": {
+    "message": "Tuding pada imej untuk mendedahkannya seketika. Muat semula tab selepas menukar tetapan untuk kesan penuh."
+  },
+  "donate_title": {
+    "message": "Sokong Porda AI"
+  },
+  "tab_status": {
+    "message": "Status"
+  },
+  "tab_detection": {
+    "message": "Pengesanan"
+  },
+  "tab_cover": {
+    "message": "Penutup"
+  },
+  "detection_title": {
+    "message": "Pengesanan"
+  },
+  "detection_sub": {
+    "message": "Apa yang perlu dicari oleh pengesan dalam setiap media."
+  },
+  "detect_male": {
+    "message": "Lelaki"
+  },
+  "detect_female": {
+    "message": "Perempuan"
+  },
+  "detect_images": {
+    "message": "Dalam imej"
+  },
+  "detect_videos": {
+    "message": "Dalam video"
+  },
+  "greyscale_cover": {
+    "message": "Skala kelabu di bawah Kabur / Mozek"
+  },
+  "full_image_cover": {
+    "message": "Tutup seluruh imej apabila sesuatu dikesan"
+  },
+  "cover_title_img": {
+    "message": "Penutup untuk imej"
+  },
+  "cover_sub_img": {
+    "message": "Bagaimana kawasan yang dikesan ditutup dalam imej pegun."
+  },
+  "cover_title_video": {
+    "message": "Penutup untuk video"
+  },
+  "cover_sub_video": {
+    "message": "Bagaimana kawasan yang dikesan ditutup dalam bingkai video."
+  },
+  "cover_mosaic": {
+    "message": "Mozek (piksel)"
+  },
+  "cover_blur": {
+    "message": "Kabur"
+  },
+  "cover_bg": {
+    "message": "Warna latar"
+  },
+  "cover_black": {
+    "message": "Hitam"
+  },
+  "cover_white": {
+    "message": "Putih"
+  },
+  "cover_custom": {
+    "message": "Warna tersuai"
+  },
+  "pixel_intensity": {
+    "message": "Blok piksel"
+  },
+  "blur_strength": {
+    "message": "Kekuatan kabur"
+  },
+  "pick_color": {
+    "message": "Pilih warna"
+  },
+  "products_title": {
+    "message": "Juga daripada kami"
+  },
+  "musicremover_desc": {
+    "message": "Bisukan & buang muzik haram daripada YouTube"
+  },
+  "muslimbrowser_desc": {
+    "message": "Pelayar selamat untuk Muslim"
+  },
+  "how_it_works": {
+    "message": "Cara ia berfungsi"
+  },
+  "feedback": {
+    "message": "Maklum balas"
+  },
+  "contact": {
+    "message": "Hubungi"
+  },
+  "reload_prompt_title_install": {
+    "message": "PordaAI tidak berjalan pada halaman ini"
+  },
+  "reload_prompt_body_install": {
+    "message": "Tab ini sudah dibuka sebelum PordaAI dipasang, jadi imej di sini tidak diperiksa. Muat semula untuk menghidupkan perlindungan."
+  },
+  "reload_prompt_title_update": {
+    "message": "PordaAI telah dikemas kini"
+  },
+  "reload_prompt_body_update": {
+    "message": "Kemas kini menghentikan PordaAI pada tab yang sudah dibuka, jadi imej di sini tidak diperiksa. Muat semula untuk menghidupkan semula perlindungan."
+  },
+  "reload_prompt_dismiss": {
+    "message": "Nanti dulu"
+  },
+  "cover_title": {
+    "message": "Gaya penutup"
+  },
+  "cover_sub": {
+    "message": "Bagaimana kawasan yang dikesan ditutup dalam imej yang diproses."
+  },
+  "action_title_protecting": {
+    "message": "PordaAI melindungi halaman ini"
+  },
+  "action_title_master_off": {
+    "message": "PordaAI dimatikan — klik untuk menghidupkan perlindungan"
+  },
+  "action_title_site_off": {
+    "message": "PordaAI dimatikan di laman ini — klik untuk menghidupkannya"
+  },
+  "float_btn_title": {
+    "message": "Tunjukkan butang PordaAI pada video"
+  },
+  "float_btn_sub": {
+    "message": "Butang hidup/mati PordaAI yang boleh dialihkan pada setiap video."
+  },
+  "pcapp_connected_title": {
+    "message": "Penyegerakan PC • Disambungkan"
+  },
+  "pcapp_off_title": {
+    "message": "Penyegerakan PC • Diputuskan"
+  },
+  "pcapp_off_connect": {
+    "message": "Dapatkan percuma"
+  },
+  "pcapp_off_open": {
+    "message": "Buka apl"
+  },
+  "pcapp_off_pitch": {
+    "message": "Beban pelayar 99% lebih ringan · 10× lebih pantas · Kaburkan Haram di luar pelayar"
+  },
+  "website": {
+    "message": "Laman web"
+  },
+  "advanced_settings": {
+    "message": "Tetapan Lanjutan"
+  },
+  "greyscale_title": {
+    "message": "Mozek / Kabur Skala Kelabu"
+  },
+  "greyscale_sub": {
+    "message": "Jadikan kawasan kabur hitam & putih"
+  },
+  "full_cover_title": {
+    "message": "Tutup Imej Penuh"
+  },
+  "full_cover_sub": {
+    "message": "Tutup seluruh imej apabila dikesan"
+  },
+  "donate_sub": {
+    "message": "Dibiayai komuniti. Menjaga privasi."
+  },
+  "bkash_label": {
+    "message": "🇧🇩 bKash (Peribadi):"
+  },
+  "copy": {
+    "message": "Salin"
+  },
+  "copied": {
+    "message": "Disalin!"
+  },
+  "locked": {
+    "message": "Dikunci"
+  },
+  "behavior_title": {
+    "message": "Tingkah Laku Porda AI"
+  },
+  "status_active": {
+    "message": "Perlindungan Aktif"
+  },
+  "status_paused": {
+    "message": "Perlindungan Dijeda"
+  },
+  "status_desc_active": {
+    "message": "Perisai AI masa nyata aktif"
+  },
+  "status_desc_paused": {
+    "message": "Semua penapis AI dijeda"
+  },
+  "badge_on": {
+    "message": "HIDUP"
+  },
+  "badge_off": {
+    "message": "MATI"
+  },
+  "site_on": {
+    "message": "Laman: HIDUP"
+  },
+  "site_off": {
+    "message": "Laman: MATI"
+  },
+  "site_sub_active": {
+    "message": "Tab aktif • Penapis aktif"
+  },
+  "site_sub_disabled": {
+    "message": "Tab aktif • Penapis dimatikan"
+  },
+  "site_sub_paused": {
+    "message": "Tab aktif • Perlindungan dijeda"
+  },
+  "product_musicremover": {
+    "message": "Pembuang Muzik"
+  },
+  "product_muslimbrowser": {
+    "message": "Muslim Browser"
+  },
+  "blur_images_title": {
+    "message": "Kaburkan imej"
+  },
+  "blur_images_sub": {
+    "message": "Kaburkan setiap imej pada setiap halaman sehingga disemak."
+  },
+  "pcapp_connected_sub": {
+    "message": "Mengesan pada GPU — 99% kurang beban pelayar, ~5× lebih pantas."
+  },
+  "pcapp_off_opening": {
+    "message": "Membuka…"
+  },
+  "pcapp_off_reinstall": {
+    "message": "Pasang Semula →"
+  },
+  "pcapp_off_sub": {
+    "message": "Sambungkan Aplikasi PC percuma untuk mengurangkan beban pelayar sebanyak 99% dan muatkan imej 5× lebih pantas."
+  },
+  "pcapp_off_cta": {
+    "message": "Dapatkan Aplikasi PC →"
+  }
+}

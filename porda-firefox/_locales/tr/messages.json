@@ -1,0 +1,305 @@
+{
+  "_comment": {
+    "message": "Turkish (tr)."
+  },
+  "checking": {
+    "message": "Kontrol ediliyor..."
+  },
+  "pordaai_is_running": {
+    "message": "PordaAI çalışıyor"
+  },
+  "browse_any_site": {
+    "message": "İstediğiniz siteyi gezin — görseller incelenene kadar bulanıklaştırılır."
+  },
+  "desktop_app_not_running": {
+    "message": "Masaüstü uygulaması çalışmıyor"
+  },
+  "install_or_open": {
+    "message": "Görselleri işlemeye başlamak için PordaAI'yi yükleyin veya açın."
+  },
+  "ext_master_title": {
+    "message": "Uzantıyı Aç | Kapat"
+  },
+  "site_title": {
+    "message": "Bu sitede etkin"
+  },
+  "site_sub": {
+    "message": "Yalnızca geçerli sitede kapat."
+  },
+  "preblur_title": {
+    "message": "Görselleri ön-bulanıklaştır"
+  },
+  "preblur_sub": {
+    "message": "Sayfa yüklenirken tüm görseller incelenene dek bulanıklaştırılır."
+  },
+  "reload_needed_title": {
+    "message": "Yeniden yükleme gerekli"
+  },
+  "reload_needed": {
+    "message": "Yeni ayarların etkin olması için sekmeyi yeniden yükleyin."
+  },
+  "reload_now": {
+    "message": "Şimdi yeniden yükle"
+  },
+  "cancel": {
+    "message": "İptal"
+  },
+  "get_desktop_app": {
+    "message": "Ücretsiz masaüstü uygulamasını edinin"
+  },
+  "desktop_app_intro": {
+    "message": "Bu, tarayıcının ötesinde, video oynatıcılar dahil her yerde koruma sağlar."
+  },
+  "free_download": {
+    "message": "Ücretsiz indir"
+  },
+  "coming_soon": {
+    "message": "Çok yakında"
+  },
+  "how_to_use": {
+    "message": "Nasıl kullanılır"
+  },
+  "hover_hint": {
+    "message": "Bir görseli geçici olarak görmek için üzerine gelin. Tam etki için ayarları değiştirdikten sonra sekmeleri yenileyin."
+  },
+  "donate_title": {
+    "message": "Porda AI'yı Destekleyin"
+  },
+  "tab_status": {
+    "message": "Durum"
+  },
+  "tab_detection": {
+    "message": "Tespit"
+  },
+  "tab_cover": {
+    "message": "Örtme"
+  },
+  "detection_title": {
+    "message": "Tespit"
+  },
+  "detection_sub": {
+    "message": "Dedektörün her medyada neyi araması gerektiği."
+  },
+  "detect_male": {
+    "message": "Erkek"
+  },
+  "detect_female": {
+    "message": "Kadın"
+  },
+  "detect_images": {
+    "message": "Görsellerde"
+  },
+  "detect_videos": {
+    "message": "Videolarda"
+  },
+  "greyscale_cover": {
+    "message": "Bulanıklık / Mozaik altında gri tonlama"
+  },
+  "full_image_cover": {
+    "message": "Bir şey tespit edildiğinde tüm görseli ört"
+  },
+  "cover_title_img": {
+    "message": "Görseller için örtme"
+  },
+  "cover_sub_img": {
+    "message": "Tespit edilen bölgeler sabit görsellerde nasıl maskelenir."
+  },
+  "cover_title_video": {
+    "message": "Videolar için örtme"
+  },
+  "cover_sub_video": {
+    "message": "Tespit edilen bölgeler video karelerinde nasıl maskelenir."
+  },
+  "cover_mosaic": {
+    "message": "Mozaik (piksel)"
+  },
+  "cover_blur": {
+    "message": "Bulanıklık"
+  },
+  "cover_bg": {
+    "message": "Arka plan rengi"
+  },
+  "cover_black": {
+    "message": "Siyah"
+  },
+  "cover_white": {
+    "message": "Beyaz"
+  },
+  "cover_custom": {
+    "message": "Özel renk"
+  },
+  "pixel_intensity": {
+    "message": "Piksel blokları"
+  },
+  "blur_strength": {
+    "message": "Bulanıklık şiddeti"
+  },
+  "pick_color": {
+    "message": "Renk seç"
+  },
+  "products_title": {
+    "message": "Bizden diğer ürünler"
+  },
+  "musicremover_desc": {
+    "message": "YouTube'daki haram müziği sustur ve kaldır"
+  },
+  "muslimbrowser_desc": {
+    "message": "Müslümanlar için güvenli tarayıcı"
+  },
+  "how_it_works": {
+    "message": "Nasıl çalışır"
+  },
+  "feedback": {
+    "message": "Geri bildirim"
+  },
+  "contact": {
+    "message": "İletişim"
+  },
+  "reload_prompt_title_install": {
+    "message": "PordaAI bu sayfada çalışmıyor"
+  },
+  "reload_prompt_body_install": {
+    "message": "Bu sekme PordaAI kurulmadan önce açıktı, bu yüzden buradaki görseller incelenmiyor. Korumayı açmak için sayfayı yeniden yükleyin."
+  },
+  "reload_prompt_title_update": {
+    "message": "PordaAI güncellendi"
+  },
+  "reload_prompt_body_update": {
+    "message": "Güncelleme, önceden açık olan sekmelerde PordaAI’yi durdurdu; bu yüzden buradaki görseller incelenmiyor. Korumayı yeniden açmak için sayfayı yeniden yükleyin."
+  },
+  "reload_prompt_dismiss": {
+    "message": "Şimdilik geç"
+  },
+  "cover_title": {
+    "message": "Kapatma stili"
+  },
+  "cover_sub": {
+    "message": "İşlenen görselde tespit edilen bölgelerin nasıl maskeleneceği."
+  },
+  "action_title_protecting": {
+    "message": "PordaAI bu sayfayı koruyor"
+  },
+  "action_title_master_off": {
+    "message": "PordaAI kapalı — korumayı yeniden açmak için tıklayın"
+  },
+  "action_title_site_off": {
+    "message": "PordaAI bu sitede kapalı — yeniden açmak için tıklayın"
+  },
+  "float_btn_title": {
+    "message": "Videolarda PordaAI düğmesini göster"
+  },
+  "float_btn_sub": {
+    "message": "Her videodaki taşınabilir PordaAI aç/kapat düğmesi."
+  },
+  "pcapp_connected_title": {
+    "message": "PC Eşitleme • Bağlı"
+  },
+  "pcapp_off_title": {
+    "message": "PC Eşitleme • Bağlantı Kesildi"
+  },
+  "pcapp_off_connect": {
+    "message": "Ücretsiz Edinin"
+  },
+  "pcapp_off_open": {
+    "message": "Uygulamayı aç"
+  },
+  "pcapp_off_pitch": {
+    "message": "%99 daha az tarayıcı yükü · 10 kat daha hızlı · Tarayıcının ötesinde Haram'ı bulanıklaştırın"
+  },
+  "website": {
+    "message": "Web Sitesi"
+  },
+  "advanced_settings": {
+    "message": "Gelişmiş Ayarlar"
+  },
+  "greyscale_title": {
+    "message": "Gri Tonlamalı Mozaik / Bulanıklık"
+  },
+  "greyscale_sub": {
+    "message": "Bulanık alanları siyah beyaz yapar"
+  },
+  "full_cover_title": {
+    "message": "Tam Resim Kaplama"
+  },
+  "full_cover_sub": {
+    "message": "Algılandığında tüm görseli kapat"
+  },
+  "donate_sub": {
+    "message": "Topluluk destekli. Gizlilik odaklı."
+  },
+  "bkash_label": {
+    "message": "🇧🇩 bKash (Kişisel):"
+  },
+  "copy": {
+    "message": "Kopyala"
+  },
+  "copied": {
+    "message": "Kopyalandı!"
+  },
+  "locked": {
+    "message": "Kilitli"
+  },
+  "behavior_title": {
+    "message": "Porda AI Davranışı"
+  },
+  "status_active": {
+    "message": "Koruma Aktif"
+  },
+  "status_paused": {
+    "message": "Koruma Duraklatıldı"
+  },
+  "status_desc_active": {
+    "message": "Gerçek zamanlı yapay zeka kalkanı aktif"
+  },
+  "status_desc_paused": {
+    "message": "Tüm yapay zeka filtreleri duraklatıldı"
+  },
+  "badge_on": {
+    "message": "AÇIK"
+  },
+  "badge_off": {
+    "message": "KAPALI"
+  },
+  "site_on": {
+    "message": "Site: AÇIK"
+  },
+  "site_off": {
+    "message": "Site: KAPALI"
+  },
+  "site_sub_active": {
+    "message": "Aktif sekme • Filtre etkin"
+  },
+  "site_sub_disabled": {
+    "message": "Aktif sekme • Filtre devre dışı"
+  },
+  "site_sub_paused": {
+    "message": "Aktif sekme • Koruma duraklatıldı"
+  },
+  "product_musicremover": {
+    "message": "Müzik Kaldırıcı"
+  },
+  "product_muslimbrowser": {
+    "message": "Müslüman Tarayıcı"
+  },
+  "blur_images_title": {
+    "message": "Görselleri Bulanıklaştır"
+  },
+  "blur_images_sub": {
+    "message": "İncelenene kadar her sayfadaki tüm görselleri bulanıklaştırın."
+  },
+  "pcapp_connected_sub": {
+    "message": "GPU'nuzda algılanıyor — %99 daha az tarayıcı yükü, ~5 kat daha hızlı."
+  },
+  "pcapp_off_opening": {
+    "message": "Açılıyor…"
+  },
+  "pcapp_off_reinstall": {
+    "message": "Yeniden Yükle →"
+  },
+  "pcapp_off_sub": {
+    "message": "Tarayıcı yükünü %99 azaltmak ve resimleri 5 kat hızlı yüklemek için ücretsiz PC uygulamasını bağlayın."
+  },
+  "pcapp_off_cta": {
+    "message": "PC Uygulamasını Al →"
+  }
+}
