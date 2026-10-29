@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtCore import (Qt, QPoint, QTimer,QCoreApplication,QEvent, 
+from PyQt5.QtCore import (Qt, QPoint, QRect, QTimer,QCoreApplication,QEvent, 
                           QObject, pyqtSignal,QStandardPaths,QThread)
 from PyQt5.QtGui import QPainter,QPixmap,QImage
 from PyQt5.QtWidgets import (QApplication, QWidget,QLabel,QVBoxLayout,
@@ -104,10 +104,15 @@ class MainWindow(QWidget):
         self.setAttribute(Qt.WA_TranslucentBackground)
        
         #self.setWindowState(Qt.WindowFullScreen)
-        screen_rect = QApplication.desktop().availableGeometry()
-        
-        #print(f"screen_rect{screen_rect}")
-        self.setGeometry(screen_rect)
+        # The cover is drawn at desktop coordinates (see draw_cover): a box at
+        # screen_x + x has to land on pixel screen_x + x of the desktop. That is
+        # only true if this window itself starts at the virtual screen origin and
+        # spans every monitor, so use the whole virtual desktop and not
+        # availableGeometry(), which describes the primary screen only. Using the
+        # primary screen's rect made covers show up on the wrong monitor in
+        # multi-monitor setups.
+        self.setGeometry(self.virtual_desktop_geometry())
+        self.last_screen_geometry = self.virtual_desktop_geometry()
         self.setWindowFlags(self.windowFlags() | Qt.Tool)
 
         self.my_win_id = self.winId()
@@ -374,6 +379,36 @@ class MainWindow(QWidget):
         print("Making TOp")
         win32gui.SetWindowPos(int(self.winId()), win32con.HWND_TOPMOST, 0, 0, 0, 0, win32con.SWP_NOMOVE | win32con.SWP_NOSIZE)
 
+    @staticmethod
+    def virtual_desktop_geometry():
+        """Rect covering every monitor, in Windows virtual-screen coordinates.
+
+        Qt's desktop()/screenAt() only describe a single screen. The union has to
+        come from the Win32 metrics, which may start at a negative x/y when a
+        monitor sits left of or above the primary one.
+        """
+        try:
+            left = win32api.GetSystemMetrics(win32con.SM_XVIRTUALSCREEN)
+            top = win32api.GetSystemMetrics(win32con.SM_YVIRTUALSCREEN)
+            width = win32api.GetSystemMetrics(win32con.SM_CXVIRTUALSCREEN)
+            height = win32api.GetSystemMetrics(win32con.SM_CYVIRTUALSCREEN)
+            if width > 0 and height > 0:
+                return QRect(left, top, width, height)
+        except Exception as e:
+            logging.error(f"Could not read virtual screen geometry: {e}")
+
+        return QApplication.desktop().availableGeometry()
+
+    def ensure_window_covers_all_screens(self):
+        """Re-apply the full-desktop geometry when monitors are added/removed."""
+        geometry = self.virtual_desktop_geometry()
+        if geometry == getattr(self, "last_screen_geometry", None):
+            return
+
+        self.last_screen_geometry = geometry
+        self.setGeometry(geometry)
+        self.update()
+
     def capture_screenshot(self):
 
         if (time.time() - self.last_status_changed_shortcut_key_press_f1) < 0.1: #second
@@ -497,6 +532,10 @@ class MainWindow(QWidget):
         
         try:
             #t1=time.time()
+            # A monitor plugged in, unplugged or rearranged changes the virtual
+            # desktop origin and size; without this the overlay keeps the old rect
+            # and covers drift onto the wrong monitor again.
+            self.ensure_window_covers_all_screens()
             img,x,y,h,w,status = GetScreenData(self) #x y is position of window
             if status:
                 self.draw_cover(img, x, y,h,w) # detect object and draw
