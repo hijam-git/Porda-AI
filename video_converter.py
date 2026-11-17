@@ -19,7 +19,7 @@ import cv2
 import numpy as np
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parent))
 CONFIG = ROOT / "model" / "pordav4x3.cfg"
 WEIGHTS = ROOT / "model" / "porda-19200-lr-0005-909.weights"
 CLASS_IDS = {"male": (0,), "female": (1,), "both": (0, 1)}
@@ -41,6 +41,10 @@ class ConvertOptions:
     start: float = 0.0
     duration: float | None = None
     keep_audio: bool = True
+
+
+class ConversionCancelled(RuntimeError):
+    """Raised when a caller requests a clean conversion cancellation."""
 
 
 def parse_color(value: str) -> tuple[int, int, int]:
@@ -234,7 +238,13 @@ def probe_video(ffmpeg: str, input_path: str) -> tuple[int, int, float, float | 
     )
 
 
-def convert_video(input_path: str, output_path: str, options: ConvertOptions) -> int:
+def convert_video(
+    input_path: str,
+    output_path: str,
+    options: ConvertOptions,
+    progress_callback=None,
+    is_cancelled=None,
+) -> int:
     ffmpeg = ffmpeg_executable()
     width, height, fps, source_duration = probe_video(ffmpeg, input_path)
     if source_duration is not None and options.start >= source_duration:
@@ -264,8 +274,15 @@ def convert_video(input_path: str, output_path: str, options: ConvertOptions) ->
     frame_bytes = width * height * 3
     processed = covered_frames = 0
     started = last_report = time.monotonic()
+    cancelled = False
+    processing_error = None
+    if progress_callback:
+        progress_callback(0, total, 0)
     try:
         while True:
+            if is_cancelled and is_cancelled():
+                cancelled = True
+                break
             data = decoder.stdout.read(frame_bytes)
             if len(data) != frame_bytes:
                 break
@@ -274,18 +291,38 @@ def convert_video(input_path: str, output_path: str, options: ConvertOptions) ->
             encoder.stdin.write(censored.tobytes())
             processed += 1
             covered_frames += bool(covered)
+            if progress_callback:
+                progress_callback(processed, total, covered_frames)
             now = time.monotonic()
             if processed == 1 or now - last_report >= 2:
                 progress = f"{processed}/{total}" if total else str(processed)
                 print(f"[progress] frames {progress} | covered {covered_frames}", flush=True)
                 last_report = now
+    except Exception as exc:
+        processing_error = exc
     finally:
         if decoder.stdout:
             decoder.stdout.close()
         if encoder.stdin:
-            encoder.stdin.close()
+            try:
+                encoder.stdin.close()
+            except OSError:
+                pass
+        if cancelled or processing_error:
+            if decoder.poll() is None:
+                decoder.terminate()
+            if encoder.poll() is None:
+                encoder.terminate()
     decoder_code = decoder.wait()
     encoder_code = encoder.wait()
+    if cancelled:
+        if Path(output_path).exists():
+            Path(output_path).unlink()
+        raise ConversionCancelled("video conversion cancelled")
+    if processing_error:
+        if Path(output_path).exists():
+            Path(output_path).unlink()
+        raise RuntimeError(f"video processing failed: {processing_error}") from processing_error
     if decoder_code or encoder_code:
         if Path(output_path).exists():
             Path(output_path).unlink()

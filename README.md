@@ -72,8 +72,19 @@ The project prevents to looking unwanted content one does not wish to see. The a
 ### Convert a local video
 
 Porda can also create a permanently censored MP4 while keeping processing
-offline. Run the converter without an input path to select a video with the
-native file picker:
+offline. In the desktop app, right-click the Porda system-tray icon and choose
+**Convert Video...**. The converter window provides input and output pickers,
+gender and cover settings, time-range and engine controls, conversion progress,
+and cancellation.
+
+The same window can be launched directly during development:
+
+```bash
+python video_converter_ui.py
+```
+
+For a lightweight native file picker followed by conversion with default
+options, run:
 
 ```bash
 python video_converter.py
