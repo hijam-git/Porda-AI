@@ -69,6 +69,32 @@ The project prevents to looking unwanted content one does not wish to see. The a
 
 ## Features
 
+### Convert a local video
+
+Porda can also create a permanently censored MP4 while keeping processing
+offline. Run the converter without an input path to select a video with the
+native file picker:
+
+```bash
+python video_converter.py
+```
+
+For scripting or batch use, pass the input and any conversion options:
+
+```bash
+python video_converter.py input.mp4 --gender female --cover blur
+python video_converter.py input.mp4 -o protected.mp4 --cover mosaic --mosaic-blocks 16
+python video_converter.py input.mp4 --cover color --color 0,0,0 --confidence 0.35
+python video_converter.py input.mp4 --start 30 --duration 60 --no-audio
+```
+
+The converter supports `male`, `female`, and `both` detection; blur, mosaic,
+black, white, custom-color, and background-color covers; adjustable confidence
+and NMS thresholds; CPU or OpenCL inference; time ranges; and optional audio.
+The original file is never overwritten, and an existing output requires the
+explicit `--overwrite` option. Run `python video_converter.py --help` for the
+complete option reference.
+
 💠 **Custome Ai model:**
 
 -   Optimal Halal Vision
