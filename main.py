@@ -24,6 +24,8 @@ from settings.SettingsValue import load_settings,save_settings, cover_list, engi
 from settings.message import show_message,make_notification_sound
 from settings.EngineSetting import SetEngine,set_graphics_preference
 from settings.ga4_porda import send_tracking_request
+from video_converter_ui import VideoConverterDialog
+
 import SetupPordaApp
 from PyQt5.QtGui import QIcon
 import pstats
@@ -98,7 +100,6 @@ class CPUThread(QThread):
 class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
-        self.video_converter_window = None
         #self.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint | Qt.WindowTransparentForInput)
         self.setWindowFlags(self.windowFlags() | Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint |  Qt.WindowTransparentForInput)
         self.setAttribute(Qt.WA_TranslucentBackground)
@@ -820,17 +821,6 @@ class MainWindow(QWidget):
 
         QCoreApplication.instance().quit()
 
-    def show_video_converter(self):
-        """Create the converter on demand and bring its window to the front."""
-        if self.video_converter_window is None:
-            from video_converter_ui import VideoConverterDialog
-
-            self.video_converter_window = VideoConverterDialog()
-
-        self.video_converter_window.show()
-        self.video_converter_window.raise_()
-        self.video_converter_window.activateWindow()
-
     def closetheapp(self):
         #self.display_image_closing()
         if self.enable_auto_stop_when_high_cpu:
@@ -851,27 +841,37 @@ class SystemTrayIcon(QSystemTrayIcon):
         self.settings=main_window.settings_window
 
         self.menu = QMenu()
-        self.settings_action = self._add_menu_action(
-            "PordaAi Settings", self.settings.show
-        )
-        self.video_converter_action = self._add_menu_action(
-            "Convert Video...", main_window.show_video_converter
-        )
-        self.menu.addSeparator()
-        self.deactivate_action = self._add_menu_action(
-            "Activate/Deactivate", main_window.enable_disable_by_shortcut_key
-        )
-        self.dataset_action = self._add_menu_action(
-            "Make Dataset", main_window.capture_screenshot
-        )
-        self.refresh_hotkey_action = self._add_menu_action(
-            "Refresh HotKey", main_window.refresh_hotkey
-        )
-        self.refresh_cover_action = self._add_menu_action(
-            "Refresh Cover", main_window.make_window_topmost
-        )
-        self.menu.addSeparator()
-        self.exit_action = self._add_menu_action("Exit", main_window.closetheapp)
+        self.settings_action = QAction("PordaAi Settings", self)
+        self.settings_action.triggered.connect(self.settings.show)
+        self.menu.addAction(self.settings_action)
+
+        self.video_converter = VideoConverterDialog()
+        self.video_converter_action = QAction("Convert Video...", self)
+        self.video_converter_action.triggered.connect(self.show_video_converter)
+        self.menu.addAction(self.video_converter_action)
+
+        self.deactivate_action = QAction("Activate/Deactivate", self)
+        self.deactivate_action.triggered.connect(main_window.enable_disable_by_shortcut_key)
+        self.menu.addAction(self.deactivate_action)
+        ''' self.settings_action = QAction("PordaAi Settings", self)
+        self.settings_action.triggered.connect(self.settings.show)
+        self.menu.addAction(self.settings_action)
+        '''
+        self.capture_screenshot = QAction("Make Dataset", self)
+        self.capture_screenshot.triggered.connect(main_window.capture_screenshot)
+        self.menu.addAction(self.capture_screenshot)
+
+        self.refresh_hotkey_tray = QAction("Refresh HotKey", self)
+        self.refresh_hotkey_tray.triggered.connect(main_window.refresh_hotkey)
+        self.menu.addAction(self.refresh_hotkey_tray)
+
+        self.refresh_cover_tray = QAction("Refresh Cover", self)
+        self.refresh_cover_tray.triggered.connect(main_window.make_window_topmost)
+        self.menu.addAction(self.refresh_cover_tray)
+       
+        self.exit_action = QAction("Exit", self)
+        self.exit_action.triggered.connect(main_window.closetheapp)
+        self.menu.addAction(self.exit_action)
         
         self.setContextMenu(self.menu)
 
@@ -881,11 +881,10 @@ class SystemTrayIcon(QSystemTrayIcon):
         #self.messageClicked.connect(self.change_tooltip)
         self.show()
 
-    def _add_menu_action(self, label, callback):
-        action = QAction(label, self)
-        action.triggered.connect(callback)
-        self.menu.addAction(action)
-        return action
+    def show_video_converter(self):
+        self.video_converter.show()
+        self.video_converter.raise_()
+        self.video_converter.activateWindow()
 
     def icon_activated(self, reason):
         if reason == QSystemTrayIcon.Trigger:
