@@ -24,6 +24,7 @@ from settings.SettingsValue import load_settings,save_settings, cover_list, engi
 from settings.message import show_message,make_notification_sound
 from settings.EngineSetting import SetEngine,set_graphics_preference
 from settings.ga4_porda import send_tracking_request
+from video_converter_ui import VideoConverterDialog
 
 import SetupPordaApp
 from PyQt5.QtGui import QIcon
@@ -844,6 +845,11 @@ class SystemTrayIcon(QSystemTrayIcon):
         self.settings_action.triggered.connect(self.settings.show)
         self.menu.addAction(self.settings_action)
 
+        self.video_converter = VideoConverterDialog()
+        self.video_converter_action = QAction("Convert Video...", self)
+        self.video_converter_action.triggered.connect(self.show_video_converter)
+        self.menu.addAction(self.video_converter_action)
+
         self.deactivate_action = QAction("Activate/Deactivate", self)
         self.deactivate_action.triggered.connect(main_window.enable_disable_by_shortcut_key)
         self.menu.addAction(self.deactivate_action)
@@ -874,6 +880,11 @@ class SystemTrayIcon(QSystemTrayIcon):
         # Connect the messageClicked signal to handle tooltip change on hover
         #self.messageClicked.connect(self.change_tooltip)
         self.show()
+
+    def show_video_converter(self):
+        self.video_converter.show()
+        self.video_converter.raise_()
+        self.video_converter.activateWindow()
 
     def icon_activated(self, reason):
         if reason == QSystemTrayIcon.Trigger:
@@ -918,9 +929,3 @@ if __name__ == '__main__':
     # Stop tracing memory allocations
     #tracemalloc.stop()
     sys.exit(app.exec_())
-
-
-
-    
-
-  

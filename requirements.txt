@@ -12,4 +12,5 @@ pywin32==306
 Requests==2.32.3
 pyinstaller
 python-dotenv
+imageio-ffmpeg==0.6.0
 

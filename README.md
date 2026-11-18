@@ -69,6 +69,43 @@ The project prevents to looking unwanted content one does not wish to see. The a
 
 ## Features
 
+### Convert a local video
+
+Porda can also create a permanently censored MP4 while keeping processing
+offline. In the desktop app, right-click the Porda system-tray icon and choose
+**Convert Video...**. The converter window provides input and output pickers,
+gender and cover settings, time-range and engine controls, conversion progress,
+and cancellation.
+
+The same window can be launched directly during development:
+
+```bash
+python video_converter_ui.py
+```
+
+For a lightweight native file picker followed by conversion with default
+options, run:
+
+```bash
+python video_converter.py
+```
+
+For scripting or batch use, pass the input and any conversion options:
+
+```bash
+python video_converter.py input.mp4 --gender female --cover blur
+python video_converter.py input.mp4 -o protected.mp4 --cover mosaic --mosaic-blocks 16
+python video_converter.py input.mp4 --cover color --color 0,0,0 --confidence 0.35
+python video_converter.py input.mp4 --start 30 --duration 60 --no-audio
+```
+
+The converter supports `male`, `female`, and `both` detection; blur, mosaic,
+black, white, custom-color, and background-color covers; adjustable confidence
+and NMS thresholds; CPU or OpenCL inference; time ranges; and optional audio.
+The original file is never overwritten, and an existing output requires the
+explicit `--overwrite` option. Run `python video_converter.py --help` for the
+complete option reference.
+
 💠 **Custome Ai model:**
 
 -   Optimal Halal Vision
@@ -219,7 +256,16 @@ If you've found value in this project, your support can contribute to its presen
 -   to Run the application: python main.py
 
 -   For building application:
-    pyinstaller --onefile --noconsole --add-data "model/pordav4x3.cfg;model/" --add-data "model/porda-19200-lr-0005-909.weights;model/" --add-data "startup_image/1.png;startup_image/" --add-data "static/pordaailogo.png;static/" --add-data "static/pordaailogo.ico;static/" --icon=static/pordaailogo.ico --name PordaAi(version) main.py
+
+    ```powershell
+    pyinstaller --onefile --noconsole --collect-all imageio_ffmpeg `
+      --add-data "model/pordav4x3.cfg;model/" `
+      --add-data "model/porda-19200-lr-0005-909.weights;model/" `
+      --add-data "startup_image/1.png;startup_image/" `
+      --add-data "static/pordaailogo.png;static/" `
+      --add-data "static/pordaailogo.ico;static/" `
+      --icon=static/pordaailogo.ico --name PordaAi(version) main.py
+    ```
 
 ## Important Info
 
