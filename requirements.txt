@@ -2,7 +2,7 @@ keyboard==0.13.5
 matplotlib==3.10.1
 numpy==1.26.4
 opencv_contrib_python==4.8.1.78
-opencv_python==4.10.0.84  # OpenCV 5 removed the Darknet importer used by Porda
+opencv_python==4.10.0.84
 opencv_python_headless==4.10.0.84
 psutil==5.9.6
 pyopencl==2023.1.4
@@ -12,5 +12,5 @@ pywin32==306
 Requests==2.32.3
 pyinstaller
 python-dotenv
-imageio-ffmpeg>=0.4.9
+imageio-ffmpeg==0.6.0
 

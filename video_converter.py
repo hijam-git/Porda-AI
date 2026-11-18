@@ -13,7 +13,9 @@ import os
 from pathlib import Path
 import subprocess
 import sys
+import tempfile
 import time
+from typing import Callable, Optional, Tuple
 
 import cv2
 import numpy as np
@@ -24,13 +26,16 @@ CONFIG = ROOT / "model" / "pordav4x3.cfg"
 WEIGHTS = ROOT / "model" / "porda-19200-lr-0005-909.weights"
 CLASS_IDS = {"male": (0,), "female": (1,), "both": (0, 1)}
 VIDEO_FILTER = "Videos (*.mp4 *.mkv *.mov *.avi *.webm *.m4v);;All files (*)"
+SUBPROCESS_FLAGS = getattr(subprocess, "CREATE_NO_WINDOW", 0)
+ProgressCallback = Callable[[int, Optional[int], int], None]
+CancelCheck = Callable[[], bool]
 
 
 @dataclass(frozen=True)
 class ConvertOptions:
     gender: str = "both"
     cover: str = "blur"
-    color: tuple[int, int, int] = (0, 0, 0)
+    color: Tuple[int, int, int] = (0, 0, 0)
     blur_strength: int = 51
     mosaic_blocks: int = 12
     confidence: float = 0.25
@@ -39,7 +44,7 @@ class ConvertOptions:
     height: int = 320
     engine: str = "cpu"
     start: float = 0.0
-    duration: float | None = None
+    duration: Optional[float] = None
     keep_audio: bool = True
 
 
@@ -47,7 +52,7 @@ class ConversionCancelled(RuntimeError):
     """Raised when a caller requests a clean conversion cancellation."""
 
 
-def parse_color(value: str) -> tuple[int, int, int]:
+def parse_color(value: str) -> Tuple[int, int, int]:
     """Parse an R,G,B command-line color."""
     try:
         values = tuple(int(part.strip()) for part in value.split(","))
@@ -86,7 +91,7 @@ def positive_float(value: str) -> float:
     return parsed
 
 
-def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+def parse_args(argv=None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Select a local video and create an offline censored copy."
     )
@@ -112,7 +117,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     return parser.parse_args(argv)
 
 
-def choose_input() -> str | None:
+def choose_input() -> Optional[str]:
     """Open the lightweight native picker without starting the main Porda window."""
     from PyQt5.QtWidgets import QApplication, QFileDialog
 
@@ -182,7 +187,7 @@ def cover_region(region: np.ndarray, options: ConvertOptions) -> np.ndarray:
     return cv2.GaussianBlur(region, (max(1, kernel), max(1, kernel)), 0)
 
 
-def censor_frame(frame: np.ndarray, model, options: ConvertOptions) -> tuple[np.ndarray, int]:
+def censor_frame(frame: np.ndarray, model, options: ConvertOptions) -> Tuple[np.ndarray, int]:
     padded, x_ratio, y_ratio = letterbox(frame, options.width, options.height)
     classes, _, boxes = model.detect(
         padded, confThreshold=options.confidence, nmsThreshold=options.nms
@@ -214,11 +219,14 @@ def ffmpeg_executable() -> str:
         raise RuntimeError("imageio-ffmpeg is required for video conversion") from exc
 
 
-def probe_video(ffmpeg: str, input_path: str) -> tuple[int, int, float, float | None]:
+def probe_video(ffmpeg: str, input_path: str) -> Tuple[int, int, float, Optional[float]]:
     import re
 
     result = subprocess.run(
-        [ffmpeg, "-hide_banner", "-i", input_path], capture_output=True, text=True
+        [ffmpeg, "-hide_banner", "-i", input_path],
+        capture_output=True,
+        text=True,
+        creationflags=SUBPROCESS_FLAGS,
     )
     dimensions = re.search(r"Video:.*?,\s*(?:[^,]+,\s*)?(\d{2,5})x(\d{2,5})", result.stderr)
     fps_match = re.search(r"(\d+(?:\.\d+)?) fps", result.stderr)
@@ -233,8 +241,10 @@ def probe_video(ffmpeg: str, input_path: str) -> tuple[int, int, float, float | 
             + float(duration_match.group(3))
         )
     return (
-        int(dimensions.group(1)), int(dimensions.group(2)),
-        float(fps_match.group(1)), duration,
+        int(dimensions.group(1)),
+        int(dimensions.group(2)),
+        float(fps_match.group(1)),
+        duration,
     )
 
 
@@ -242,35 +252,122 @@ def convert_video(
     input_path: str,
     output_path: str,
     options: ConvertOptions,
-    progress_callback=None,
-    is_cancelled=None,
+    progress_callback: Optional[ProgressCallback] = None,
+    is_cancelled: Optional[CancelCheck] = None,
 ) -> int:
+    input_file = Path(input_path).resolve()
+    output_file = Path(output_path).resolve()
+    if not input_file.is_file():
+        raise ValueError(f"input file does not exist: {input_file}")
+    same_file = input_file == output_file
+    if output_file.exists():
+        same_file = same_file or os.path.samefile(input_file, output_file)
+    if same_file:
+        raise ValueError("output must be different from input")
+    if output_file.is_dir():
+        raise ValueError("output path must be a file")
+    if output_file.suffix.lower() != ".mp4":
+        raise ValueError("output must use the .mp4 extension")
+    if not output_file.parent.is_dir():
+        raise ValueError(f"output folder does not exist: {output_file.parent}")
+
     ffmpeg = ffmpeg_executable()
-    width, height, fps, source_duration = probe_video(ffmpeg, input_path)
+    width, height, fps, source_duration = probe_video(ffmpeg, str(input_file))
     if source_duration is not None and options.start >= source_duration:
         raise ValueError("start time must be before the end of the video")
     available = max(0, source_duration - options.start) if source_duration is not None else None
     duration = options.duration
     if available is not None:
         duration = min(duration, available) if duration is not None else available
-    total = int(duration * fps) if duration is not None else None
+    total = max(1, int(round(duration * fps))) if duration is not None else None
     model = load_model(options)
     seek = ["-ss", str(options.start)] if options.start else []
     limit = ["-t", str(options.duration)] if options.duration else []
-    decoder = subprocess.Popen(
-        [ffmpeg, "-v", "error", *seek, "-i", input_path, *limit,
-         "-f", "rawvideo", "-pix_fmt", "bgr24", "pipe:1"],
-        stdout=subprocess.PIPE,
+
+    temporary = tempfile.NamedTemporaryFile(
+        prefix=f".{output_file.stem}.",
+        suffix=".mp4",
+        dir=str(output_file.parent),
+        delete=False,
     )
+    temporary_output = Path(temporary.name)
+    temporary.close()
     command = [
-        ffmpeg, "-y", "-v", "error", "-f", "rawvideo", "-pix_fmt", "bgr24",
-        "-s", f"{width}x{height}", "-r", str(fps), "-i", "pipe:0",
+        ffmpeg,
+        "-y",
+        "-v",
+        "error",
+        "-f",
+        "rawvideo",
+        "-pix_fmt",
+        "bgr24",
+        "-s",
+        f"{width}x{height}",
+        "-r",
+        str(fps),
+        "-i",
+        "pipe:0",
     ]
     if options.keep_audio:
-        command += [*seek, "-i", input_path, *limit, "-map", "0:v:0", "-map", "1:a:0?", "-c:a", "copy"]
+        command += [
+            *seek,
+            "-i",
+            str(input_file),
+            *limit,
+            "-map",
+            "0:v:0",
+            "-map",
+            "1:a:0?",
+            "-c:a",
+            "copy",
+        ]
     pixel_format = "yuv420p" if width % 2 == 0 and height % 2 == 0 else "yuv444p"
-    command += ["-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", pixel_format, "-shortest", output_path]
-    encoder = subprocess.Popen(command, stdin=subprocess.PIPE)
+    command += [
+        "-c:v",
+        "libx264",
+        "-preset",
+        "veryfast",
+        "-crf",
+        "20",
+        "-pix_fmt",
+        pixel_format,
+        "-shortest",
+        str(temporary_output),
+    ]
+
+    decoder = None
+    encoder = None
+    try:
+        decoder = subprocess.Popen(
+            [
+                ffmpeg,
+                "-v",
+                "error",
+                *seek,
+                "-i",
+                str(input_file),
+                *limit,
+                "-f",
+                "rawvideo",
+                "-pix_fmt",
+                "bgr24",
+                "pipe:1",
+            ],
+            stdout=subprocess.PIPE,
+            creationflags=SUBPROCESS_FLAGS,
+        )
+        encoder = subprocess.Popen(
+            command,
+            stdin=subprocess.PIPE,
+            creationflags=SUBPROCESS_FLAGS,
+        )
+    except Exception:
+        if decoder and decoder.poll() is None:
+            decoder.terminate()
+            decoder.wait()
+        temporary_output.unlink(missing_ok=True)
+        raise
+
     frame_bytes = width * height * 3
     processed = covered_frames = 0
     started = last_report = time.monotonic()
@@ -316,25 +413,27 @@ def convert_video(
     decoder_code = decoder.wait()
     encoder_code = encoder.wait()
     if cancelled:
-        if Path(output_path).exists():
-            Path(output_path).unlink()
+        temporary_output.unlink(missing_ok=True)
         raise ConversionCancelled("video conversion cancelled")
     if processing_error:
-        if Path(output_path).exists():
-            Path(output_path).unlink()
+        temporary_output.unlink(missing_ok=True)
         raise RuntimeError(f"video processing failed: {processing_error}") from processing_error
     if decoder_code or encoder_code:
-        if Path(output_path).exists():
-            Path(output_path).unlink()
+        temporary_output.unlink(missing_ok=True)
         raise RuntimeError(
             f"video conversion failed (decoder {decoder_code}, encoder {encoder_code})"
         )
+    try:
+        os.replace(temporary_output, output_file)
+    except OSError:
+        temporary_output.unlink(missing_ok=True)
+        raise
     elapsed = time.monotonic() - started
-    print(f"[done] {processed} frames in {elapsed:.1f}s -> {output_path}")
+    print(f"[done] {processed} frames in {elapsed:.1f}s -> {output_file}")
     return processed
 
 
-def main(argv: list[str] | None = None) -> int:
+def main(argv=None) -> int:
     args = parse_args(argv)
     input_path = args.input or choose_input()
     if not input_path:
@@ -344,19 +443,32 @@ def main(argv: list[str] | None = None) -> int:
     if not os.path.isfile(input_path):
         print(f"Input file does not exist: {input_path}", file=sys.stderr)
         return 2
-    output_path = os.path.abspath(os.path.expanduser(args.output or default_output(input_path)))
+    output_path = os.path.abspath(
+        os.path.expanduser(args.output or default_output(input_path))
+    )
     if os.path.normcase(input_path) == os.path.normcase(output_path):
         print("Output must be different from input.", file=sys.stderr)
         return 2
     if os.path.exists(output_path) and not args.overwrite:
-        print(f"Output already exists (pass --overwrite to replace it): {output_path}", file=sys.stderr)
+        print(
+            f"Output already exists (pass --overwrite to replace it): {output_path}",
+            file=sys.stderr,
+        )
         return 2
     options = ConvertOptions(
-        gender=args.gender, cover=args.cover, color=args.color,
-        blur_strength=args.blur_strength, mosaic_blocks=args.mosaic_blocks,
-        confidence=args.confidence, nms=args.nms,
-        width=args.model_width, height=args.model_height, engine=args.engine,
-        start=args.start, duration=args.duration, keep_audio=not args.no_audio,
+        gender=args.gender,
+        cover=args.cover,
+        color=args.color,
+        blur_strength=args.blur_strength,
+        mosaic_blocks=args.mosaic_blocks,
+        confidence=args.confidence,
+        nms=args.nms,
+        width=args.model_width,
+        height=args.model_height,
+        engine=args.engine,
+        start=args.start,
+        duration=args.duration,
+        keep_audio=not args.no_audio,
     )
     try:
         convert_video(input_path, output_path, options)

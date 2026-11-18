@@ -30,7 +30,10 @@ class VideoConverterTests(unittest.TestCase):
             parse_color("0,256,0")
 
     def test_default_output_is_next_to_input(self):
-        self.assertEqual(Path(default_output("clips/example.mov")), Path("clips/example.porda.mp4"))
+        self.assertEqual(
+            Path(default_output("clips/example.mov")),
+            Path("clips/example.porda.mp4"),
+        )
 
     def test_letterbox_preserves_aspect_ratio(self):
         image = np.zeros((100, 200, 3), dtype=np.uint8)
@@ -44,15 +47,21 @@ class VideoConverterTests(unittest.TestCase):
         region = np.arange(30 * 20 * 3, dtype=np.uint8).reshape(20, 30, 3)
         for style in ("blur", "mosaic", "black", "white", "color", "bgcolor"):
             with self.subTest(style=style):
-                covered = cover_region(region, ConvertOptions(cover=style, color=(1, 2, 3)))
+                covered = cover_region(
+                    region, ConvertOptions(cover=style, color=(1, 2, 3))
+                )
                 self.assertEqual(covered.shape, region.shape)
                 self.assertEqual(covered.dtype, region.dtype)
 
     def test_gender_filter_only_covers_selected_class(self):
         frame = np.full((100, 100, 3), 200, dtype=np.uint8)
-        model = FakeModel(classes=[0, 1], boxes=[[0, 0, 20, 20], [40, 0, 20, 20]])
+        model = FakeModel(
+            classes=[0, 1], boxes=[[0, 0, 20, 20], [40, 0, 20, 20]]
+        )
         output, count = censor_frame(
-            frame, model, ConvertOptions(gender="female", cover="black", width=100, height=100)
+            frame,
+            model,
+            ConvertOptions(gender="female", cover="black", width=100, height=100),
         )
         self.assertEqual(count, 1)
         self.assertTrue(np.all(output[:20, :20] == 200))

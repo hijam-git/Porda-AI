@@ -6,6 +6,7 @@ import os
 from pathlib import Path
 import sys
 import threading
+from typing import Optional
 
 from PyQt5.QtCore import QObject, QThread, pyqtSignal, pyqtSlot
 from PyQt5.QtGui import QColor
@@ -54,7 +55,7 @@ class ConversionWorker(QObject):
     def cancel(self):
         self._cancel_event.set()
 
-    def _report_progress(self, processed: int, total: int | None, covered: int):
+    def _report_progress(self, processed: int, total: Optional[int], covered: int):
         percent = -1 if not total else min(100, round(processed / total * 100))
         total_text = str(total) if total else "unknown"
         self.progress.emit(

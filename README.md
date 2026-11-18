@@ -256,7 +256,16 @@ If you've found value in this project, your support can contribute to its presen
 -   to Run the application: python main.py
 
 -   For building application:
-    pyinstaller --onefile --noconsole --add-data "model/pordav4x3.cfg;model/" --add-data "model/porda-19200-lr-0005-909.weights;model/" --add-data "startup_image/1.png;startup_image/" --add-data "static/pordaailogo.png;static/" --add-data "static/pordaailogo.ico;static/" --icon=static/pordaailogo.ico --name PordaAi(version) main.py
+
+    ```powershell
+    pyinstaller --onefile --noconsole --collect-all imageio_ffmpeg `
+      --add-data "model/pordav4x3.cfg;model/" `
+      --add-data "model/porda-19200-lr-0005-909.weights;model/" `
+      --add-data "startup_image/1.png;startup_image/" `
+      --add-data "static/pordaailogo.png;static/" `
+      --add-data "static/pordaailogo.ico;static/" `
+      --icon=static/pordaailogo.ico --name PordaAi(version) main.py
+    ```
 
 ## Important Info
 
